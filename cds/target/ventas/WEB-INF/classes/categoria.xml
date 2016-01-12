@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+	<package name="categoria" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="sessionInterceptor"
+				class="ar.com.templateit.cds.web.interceptor.SessionInterceptor">
+			</interceptor>
+
+			<interceptor-stack name="sessionStack">
+				<interceptor-ref name="sessionInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+
+			<interceptor-stack name="paginationStack">
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="sessionExpired">/pages/login/sessionTimeout.jsp</result>
+		</global-results>
+		
+		<action name="abmCategoria_*" method="{1}" class="ambCategoriaAction">
+			<!--<interceptor-ref name="sessionStack" />
+			<interceptor-ref name="paginationStack" /> -->
+			<interceptor-ref name="params">
+				<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
+			</interceptor-ref>
+			<result name="abmCategoria">/pages/categoria/abmCategoria.jsp</result>
+			<result name="loadNewCategoria">/pages/ajax/categoria/newCategoria.jsp</result>
+			<result name="loadEditCategoria">/pages/ajax/categoria/editCategoria.jsp</result>
+			<result name="loadViewCategoria">/pages/ajax/categoria/viewCategoria.jsp</result>
+			<result name="searchCategoria">/pages/ajax/categoria/resultCategoria.jsp</result> 
+			<!-- <result name="render" type="redirect"> <param name="location">/abmProducto_result.do</param> </result> -->
+			<result name="render">/pages/ajax/categoria/resultCategoria.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/decorators">
+	<excludes>
+    	<pattern>*/styles/*</pattern>
+        <pattern>*/js/*</pattern>
+        <pattern>*/images/*</pattern>
+        <pattern>/context/*</pattern>
+        <pattern>*/webservices/*</pattern>
+        <pattern>*/ajax/*</pattern>
+        <pattern>*/popup/*</pattern>
+        <pattern>/*.htm</pattern>
+        <pattern>/*.html</pattern>
+        <pattern>*/login.jsp</pattern>
+        <pattern>*/loginSpringSecurity.jsp</pattern>
+        <pattern>*/logout.jsp</pattern>
+        <pattern>*/sessionTimeout.jsp</pattern>
+    </excludes>
+	<!--<decorator name="main" page="main.jsp">
+    	 <pattern>/*</pattern> 
+    </decorator>-->
+    <decorator name="baseLayout" page="baseLayout.jsp">
+    	 <pattern>/*</pattern> 
+    </decorator>
+</decorators>

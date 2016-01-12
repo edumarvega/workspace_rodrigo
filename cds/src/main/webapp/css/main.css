@@ -1,0 +1,85 @@
+
+.form-signin {
+  max-width: 330px;
+  /*padding: 15px;
+  margin: 0 auto;*/
+  padding: 40px;
+  margin: 20px;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-logout {
+  max-width: 500px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.ingresoGrillaScroll{
+	height: 210px !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.egresoGrillaScroll{
+	height: 250px !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.printVentaGrillaScroll{
+	height: 320px !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.alerta{
+	width: 150px;
+	height: 25px;
+	margin: 450px 10px 10px 800px;
+	padding: 1px;
+	position: fixed;
+	color: #F00000;
+	background-color: #FF99CC;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #F00000;
+}
+
+.ui-autocomplete-loading {
+	background : #fff url('img/ui-anim_basic_16x16.gif') right center no-repeat;
+}
+
+a:link, a:visited{
+	text-decoration:none;
+}
+
+
+
+

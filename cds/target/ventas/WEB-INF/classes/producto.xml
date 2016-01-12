@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+	<package name="producto" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="sessionInterceptor"
+				class="ar.com.templateit.cds.web.interceptor.SessionInterceptor">
+			</interceptor>
+
+			<interceptor-stack name="sessionStack">
+				<interceptor-ref name="sessionInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+
+			<interceptor-stack name="paginationStack">
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="sessionExpired">/pages/login/sessionTimeout.jsp</result>
+		</global-results>
+		<action name="abmProducto_*" method="{1}" class="ambProductoAction">
+			<!-- <interceptor-ref name="sessionStack" />
+			<interceptor-ref name="paginationStack" /> -->
+			<interceptor-ref name="params">
+				<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
+			</interceptor-ref>
+			<result name="abmProducto">/pages/producto/abmProducto.jsp</result>
+			<result name="loadNewProducto">/pages/ajax/producto/newProducto.jsp</result>
+			<result name="loadEditProducto">/pages/ajax/producto/editProducto.jsp</result>
+			<result name="loadViewProducto">/pages/ajax/producto/viewProducto.jsp</result>
+			<result name="searchProducto">/pages/ajax/producto/resultProducto.jsp</result> 
+			<!-- <result name="render" type="redirect"> <param name="location">/abmProducto_result.do</param> </result> -->
+			<result name="render">/pages/ajax/producto/resultProducto.jsp</result>
+		</action>
+		
+		<action name="ingresoProducto_*" method="{1}" class="ingresoProductoAction">
+			<!--<interceptor-ref name="sessionStack" />
+			<interceptor-ref name="paginationStack" />
+			-->
+			<interceptor-ref name="params">
+				<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
+			</interceptor-ref>
+			<result name="ingresoProducto">/pages/producto/ingresoProducto.jsp</result>
+			<result name="loadIngresoProducto">/pages/ajax/producto/inputProducto.jsp</result>
+			<result name="loadAddProducto">/pages/ajax/producto/addProducto.jsp</result>
+			<result name="refreshItems">/pages/ajax/producto/grillaIngresoProducto.jsp</result>
+			<result name="searchIngreso">/pages/ajax/producto/resultIngresos.jsp</result> 
+			<result name="render">/pages/ajax/producto/resultIngresos.jsp</result>
+			<result name="loadEditIngresoProducto">/pages/ajax/producto/editInputProducto.jsp</result>
+			<result name="loadViewIngresoProducto">/pages/ajax/producto/viewInputProducto.jsp</result>
+			 
+		</action>
+		
+		<action name="egresoProducto_*" method="{1}" class="egresoProductoAction">
+			<!--<interceptor-ref name="sessionStack" />
+			<interceptor-ref name="paginationStack" />
+			-->
+			<interceptor-ref name="params">
+				<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
+			</interceptor-ref>
+			<result name="egresoProducto">/pages/producto/egresoProducto.jsp</result>
+			<result name="loadEgresoProducto">/pages/ajax/producto/outputProducto.jsp</result>
+			<result name="loadImporteProducto">/pages/ajax/producto/importeProducto.jsp</result>
+			<result name="refreshItems">/pages/ajax/producto/grillaEgresoProducto.jsp</result>
+			<result name="searchEgreso">/pages/ajax/producto/resultEgresos.jsp</result> 
+			<result name="render">/pages/ajax/producto/resultEgresos.jsp</result>
+			<result name="imprimirVenta">/pages/ajax/producto/printVenta.jsp</result> 
+			<result name="imprimirTicketNoFiscal">/pages/ajax/producto/printTicketNoFiscal.jsp</result> 
+		</action>
+		
+		<action name="ajusteProducto_*" method="{1}" class="ajusteProductoAction">
+			<!--<interceptor-ref name="sessionStack" />
+			<interceptor-ref name="paginationStack" />
+			-->
+			<interceptor-ref name="params">
+				<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
+			</interceptor-ref>
+			<result name="ajusteProducto">/pages/producto/ajusteProducto.jsp</result>
+			<result name="loadAjusteProducto">/pages/ajax/producto/adjustmentProducto.jsp</result>
+			<result name="loadViewAjusteProducto">/pages/ajax/producto/viewAdjustmentProducto.jsp</result>
+			<result name="searchAjusteProducto">/pages/ajax/producto/resultAjustes.jsp</result> 
+			<result name="render">/pages/ajax/producto/resultAjustes.jsp</result>
+		</action>
+		
+		<action name="alertaProducto_*" method="{1}" class="alertaProductoAction">
+			<!--<interceptor-ref name="sessionStack" />
+			<interceptor-ref name="paginationStack" />
+			-->
+			<interceptor-ref name="params">
+				<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
+			</interceptor-ref>
+			<result name="alertaProducto">/pages/producto/alertaProducto.jsp</result>
+			<result name="loadAlertaProducto">/pages/ajax/alertaProducto/grillaAlertaProducto.jsp</result>
+			
+		</action>
+		
+		<action name="producto_*" method="{1}" class="productoAction">
+			<!--<interceptor-ref name="sessionStack" />
+			<interceptor-ref name="paginationStack" />
+			-->
+			<interceptor-ref name="params">
+				<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
+			</interceptor-ref>
+			<result name="loadFilterProducto">/pages/ajax/producto/filterProducto.jsp</result>
+			<result name="searchProducto">/pages/ajax/producto/resultFilterProducto.jsp</result>
+		</action>
+		
+		<action name="estadisticaVenta_*" method="{1}" class="estadisticaVentaAction">
+			<!--<interceptor-ref name="sessionStack" />
+			<interceptor-ref name="paginationStack" />
+			-->
+			<interceptor-ref name="params">
+				<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
+			</interceptor-ref>
+			<result name="estadisticaVenta">/pages/estadisticaVenta/estadisticaVenta.jsp</result>
+			<result name="loadEstadisticaVenta">/pages/ajax/estadisticaVenta/statisticsSales.jsp</result>
+		</action>
+	</package>
+	
+	<!--<package name="jsonProducto" namespace="/" extends="json-default">
+      <action name="jsonProducto_*" method="{1}" class="ar.com.templateit.cds.web.action.JsonProductoAction">
+       	   <result type="json" >
+       	 		<param name="root">lista</param>
+       	 	</result>
+      </action>
+    </package>
+    
+    -->
+    <package name="jsonProducto" namespace="/" extends="json-default">
+      <action name="jsonProducto_*" method="{1}" class="productoAction">
+       	   <result type="json" >
+       	 		<param name="root">listaProductos</param>
+       	 	</result>
+      </action>
+    </package>
+	
+	<package name="myJson" namespace="/" extends="json-default">
+      <action name="getJSONResult" 
+           class="ar.com.templateit.cds.web.action.JSONDataAction">
+       	   <result type="json">
+       	   		<param name="root">lists</param>
+       	   </result>
+      </action>
+    </package>
+    
+    <package name="jsonVentas" namespace="/" extends="json-default">
+      <action name="getJSONVentas_*" method="{1}" class="estadisticaVentaAction">
+       	   <result type="json">
+       	   		<param name="root">ventas</param>
+       	   </result>
+      </action>
+    </package>
+    
+    <package name="jsonAlertas" namespace="/" extends="json-default">
+      <action name="getJSONAlertas_*" method="{1}" class="alertaProductoAction">
+       	   <result type="json">
+       	   		<param name="root">mostrar</param>
+       	   </result>
+      </action>
+    </package>
+    
+    <package name="jsonProductoExistente" namespace="/" extends="json-default">
+      <action name="jsonProductoExistente_*" method="{1}" class="productoAction">
+       	   <result type="json" >
+       	 		<param name="root">mensaje</param>
+       	 	</result>
+      </action>
+    </package>
+</struts>

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ar.com.templateit.cds.web.entity.Venta" table="venta">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="fechaAlta" type="timestamp">
+            <column name="FECHA_ALTA" />
+        </property>
+        <property name="fechaVenta" type="date">
+            <column name="FECHA_VENTA" />
+        </property>
+        <property name="nroTicketFactura" type="string" length="20" not-null="true">
+            <column name="NRO_TICKET_FACTURA" />
+        </property>
+        <property name="total" type="java.math.BigDecimal">
+            <column name="TOTAL" />
+        </property>
+        <property name="efectivo" type="java.math.BigDecimal">
+            <column name="EFECTIVO" />
+        </property>
+        <property name="cambio" type="java.math.BigDecimal">
+            <column name="CAMBIO" />
+        </property>
+        <property name="medioDePago" type="java.lang.Integer">
+            <column name="MEDIO_DE_PAGO" />
+        </property>
+        <property name="porcentajeDescuento" type="java.math.BigDecimal">
+            <column name="PORCENTAJE_DESCUENTO" />
+        </property>
+        <property name="descuento" type="java.math.BigDecimal">
+            <column name="DESCUENTO" />
+        </property>
+        <property name="interesDebito" type="java.math.BigDecimal">
+            <column name="INTERES_DEBITO" />
+        </property>
+        <property name="interesCredito" type="java.math.BigDecimal">
+            <column name="INTERES_CREDITO" />
+        </property>
+        
+        
+     	 <list name="items" cascade="all" inverse="false" lazy="false">
+         	<key column="ID_VENTA"/>
+         	<list-index column="idx"/>
+         	<one-to-many class="ar.com.templateit.cds.web.entity.DetalleVenta"/>
+      	</list>
+      	<many-to-one name="usuario" class="ar.com.templateit.cds.web.entity.Usuario" fetch="join" cascade="none">
+        	<column name="ID_USUARIO" />
+        </many-to-one>
+        <property name="observaciones" type="string">
+            <column name="OBSERVACIONES" length="1024" />
+        </property>
+    </class>
+</hibernate-mapping>
+

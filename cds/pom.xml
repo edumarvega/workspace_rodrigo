@@ -1,0 +1,260 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ar.com.templateit.cds</groupId>
+  <artifactId>cds</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>ventas</name>
+  <url>http://maven.apache.org</url>
+   <build>
+		<finalName>ventas</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+	</plugins>
+  </build> 
+  <properties>
+  	<struts.version>2.3.8</struts.version>
+    <!--<spring.version>2.5.6</spring.version> -->   
+    <spring.version>3.0.5.RELEASE</spring.version>
+    <spring.security.version>3.2.3.RELEASE</spring.security.version>          
+  </properties>
+  <dependencies>
+ 	
+	<!-- Struts 2 -->
+        <dependency>
+	    	<groupId>org.apache.struts</groupId>
+	    	<artifactId>struts2-core</artifactId>
+	    	<!--<version>2.1.8</version>
+	    	--><version>${struts.version}</version>
+	    	
+        </dependency>
+	 <!-- Struts 2 + Spring plugins -->
+		<dependency>
+            <groupId>org.apache.struts</groupId>
+	    	<artifactId>struts2-spring-plugin</artifactId>
+	    	<!--<version>2.1.8</version>
+    -->
+    <version>${struts.version}</version>
+    </dependency>
+    
+    <!-- Struts 2 JSON Plugins -->
+    <dependency>
+          <groupId>org.apache.struts</groupId>
+	  <artifactId>struts2-json-plugin</artifactId>
+	  <!--<version>2.1.8</version>
+	  --><version>${struts.version}</version>
+    </dependency>
+
+	      <!-- MySQL database driver -->
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>5.1.9</version>
+	</dependency>
+	
+	<!-- Spring framework --> 
+	<!--2.5.6<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+		<version>${spring.version}</version>
+	</dependency> -->
+	
+	<!-- Spring 3 dependencies -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+ 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-jdbc</artifactId>
+    		<version>${spring.version}</version>
+		</dependency>
+	
+	<!-- Spring Security -->
+	<dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${spring.security.version}</version>
+         </dependency>
+         <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring.security.version}</version>
+         </dependency>
+         <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${spring.security.version}</version>
+         </dependency>
+        <dependency> 
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+
+	<!-- Hibernate core -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate</artifactId>
+		<version>3.2.7.ga</version>
+	</dependency>
+ 
+	<!-- Hibernate core library dependency start -->
+	<dependency>
+		<groupId>dom4j</groupId>
+		<artifactId>dom4j</artifactId>
+		<version>1.6.1</version>
+	</dependency>
+ 
+	<dependency>
+		<groupId>commons-logging</groupId>
+		<artifactId>commons-logging</artifactId>
+		<version>1.1.1</version>
+	</dependency>
+ 
+	<dependency>
+		<groupId>commons-collections</groupId>
+		<artifactId>commons-collections</artifactId>
+		<version>3.2.1</version>
+	</dependency>
+ 
+	<dependency>
+		<groupId>cglib</groupId>
+		<artifactId>cglib</artifactId>
+		<version>2.2</version>
+	</dependency>
+	<!-- Hibernate core library dependency end -->
+ 
+	<!-- Hibernate query library dependecy start -->
+        <dependency>
+          <groupId>antlr</groupId>
+          <artifactId>antlr</artifactId>
+          <version>2.7.7</version>
+        </dependency>
+        
+        <dependency>
+          <groupId>javax.transaction</groupId>
+          <artifactId>jta</artifactId>
+          <version>1.0.1B</version>
+        </dependency>
+        
+        <dependency>
+        	<groupId>javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.4.GA</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+        	<groupId>asm</groupId>
+        	<artifactId>asm</artifactId>
+        	<version>3.1</version>
+    	</dependency>
+    <!-- Hibernate query library dependecy end -->
+    
+    <!-- Sitemesh -->
+    	<!--<dependency>
+			<groupId>opensymphony</groupId>
+			<artifactId>sitemesh</artifactId>
+			<version>2.4.1</version>
+		</dependency>
+	 --><!-- Sitemesh end-->	
+	 
+	 <!-- Sitemesh -->
+	 <dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-sitemesh-plugin</artifactId>
+			<!-- <version>2.1.8</version> -->
+			<version>2.3.8</version>
+	</dependency>
+	<!-- Sitemesh end-->
+	
+	<!--jstl  -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+    	<artifactId>jstl</artifactId>
+    	<version>1.1.2</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>taglibs</groupId>
+		<artifactId>standard</artifactId>
+		<version>1.1.2</version>
+	</dependency>
+	<!--jstl end-->
+	
+	<!--displaytag  -->
+	<dependency>
+		<groupId>displaytag</groupId>
+		<artifactId>displaytag-export-poi</artifactId>
+		<version>1.2</version>
+		<exclusions>
+			<exclusion>
+				<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+			</exclusion>
+			<exclusion>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl104-over-slf4j</artifactId>
+			</exclusion>
+			<exclusion>
+				<groupId>commons-collections</groupId>
+				<artifactId>commons-collections</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	<!--displaytag end-->
+	
+	<dependency>
+		<groupId>org.apache.tomcat</groupId>
+		<artifactId>servlet-api</artifactId>
+		<version>6.0.13</version><!-- 2.5 para Tomcat -->
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>jsp-api</artifactId>
+		<version>2.0</version>
+		<scope>provided</scope>
+	</dependency>
+  	
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  
+</project>

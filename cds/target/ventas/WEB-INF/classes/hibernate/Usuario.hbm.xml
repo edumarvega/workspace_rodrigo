@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ar.com.templateit.cds.web.entity.Usuario" table="usuario">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+
+		<property name="usuario" type="string">
+            <column name="USUARIO" length="50" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="60" not-null="true" />
+        </property>
+        <property name="apellido" type="string">
+            <column name="APELLIDO" length="80" not-null="true" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="100" not-null="true" />
+        </property>
+        <property name="habilitado" type="boolean">
+            <column name="HABILITADO" sql-type="tinyint" not-null="true" />
+        </property>
+        <set name="usuarioRole" table="usuariorole" cascade="all" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="ID_USUARIO"/>
+            </key>
+            <one-to-many class="ar.com.templateit.cds.web.entity.UsuarioRole" />
+        </set>
+        
+    </class>
+</hibernate-mapping>
+

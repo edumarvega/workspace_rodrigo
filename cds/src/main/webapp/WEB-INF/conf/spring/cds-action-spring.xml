@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+ 
+ 	<bean id="usuarioAction" class="ar.com.templateit.cds.web.action.LoginAction" scope="prototype">
+		<property name="usuarioBO" ref="usuarioBO" />	
+	</bean>
+	
+	<bean id="homeAction" class="ar.com.templateit.cds.web.action.HomeAction" scope="prototype">
+		<property name="usuarioBO" ref="usuarioBO" />
+	</bean>
+	
+	<bean id="accessDeniedAction" class="ar.com.templateit.cds.web.action.AccessDeniedAction" scope="prototype">
+		
+	</bean>
+	
+	
+	
+	<bean id="ambProductoAction" class="ar.com.templateit.cds.web.action.ABMProductoAction" scope="prototype">
+		<property name="categoriaBO" ref="categoriaBO" />
+		<property name="productoBO" ref="productoBO" />		
+	</bean>
+	
+	<bean id="productoAction" class="ar.com.templateit.cds.web.action.ProductoAction" scope="prototype">
+		<property name="productoBO" ref="productoBO" />		
+	</bean>
+	
+	<bean id="ingresoProductoAction" class="ar.com.templateit.cds.web.action.IngresoProductoAction" scope="prototype">
+		<property name="compraBO" ref="compraBO" />	
+		<property name="productoBO" ref="productoBO" />	
+		<property name="alertaBO" ref="alertaBO" />	
+	</bean>
+	
+	<bean id="egresoProductoAction" class="ar.com.templateit.cds.web.action.EgresoProductoAction" scope="prototype">
+		<property name="ventaBO" ref="ventaBO" />	
+		<property name="productoBO" ref="productoBO" />
+		<property name="alertaBO" ref="alertaBO" />
+		<property name="categoriaBO" ref="categoriaBO" />
+		<property name="nombreEmpresa" value="${empresa.nombre}" />
+		<property name="direccion" value="${empresa.direccion}" />
+		<property name="telefono" value="${empresa.telefono}" />
+		<property name="email" value="${empresa.email}" />
+		<property name="categoriaSinCodigo">
+        	<map>
+            	<entry key="9999999999999" value="SIN CODIGO"/>
+            	<entry key="8888888888888" value="PIROTECNIA"/>
+         	</map>	
+        </property>
+
+	</bean>
+	
+	<bean id="ajusteProductoAction" class="ar.com.templateit.cds.web.action.AjusteProductoAction" scope="prototype">
+		<property name="ajusteBO" ref="ajusteBO" />	
+		<property name="productoBO" ref="productoBO" />	
+		<property name="motivoAjusteBO" ref="motivoAjusteBO" />	
+		<property name="alertaBO" ref="alertaBO" />	
+	</bean>
+	
+	<bean id="estadisticaVentaAction" class="ar.com.templateit.cds.web.action.EstadisticaVentaAction" scope="prototype">
+		<property name="estadisticaVentaBO" ref="estadisticaVentaBO" />	
+	</bean>
+	
+	<bean id="alertaProductoAction" class="ar.com.templateit.cds.web.action.AlertaProductoAction" scope="prototype">
+		<property name="alertaBO" ref="alertaBO" />				
+	</bean>
+	
+	<bean id="ambProveedorAction" class="ar.com.templateit.cds.web.action.ABMProveedorAction" scope="prototype">
+		<property name="provinciaBO" ref="provinciaBO" />
+		<property name="proveedorBO" ref="proveedorBO" />
+			
+	</bean>
+	
+	<bean id="proveedorAction" class="ar.com.templateit.cds.web.action.ProveedorAction" scope="prototype">
+			
+	</bean>
+	
+	<bean id="ambUsuarioAction" class="ar.com.templateit.cds.web.action.ABMUsuarioAction" scope="prototype">
+		<property name="usuarioBO" ref="usuarioBO" />
+		<property name="roleBO" ref="roleBO" />
+	</bean>
+	
+	<bean id="backUpDataBaseAction" class="ar.com.templateit.cds.web.action.BackUpDataBaseAction" scope="prototype">
+		<property name="mySqldumPath" value="${mysql.path.instalacion.mysqldump}" />
+		<property name="comando" value="${mysql.comando.backup}" />
+		<property name="pathBackup" value="${mysql.path.backup.bd}" />
+			
+	</bean>
+	
+	<bean id="ambCategoriaAction" class="ar.com.templateit.cds.web.action.ABMCategoriaAction" scope="prototype">
+		<property name="categoriaBO" ref="categoriaBO" />
+	</bean>
+	
+	<bean id="reporteAction" class="ar.com.templateit.cds.web.action.ReporteAction" scope="prototype">
+		<property name="ventaBO" ref="ventaBO" />	
+		<property name="usuarioBO" ref="usuarioBO" />
+		<property name="nombreEmpresa" value="${empresa.nombre}" />
+		<property name="direccion" value="${empresa.direccion}" />
+		<property name="telefono" value="${empresa.telefono}" />
+		<property name="email" value="${empresa.email}" />
+	</bean>
+  
+</beans>

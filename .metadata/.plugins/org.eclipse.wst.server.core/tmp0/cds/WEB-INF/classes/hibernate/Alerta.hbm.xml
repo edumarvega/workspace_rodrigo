@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ar.com.templateit.cds.web.entity.Alerta" table="alerta">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="fechaIngreso" type="timestamp">
+            <column name="FECHA_INGRESO" />
+        </property>
+         <property name="codigo" type="java.lang.Long">
+            <column name="CODIGO" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="45" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="DESCRIPCION" length="100" not-null="true" />
+        </property>
+        <property name="marca" type="string">
+            <column name="MARCA" length="30" not-null="true" />
+        </property>
+        <property name="categoria" type="string">
+            <column name="CATEGORIA" length="45" not-null="true" />
+        </property>
+        <property name="cantidadActual" type="java.lang.Integer">
+            <column name="CANTIDAD_ACTUAL" />
+        </property>
+        <many-to-one name="usuario" class="ar.com.templateit.cds.web.entity.Usuario" fetch="join" cascade="none">
+        	<column name="ID_USUARIO" />
+        </many-to-one>
+         
+    </class>
+</hibernate-mapping>
+

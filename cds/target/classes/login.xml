@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+    <package name="default" namespace="/" extends="struts-default">
+    	<action name="login_*" method="{1}" class="usuarioAction">
+            <result name="loadLogint">/pages/login/loginSpringSecurity.jsp</result>
+            <result name="loadLogout">/pages/login/logout.jsp</result>
+            <result name="home" type="redirectAction">
+        		<param name="actionName">home</param>
+        		<param name="userLoged">${usuario}</param>
+        	</result>
+       </action>
+    </package>
+    
+    <package name="home" namespace="/" extends="struts-default" >
+    	<interceptors>
+    		<interceptor name="sessionInterceptor" class="ar.com.templateit.cds.web.interceptor.SessionInterceptor">
+    		</interceptor>
+    		<interceptor-stack name="sessionStack">
+    			<interceptor-ref name="sessionInterceptor"></interceptor-ref>
+    			<interceptor-ref name="defaultStack"></interceptor-ref>
+    		</interceptor-stack>
+    	</interceptors>
+    	
+    	<global-results>
+    		<result name="sessionExpired">/pages/login/sessionTimeout.jsp</result>
+    	</global-results>
+    	
+    	<action name="home" class="homeAction">
+         	<!--<interceptor-ref name="sessionStack" />-->
+            <!--<result name="success">/pages/body.jsp</result>-->
+            <result name="success">/pages/blank.jsp</result>
+         </action>
+    </package>
+    
+    <package name="accessDenied" namespace="/" extends="struts-default" >
+    	<action name="accessDenied" class="accessDeniedAction">
+         	<result name="success">/pages/error/accessDenied.jsp</result>
+         </action>
+    </package>
+    
+    <package name="spring" namespace="/" extends="struts-default" >
+    	<action name="loginSecurity">
+        	<result>/pages/login/login2.jsp</result>
+         </action>
+	</package>
+</struts>

@@ -1,0 +1,26 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+ 
+	<!-- Database Configuration -->
+	<import resource="conf/spring/cds-data-source.xml"/>
+	<import resource="conf/spring/cds-hibernate-session-factory.xml"/>
+ 
+	<!-- Beans Action Declaration -->
+	<import resource="conf/spring/cds-action-spring.xml"/>
+	
+	<!-- Beans BO Declaration -->
+	<import resource="conf/spring/cds-bo-spring.xml"/>
+	
+	<!-- Beans DAO Declaration -->
+	<import resource="conf/spring/cds-dao-spring.xml"/>
+	
+	<!-- Beans Service permisos de usuario Declaration -->
+	<import resource="conf/spring/cds-service-spring.xml"/>
+	
+	<!-- Beans quita el prefijo ROLE_ por default Declaration -->
+	<import resource="conf/spring/cds-rolevote-spring.xml"/>
+	 
+</beans>

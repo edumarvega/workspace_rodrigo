@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+    <package name="database" namespace="/" extends="struts-default" >
+    	<interceptors>
+    		<interceptor name="sessionInterceptor" class="ar.com.templateit.cds.web.interceptor.SessionInterceptor">
+    		</interceptor>
+    		<interceptor-stack name="sessionStack">
+    			<interceptor-ref name="sessionInterceptor"></interceptor-ref>
+    			<interceptor-ref name="defaultStack"></interceptor-ref>
+    		</interceptor-stack>
+    	</interceptors>
+    	
+    	<global-results>
+    		<result name="sessionExpired">/pages/login/sessionTimeout.jsp</result>
+    	</global-results>
+    	
+    	<action name="backUpDataBase_*" method="{1}" class="backUpDataBaseAction">
+         	<!--<interceptor-ref name="sessionStack" />-->
+            <!--<result name="success">/pages/body.jsp</result>-->
+            <result name="successBackUp">/pages/database/backUpDataBaseOk.jsp</result>
+            <result name="errorBackUp">/pages/database/errorBackUpDataBase.jsp</result>
+         </action>
+    </package>
+    
+
+</struts>

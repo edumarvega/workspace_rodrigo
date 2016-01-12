@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+	<bean id="usuarioBO" class="ar.com.templateit.cds.web.bo.impl.UsuarioBOImpl" >
+		<property name="usuarioDAO" ref="usuarioDAO" />
+	</bean>
+	
+	<bean id="categoriaBO" class="ar.com.templateit.cds.web.bo.impl.CategoriaBOImpl" >
+		<property name="categoriaDAO" ref="categoriaDAO" />
+	</bean>
+	
+	<bean id="productoBO" class="ar.com.templateit.cds.web.bo.impl.ProductoBOImpl" >
+		<property name="productoDAO" ref="productoDAO" />
+	</bean>
+	
+	<bean id="compraBO" class="ar.com.templateit.cds.web.bo.impl.CompraBOImpl" >
+		<property name="compraDAO" ref="compraDAO" />
+	</bean>
+	
+	<bean id="ventaBO" class="ar.com.templateit.cds.web.bo.impl.VentaBOImpl" >
+		<property name="ventaDAO" ref="ventaDAO" />
+	</bean>
+	
+	<bean id="ajusteBO" class="ar.com.templateit.cds.web.bo.impl.AjusteBOImpl" >
+		<property name="ajusteDAO" ref="ajusteDAO" />
+	</bean>
+	
+	<bean id="motivoAjusteBO" class="ar.com.templateit.cds.web.bo.impl.MotivoAjusteBOImpl" >
+		<property name="motivoAjusteDAO" ref="motivoAjusteDAO" />
+	</bean>
+	
+	<bean id="estadisticaVentaBO" class="ar.com.templateit.cds.web.bo.impl.EstadisticaVentaBOImpl" >
+		<property name="estadisticaVentaDAO" ref="estadisticaVentaDAO" />
+	</bean>
+	
+	<bean id="alertaBO" class="ar.com.templateit.cds.web.bo.impl.AlertaBOImpl" >
+		<property name="alertaDAO" ref="alertaDAO" />
+	</bean>
+	
+	<bean id="provinciaBO" class="ar.com.templateit.cds.web.bo.impl.ProvinciaBOImpl" >
+		<property name="provinciaDAO" ref="provinciaDAO" />
+	</bean>
+	
+	<bean id="proveedorBO" class="ar.com.templateit.cds.web.bo.impl.ProveedorBOImpl" >
+		<property name="proveedorDAO" ref="proveedorDAO" />
+	</bean>
+	
+	<bean id="roleBO" class="ar.com.templateit.cds.web.bo.impl.RoleBOImpl" >
+		<property name="roleDAO" ref="roleDAO" />
+	</bean>
+    
+</beans>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ar.com.templateit.cds.web.entity.DetalleVenta" table="detalleventa">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+         <property name="codigo" type="java.lang.Long">
+            <column name="CODIGO" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="45" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="DESCRIPCION" length="100" not-null="true" />
+        </property>
+         <property name="categoria" type="string">
+            <column name="CATEGORIA" length="45" not-null="true" />
+        </property>
+        <property name="precioCompra" type="java.math.BigDecimal">
+            <column name="PRECIO_COMPRA" />
+        </property>
+        <property name="precioVenta" type="java.math.BigDecimal">
+            <column name="PRECIO_VENTA" />
+        </property>
+        <property name="margenDeGanancia" type="java.math.BigDecimal">
+            <column name="MARGEN_GANANCIA" />
+        </property>
+        <property name="cantidad" type="java.lang.Integer">
+            <column name="CANTIDAD" />
+        </property>
+        <property name="subTotal" type="java.math.BigDecimal">
+            <column name="SUB_TOTAL" />
+        </property>
+         <many-to-one name="venta">
+            <column name="ID_VENTA"  />
+	     </many-to-one>
+    </class>
+</hibernate-mapping>
+

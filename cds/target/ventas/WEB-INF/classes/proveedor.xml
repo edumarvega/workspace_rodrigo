@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+	<package name="proveedor" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="sessionInterceptor"
+				class="ar.com.templateit.cds.web.interceptor.SessionInterceptor">
+			</interceptor>
+
+			<interceptor-stack name="sessionStack">
+				<interceptor-ref name="sessionInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+
+			<interceptor-stack name="paginationStack">
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="sessionExpired">/pages/login/sessionTimeout.jsp</result>
+		</global-results>
+		
+		<action name="abmProveedor_*" method="{1}" class="ambProveedorAction">
+			<!--<interceptor-ref name="sessionStack" />
+			<interceptor-ref name="paginationStack" /> -->
+			<interceptor-ref name="params">
+				<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
+			</interceptor-ref>
+			<result name="abmProveedor">/pages/proveedor/abmProveedor.jsp</result>
+			<result name="loadNewProveedor">/pages/ajax/proveedor/newProveedor.jsp</result>
+			<result name="loadEditProveedor">/pages/ajax/proveedor/editProveedor.jsp</result>
+			<result name="loadViewProveedor">/pages/ajax/proveedor/viewProveedor.jsp</result>
+			<result name="searchProveedor">/pages/ajax/proveedor/resultProveedor.jsp</result> 
+			<!-- <result name="render" type="redirect"> <param name="location">/abmProducto_result.do</param> </result> -->
+			<result name="render">/pages/ajax/proveedor/resultProveedor.jsp</result>
+		</action>
+	</package>
+	<package name="jsonProveedor" namespace="/" extends="json-default">
+      <action name="jsonProveedor_*" method="{1}" class="proveedorAction">
+       	   <result type="json" >
+       	 		<param name="root">listaProveedores</param>
+       	 	</result>
+      </action>
+    </package>	
+</struts>

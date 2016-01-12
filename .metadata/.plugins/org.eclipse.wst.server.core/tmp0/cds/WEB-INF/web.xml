@@ -1,0 +1,79 @@
+<web-app id="struts_blank" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>Template Sitemesh Struts 2 Web Application</display-name>
+		
+	<!-- Servlet de struts2 -->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>
+ 	       org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+        </filter-class>
+	</filter>
+	
+	<!-- Sitemesh -->
+	<!--<filter>
+    	<filter-name>sitemesh</filter-name>
+    	<filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
+  	</filter>-->
+  	
+  	<filter>
+		<filter-name>sitemesh</filter-name>
+		<filter-class>com.opensymphony.module.sitemesh.filter.PageFilter</filter-class>
+	</filter>
+	
+	<!-- Spring Security -->
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy
+		</filter-class>
+	</filter>
+ 
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+ 
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+		 <dispatcher>REQUEST</dispatcher>
+  		 <dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	
+	<!-- Sitemesh -->
+	<filter-mapping>
+        <filter-name>sitemesh</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    
+    <session-config> 
+		<session-timeout>10</session-timeout> 
+	</session-config>
+	
+	<!-- Cuando se quita el spring-2.5.6.jar hace falta llamar al applicationContext.xml
+	     aqui dentro del contextConfigLocation sino no carga los bo,dao,y action -->
+	 	
+	<!-- Loads Spring Security config file -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/applicationContext.xml,
+			/WEB-INF/spring-security.xml
+		</param-value>
+	</context-param>
+	
+	<!-- Contexto de spring -->
+	<listener>
+    	<listener-class>
+      		org.springframework.web.context.ContextLoaderListener
+    	</listener-class>
+  	</listener>
+  
+	<!--<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list> -->
+	 
+</web-app>

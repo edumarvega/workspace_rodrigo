@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ar.com.templateit.cds.web.entity.Proveedor" table="proveedor">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="cuit" type="java.lang.Long">
+            <column name="CUIT" />
+        </property>
+        
+        <property name="nombreRazonSocial" type="string">
+            <column name="NOMBRE_RAZON_SOCIAL" length="100" not-null="true" />
+        </property>
+        
+        <property name="telefono" type="string">
+            <column name="TELEFONO" length="20" not-null="true" />
+        </property>
+        
+        <property name="celular" type="string">
+            <column name="celular" length="20" not-null="true" />
+        </property>
+        
+        <property name="fax" type="string">
+            <column name="FAX" length="20" not-null="true" />
+        </property>
+        
+        <property name="domicilio" type="string">
+            <column name="domicilio" length="100" not-null="true" />
+        </property>
+        
+        <property name="numero" type="string">
+            <column name="NUMERO" length="6" not-null="true" />
+        </property>
+        
+        <property name="piso" type="string">
+            <column name="PISO" length="3" />
+        </property>
+        
+        <property name="dpto" type="string">
+            <column name="DPTO" length="3" />
+        </property>
+        
+        <property name="localidadPartido" type="string">
+            <column name="LOCALIDAD_PARTIDO" length="80" not-null="true" />
+        </property>
+        
+        <property name="codigoPostal" type="string">
+            <column name="CODIGO_POSTAL" length="8" />
+        </property>
+                     
+        <many-to-one name="provincia" class="ar.com.templateit.cds.web.entity.Provincia" fetch="join" cascade="none">
+        	<column name="ID_PROVINCIA" />
+        </many-to-one> 			
+	
+		<property name="email" type="string">
+            <column name="EMAIL" length="50" />
+        </property>
+      
+        <property name="paginaWeb" type="string">
+            <column name="PAGINA_WEB" length="70" />
+        </property>
+        
+        <property name="direccionFacebook" type="string">
+            <column name="DIRECCION_FACEBOOK" length="50" />
+        </property>
+        
+        <property name="direccionTwitter" type="string">
+            <column name="DIRECCION_TWITTER" length="50" />
+        </property>
+        
+        <property name="observaciones" type="string">
+            <column name="OBSERVACIONES" length="1024" />
+        </property>
+        
+        
+    </class>
+</hibernate-mapping>
+
