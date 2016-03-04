@@ -2,6 +2,7 @@ package ar.com.templateit.cds.web.bo;
 
 import java.util.List;
 
+import ar.com.templateit.cds.web.entity.Categoria;
 import ar.com.templateit.cds.web.entity.Producto;
 
 public interface ProductoBO {
@@ -16,7 +17,7 @@ public interface ProductoBO {
 	
 	List<Producto> loadAllProducto();
 	
-	List<Producto> findByCriteria(Long codigo,String nombre,String descripcion);
+	List<Producto> findByCriteria(Long codigo,String nombre,String descripcion,String marca,Categoria categoria);
 	
 	Producto findByCode(Long codigo);
 	

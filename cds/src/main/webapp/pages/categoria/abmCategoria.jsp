@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ include file="/pages/template/taglibs.jsp" %>
 <s:url action="abmCategoria_loadNewCategoria" namespace="/" var="loadNewCategoria" />
 <s:url action="abmCategoria_loadEditCategoria" namespace="/" var="loadEditCategoria" />
@@ -7,8 +6,8 @@
 <s:url action="abmCategoria_search" namespace="/" var="search" />
 <s:url action="abmCategoria_delete" namespace="/" var="delete" />
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <title>ABM de Categoria</title>
@@ -103,7 +102,7 @@
 
 	function showModalNuevaCategoria(){
 		divNewCategoria = $('<div id="divNewCategoria"></div>');
-		divNewCategoria.dialog({			
+		divNewCategoria.dialog({
 			   title: 'Nueva categoria',
 			   modal: true,
 			   width: 400,
@@ -165,7 +164,7 @@
    </script>
 </head>
 <body>
-	<span style="color:#2aabd2; font-size: 14px; font-weight:bold;">Búsqueda de Categorias</span>
+	<span style="color:#2aabd2; font-size: 14px; font-weight:bold;">B&uacute;squeda de Categor&iacute;as</span>
 	<br>
 	<br>
 	<div id="filter">

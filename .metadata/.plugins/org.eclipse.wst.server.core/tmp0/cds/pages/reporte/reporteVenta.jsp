@@ -1,10 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ include file="/pages/template/taglibs.jsp" %>
 <s:url action="reporte_search" namespace="/" var="search" />
 <s:url action="reporte_imprimirVenta" namespace="/" var="imprimirVenta" />
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <title>Reporte de Ventas</title>

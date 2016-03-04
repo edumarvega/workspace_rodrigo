@@ -1,13 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ include file="/pages/template/taglibs.jsp" %>
 <s:url action="estadisticaVenta_loadEstadisticaVenta" namespace="/" var="loadEstadisticaVenta" />
 <s:url action="getJSONVentas_search" namespace="/" var="search" />
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Estadísticas de ventas</title>
+<title>Estad&iacute;sticas de ventas</title>
  <%@ include file="/pages/template/common-header.jsp" %>
   <style type="text/css">
   </style>
@@ -25,7 +24,7 @@
   	  			titulo = 'Ventas por producto';
   	  		}
   			else{
-  				titulo = 'Ventas por categoría de producto';
+  				titulo = 'Ventas por categor&iacute;a de producto';
   	  		}
   			
   			var formData = $('filterForm').serialize();
@@ -70,7 +69,7 @@
   	  			   	  	);
   	  		        }
   		            else{
-  		            	$("#divChart").text('No se encontraron datos para el criterio de búsqueda.');
+  		            	$("#divChart").text('No se encontraron datos para el criterio de b&uacute;squeda.');
   	  		        }
   		              			   	  	
   					$("#filter").unblock();
@@ -87,7 +86,7 @@
    </script>
 </head>
 <body>
-<span style="color:#2aabd2; font-size: 14px; font-weight:bold;">Estadísticas de ventas</span>
+<span style="color:#2aabd2; font-size: 14px; font-weight:bold;">EstadÃ­sticas de ventas</span>
 	<br>
 	<br>
 	<div id="filter">
@@ -100,7 +99,7 @@
     			<s:textfield id="fechaHasta" cssClass="form-control input-sm" name="fechaHasta" placeholder="Fecha hasta" theme="simple" />
   			</div>
   			<div class="form-group">
-    			<s:radio label="Filtrar" name="selectOption" list="#{'1':'Por producto','2':'Por categoría'}" value="1" theme="simple"/>
+    			<s:radio label="Filtrar" name="selectOption" list="#{'1':'Por producto','2':'Por categorÃ­a'}" value="1" theme="simple"/>
   			</div>
   			<div class="form-group">
 				<button id="verVentas" type="button" class="btn btn-info">Ver ventas</button>

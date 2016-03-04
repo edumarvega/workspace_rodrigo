@@ -10,7 +10,7 @@
   		  		target : '#resultado',
 			    success:    function(){ 
   					changeLinksPagination('resultado','filterForm');
-  					divEditarIngresoProducto.dialog('close');
+  					divEditarIngresoProducto.dialog('destroy').remove();
 			    } 
 		};
   		$('#formEditIngresoProducto').submit(function() {
@@ -55,6 +55,7 @@
 		<s:hidden id="idCompra" name="compra.id" value="%{compra.id}"/>
 		<s:hidden id="fechaAlta" name="compra.fechaAlta" value="%{compra.fechaAlta}"/>
 		<s:hidden id="usuario" name="compra.usuario" value="%{compra.usuario}"/>
+		<s:hidden id="total" name="total" value="%{total}"/>
 	
 		<div class="form-group">
     		<label for="fechaCompra" class="col-md-3 col-lg-3 control-label">Fecha compra</label>
@@ -88,7 +89,7 @@
 							<th>Codigo</th>
 							<th>Nombre</th>
 							<th>Descripcion</th>
-							<th>Precio</th>
+							<th>Precio compra</th>
 							<th></th>
 						</tr>
 					</thead>
@@ -107,13 +108,9 @@
 					</tbody>
 				</table>
 			</div>
+			<h3 class="text-right"><strong>Total:$<s:property value="total"/></strong></h3>
     	</div>
-  		<div class="form-group">
-    		<label for="total" class="col-md-3 col-lg-3 control-label">Total $</label>
-    		<div class="col-md-2 col-lg-2">
-      			<input type="text" class="form-control input-sm" id="total" name="total" value="${total}" required>
-    		</div>
-  		</div>
+  		
   		<div class="form-group">
   			<label for="button" class="col-md-3 col-lg-3 control-label"></label>
     		<div class="col-md-4 col-lg-4">

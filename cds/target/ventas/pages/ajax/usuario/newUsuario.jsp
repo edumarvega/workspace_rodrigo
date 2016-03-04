@@ -10,7 +10,7 @@
   		  		target : '#resultado',
 			    success:    function(){ 
 	  				changeLinksPagination('resultado','filterForm');
-			    	divNewUsuario.dialog('close');
+			    	divNewUsuario.dialog('destroy').remove();
 			    } 
 		};
   		$('#formAltaUsuario').submit(function() {
@@ -25,7 +25,7 @@
   		<div class="form-group">
     		<label for="usuario" class="col-sm-4 control-label">Usuario</label>
     		<div class="col-sm-5">
-      			<input type="text" class="form-control input-sm" id="usuario" name="usuario.usuario" value="" required>
+      			<input type="text" class="form-control input-sm" id="usuario" name="usuario.usuario" value="" autofocus required>
     		</div>
   		</div>
   		<div class="form-group">

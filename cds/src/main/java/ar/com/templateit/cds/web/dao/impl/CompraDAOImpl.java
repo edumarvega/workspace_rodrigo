@@ -10,6 +10,8 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import ar.com.templateit.cds.web.dao.CompraDAO;
 import ar.com.templateit.cds.web.entity.Compra;
+import ar.com.templateit.cds.web.entity.FormaDePago;
+import ar.com.templateit.cds.web.entity.Usuario;
 
 public class CompraDAOImpl extends HibernateDaoSupport implements CompraDAO{
 
@@ -30,8 +32,10 @@ public class CompraDAOImpl extends HibernateDaoSupport implements CompraDAO{
 	}
 
 	@Override
-	public List<Compra> findByCriteria(Date fechaDesde,Date fechaHasta,String nroTicketFactura,String proveedor) {
+	public List<Compra> findByCriteria(Date fechaDesde,Date fechaHasta,String nroTicketFactura,String proveedor,FormaDePago formaDePago) {
+		
 		DetachedCriteria criteria = DetachedCriteria.forClass(Compra.class);
+		
 		if(fechaDesde!=null){
 			criteria.add(Restrictions.ge("fechaCompra",fechaDesde));
 		}
@@ -48,6 +52,10 @@ public class CompraDAOImpl extends HibernateDaoSupport implements CompraDAO{
 				criteria.add(Restrictions.ilike("proveedor", proveedor, MatchMode.ANYWHERE));
 			}
 		}
+		if(formaDePago!=null){  
+			criteria.createAlias("formaDePago", "formaDePago").add(Restrictions.eq("formaDePago", formaDePago));
+		
+		}
 		List<Compra> compras = (List<Compra>)this.getHibernateTemplate().findByCriteria(criteria);
 		return compras;
 	}
@@ -56,6 +64,29 @@ public class CompraDAOImpl extends HibernateDaoSupport implements CompraDAO{
 	public Compra getCompra(Long id) {
 		Compra compra = (Compra)this.getHibernateTemplate().get(Compra.class, id);
 		return compra;
+	}
+
+	@Override
+	public List<Compra> findCompraEfectivoByUsuario(Date fechaDesde,
+			Date fechaHasta, FormaDePago formaDePago, Usuario usuario) {
+		DetachedCriteria criteria = DetachedCriteria.forClass(Compra.class);
+		
+		if(fechaDesde!=null){
+			criteria.add(Restrictions.ge("fechaCompra",fechaDesde));
+		}
+		if(fechaHasta!=null){
+			criteria.add(Restrictions.le("fechaCompra",fechaHasta));
+		}
+			
+		if(formaDePago!=null){
+			criteria.createAlias("formaDePago", "formaDePago").add(Restrictions.eq("formaDePago", formaDePago));
+		}
+		
+		if(usuario!=null){
+			criteria.createAlias("usuario", "usuario").add(Restrictions.eq("usuario", usuario));
+		}
+		List<Compra> compras = (List<Compra>)this.getHibernateTemplate().findByCriteria(criteria);
+		return compras;
 	}
 	
 

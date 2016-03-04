@@ -6,7 +6,7 @@
   		  		target : '#resultado',
 			    success:    function(){ 
   					changeLinksPagination('resultado','filterForm');
-			    	divEditarUsuario.dialog('close');
+			    	divEditarUsuario.dialog('destroy').remove();
 			    } 
 		};
   		$('#formEdicionUsuario').submit(function() {

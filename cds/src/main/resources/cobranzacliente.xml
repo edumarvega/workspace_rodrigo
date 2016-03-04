@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+	<package name="cobranzaCliente" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="sessionInterceptor"
+				class="ar.com.templateit.cds.web.interceptor.SessionInterceptor">
+			</interceptor>
+
+			<interceptor-stack name="sessionStack">
+				<interceptor-ref name="sessionInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+
+			<interceptor-stack name="paginationStack">
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="sessionExpired">/pages/login/sessionTimeout.jsp</result>
+		</global-results>
+		
+		<action name="cobranzaCliente_*" method="{1}" class="cobranzaClienteAction">
+			<!--<interceptor-ref name="sessionStack" />
+			<interceptor-ref name="paginationStack" /> -->
+			<interceptor-ref name="params">
+				<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
+			</interceptor-ref>
+			<result name="cobranzaCliente">/pages/cobranzaCliente/cobranzaCliente.jsp</result>
+			<result name="loadNewCobranzaCliente">/pages/ajax/cobranzaCliente/newCobranzaCliente.jsp</result>
+			<result name="loadViewCobranzaCliente">/pages/ajax/cobranzaCliente/resultMovimientoCtaCteCliente.jsp</result>
+			<result name="searchCobranzaCliente">/pages/ajax/cobranzaCliente/resultCobranzaCliente.jsp</result> 
+			<result name="render">/pages/ajax/cobranzaCliente/resultCobranzaCliente.jsp</result>
+		</action>
+	</package>
+</struts>

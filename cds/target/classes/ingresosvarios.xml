@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+	<package name="ingresoVario" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="sessionInterceptor"
+				class="ar.com.templateit.cds.web.interceptor.SessionInterceptor">
+			</interceptor>
+
+			<interceptor-stack name="sessionStack">
+				<interceptor-ref name="sessionInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+
+			<interceptor-stack name="paginationStack">
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="sessionExpired">/pages/login/sessionTimeout.jsp</result>
+		</global-results>
+		
+		<action name="ingresoVario_*" method="{1}" class="ingresoVarioAction">
+			<!--<interceptor-ref name="sessionStack" />
+			<interceptor-ref name="paginationStack" /> -->
+			<interceptor-ref name="params">
+				<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
+			</interceptor-ref>
+			<result name="ingresoVario">/pages/ingresosVarios/ingresosVarios.jsp</result>
+			<result name="loadNewIngresoVario">/pages/ajax/ingresosVarios/newIngresoVario.jsp</result>
+			<result name="loadEditIngresoVario">/pages/ajax/ingresosVarios/editIngresoVario.jsp</result>
+			<result name="loadViewIngresoVario">/pages/ajax/ingresosVarios/viewIngresoVario.jsp</result>
+			<result name="searchIngresoVario">/pages/ajax/ingresosVarios/resultIngresosVarios.jsp</result> 
+			<result name="render">/pages/ajax/ingresosVarios/resultIngresosVarios.jsp</result>
+		</action>
+	</package>
+</struts>

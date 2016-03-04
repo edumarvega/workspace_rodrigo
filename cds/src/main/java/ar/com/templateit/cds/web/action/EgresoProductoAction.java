@@ -10,13 +10,22 @@ import java.util.Map.Entry;
 import org.apache.struts2.ServletActionContext;
 
 import ar.com.templateit.cds.web.bo.AlertaBO;
-import ar.com.templateit.cds.web.bo.CategoriaBO;
+import ar.com.templateit.cds.web.bo.ClienteBO;
+import ar.com.templateit.cds.web.bo.CuentaCorrienteBO;
+import ar.com.templateit.cds.web.bo.EstadoCuentaCorrienteBO;
+import ar.com.templateit.cds.web.bo.FormaDePagoBO;
 import ar.com.templateit.cds.web.bo.ProductoBO;
+import ar.com.templateit.cds.web.bo.TipoCuentaCorrienteBO;
 import ar.com.templateit.cds.web.bo.VentaBO;
 import ar.com.templateit.cds.web.entity.Alerta;
 import ar.com.templateit.cds.web.entity.Categoria;
+import ar.com.templateit.cds.web.entity.Cliente;
+import ar.com.templateit.cds.web.entity.CuentaCorriente;
 import ar.com.templateit.cds.web.entity.DetalleVenta;
+import ar.com.templateit.cds.web.entity.EstadoCuentaCorriente;
+import ar.com.templateit.cds.web.entity.FormaDePago;
 import ar.com.templateit.cds.web.entity.Producto;
+import ar.com.templateit.cds.web.entity.TipoCuentaCorriente;
 import ar.com.templateit.cds.web.entity.Usuario;
 import ar.com.templateit.cds.web.entity.Venta;
 import ar.com.templateit.cds.web.util.TemplateUtil;
@@ -58,10 +67,11 @@ public class EgresoProductoAction extends ActionSupport{
 	private List<Categoria> categorias;
 	private String defaultCategoria;
 	private List<String> ventasPor;
-	private List<String> mediosDePago;
 	private String selectedVentaPor;
 	private String selectedMedioDePago;
-	private Map<Long,String>  categoriaSinCodigo;
+	private List<String> codigoCategoriaVenta;
+	private List<String> nombreCategoriaVenta;
+	private Map<Long,String> categoriaSinCodigo;
 	private String cambio;
 	private String importe;
 	private String ventaTotal;
@@ -70,16 +80,51 @@ public class EgresoProductoAction extends ActionSupport{
 	private String interesDebito;
 	private String interesTarjetaCredito;
 	private BigDecimal totalVentaDiaria;
+	private List<FormaDePago> listaFormaDePago;
+	private String formaDePago;
+	private String defaultFormaDePago;
+	
+	private String importeDebito;
+	private String numeroTarjetaCredito;
+	private String importeTarjetaCreditoValue;
+	private String idCliente;
+	private String importeCtaCte;
+	private String saldoCtaCte;
+	private CuentaCorriente cuentaCorriente;
+	private List<FormaDePago> filterFormasDePago;
+	private String filterFormaDePago;
+	private String defaultFilterFormaDePago;
+	private String interesTarjeta;
 				
 	private VentaBO ventaBO;
 	private ProductoBO productoBO;
 	private AlertaBO alertaBO;
-	private CategoriaBO categoriaBO;
+	private FormaDePagoBO formaDePagoBO;
+	private TipoCuentaCorrienteBO tipoCuentaCorrienteBO;
+	private ClienteBO  clienteBO;
+	private EstadoCuentaCorrienteBO estadoCuentaCorrienteBO;
+	private CuentaCorrienteBO cuentaCorrienteBO;
+		
+	
+	
 	
 	public String egresoProducto() {
 		
 //		ApplicationContext context = new ClassPathXmlApplicationContext("/WEB-INF/applicationContext.xml");
 //	    EgresoProductoAction epa = (EgresoProductoAction)context.getBean("egresoProductoAction");
+		
+		this.filterFormasDePago = new ArrayList<FormaDePago>();
+		
+		FormaDePago formaDePago = new FormaDePago();
+		formaDePago.setId(new Long(0));
+		formaDePago.setNombre("Todas");
+		
+		this.filterFormasDePago.add(formaDePago);
+		List<FormaDePago> tmp = this.formaDePagoBO.loadAllFormaDePago();
+		this.filterFormasDePago.addAll(tmp);
+		
+		this.setDefaultFilterFormaDePago(this.filterFormasDePago.get(0).toString());
+		this.setFilterFormaDePago(this.filterFormasDePago.get(0).toString());
 		
 		Usuario usuario = (Usuario)ActionContext.getContext().getSession().get("usuario");
 		
@@ -91,7 +136,7 @@ public class EgresoProductoAction extends ActionSupport{
 		this.setFechaDesde(new Date());
 		this.setFechaHasta(new Date());
 		
-		this.listaVenta = this.ventaBO.findByCriteria(fechaDesde, fechaHasta, observaciones,usuario.getUsuario());
+		this.listaVenta = this.ventaBO.findByCriteria(this.fechaDesde, this.fechaHasta, observaciones,usuario.getUsuario(),null);
 		
 		if(this.listaVenta!=null){
 			if(!this.listaVenta.isEmpty()){
@@ -138,27 +183,29 @@ public class EgresoProductoAction extends ActionSupport{
 	
 	public String loadImporteProducto() {
 		this.totalVenta = (BigDecimal)ActionContext.getContext().getSession().get("totalVenta");
-				
+		
 		String observaciones = (String) ServletActionContext.getRequest().getParameter("observaciones");
 			
-		this.mediosDePago = new ArrayList<String>();
-		this.mediosDePago.add(EFECTIVO);
-		this.mediosDePago.add(TARJETA_DEBITO);
-		this.mediosDePago.add(TARJETA_CREDITO);
-		
 		ActionContext.getContext().getSession().put("observaciones", observaciones);
+		
+		this.listaFormaDePago = this.formaDePagoBO.loadAllFormaDePago();
+		this.setDefaultFormaDePago(this.listaFormaDePago.get(0).toString());
 		
 		return "loadImporteProducto";
 	}
 	
 	public String search() {
 		
+		FormaDePago formaDePago = null;
+		if(Integer.valueOf(this.getFilterFormaDePago()).intValue()!=0){
+			formaDePago = this.formaDePagoBO.getFormaDePago(Long.valueOf(this.getFilterFormaDePago()));
+		}
+		
 		Usuario usuario = (Usuario)ActionContext.getContext().getSession().get("usuario");
 		
+		this.listaVenta = this.ventaBO.findByCriteria(fechaDesde, fechaHasta, observaciones,usuario.getUsuario(),formaDePago);
+		
 		this.setTotalVentaDiaria(new BigDecimal("0.00"));
-		
-		this.listaVenta = this.ventaBO.findByCriteria(fechaDesde, fechaHasta, observaciones,usuario.getUsuario());
-		
 		if(this.listaVenta!=null){
 			if(!this.listaVenta.isEmpty()){
 				for(Venta venta : this.listaVenta){
@@ -278,21 +325,26 @@ public class EgresoProductoAction extends ActionSupport{
 	}
 	
 	public String save() {
+		
+		Usuario usuario = (Usuario)ActionContext.getContext().getSession().get("usuario");
 		String observaciones = (String)ActionContext.getContext().getSession().get("observaciones");
-						
+		this.totalVenta = (BigDecimal)ActionContext.getContext().getSession().get("totalVenta");
+		FormaDePago formaDePago = this.formaDePagoBO.getFormaDePago(Long.valueOf(this.getFormaDePago()));
 		this.venta= new Venta();
 		
 		this.getVenta().setFechaAlta(new Date());
 		this.getVenta().setFechaVenta(new Date());
 		this.getVenta().setNroTicketFactura(this.nroTicketFactura);
-		this.getVenta().setTotal(new BigDecimal(this.getVentaTotal()));
-		
-		
-		if(EFECTIVO.equals(this.getSelectedMedioDePago())){
+		this.getVenta().setEfectivo(new BigDecimal("0.00"));
+		this.getVenta().setCambio(new BigDecimal("0.00"));
+		this.getVenta().setTotal(new BigDecimal(this.ventaTotal));
+		this.getVenta().setFormaDePago(formaDePago);
+						
+		//Contado
+		if(Integer.parseInt(this.getFormaDePago())==1){
 			this.getVenta().setEfectivo(new BigDecimal(this.getImporte()));
 			this.getVenta().setCambio(new BigDecimal(this.getCambio()));
-			
-			this.getVenta().setMedioDePago(new Integer(1));
+						
 			if(this.getPorcentajeDescuento()!=null && this.getPorcentajeDescuento().length()>0){
 				this.getVenta().setPorcentajeDescuento(new BigDecimal(this.getPorcentajeDescuento()));
 				this.getVenta().setDescuento(new BigDecimal(this.getDescuento()));
@@ -302,30 +354,54 @@ public class EgresoProductoAction extends ActionSupport{
 				this.getVenta().setDescuento(BigDecimal.ZERO);
 			}
 		}
-		else if(TARJETA_DEBITO.equals(this.getSelectedMedioDePago())){
+		//Tarj.Debito
+		else if(Integer.parseInt(this.getFormaDePago())==2){
+			this.getVenta().setDescuento(BigDecimal.ZERO);
 			this.getVenta().setEfectivo(BigDecimal.ZERO);
 			this.getVenta().setCambio(BigDecimal.ZERO);
-			
-			this.getVenta().setMedioDePago(new Integer(2));
-			if(this.getInteresDebito()!=null && this.getInteresDebito().length()>0){
-				this.getVenta().setInteresDebito(new BigDecimal(this.getInteresDebito()));
+									
+			if(this.getInteresTarjeta()!=null && this.getInteresTarjeta().length()>0){
+				this.getVenta().setInteresDebito(new BigDecimal(this.getInteresTarjeta()));
 			}
 			else{
 				this.getVenta().setInteresDebito(BigDecimal.ZERO);
 			}
 		}
-		else{
+		//Tarj.Credito
+		else if(Integer.parseInt(this.getFormaDePago())==3){
+			this.getVenta().setNumeroTarjetaCredito(this.getNumeroTarjetaCredito());
+			this.getVenta().setDescuento(BigDecimal.ZERO);
 			this.getVenta().setEfectivo(BigDecimal.ZERO);
 			this.getVenta().setCambio(BigDecimal.ZERO);
-			
-			this.getVenta().setMedioDePago(new Integer(3));
-			if(this.getInteresTarjetaCredito()!=null && this.getInteresTarjetaCredito().length()>0){
-				this.getVenta().setInteresCredito(new BigDecimal(this.getInteresTarjetaCredito()));
+						
+			if(this.getInteresTarjeta()!=null && this.getInteresTarjeta().length()>0){
+				this.getVenta().setInteresCredito(new BigDecimal(this.getInteresTarjeta()));
 			}
 			else{
 				this.getVenta().setInteresCredito(BigDecimal.ZERO);
 			}
 		}
+		//Cta.Cte.
+		else{
+			//creo un registro en cuenta corriente
+			
+			Cliente cliente = this.clienteBO.getClienteById(Long.valueOf(this.getIdCliente()));
+			EstadoCuentaCorriente estadoCuentaCorriente = this.estadoCuentaCorrienteBO.loadAllEstadoCuentaCorriente().get(0);
+			TipoCuentaCorriente tipoCuentaCorriente = this.tipoCuentaCorrienteBO.loadTipoCuentaCorriente().get(0);
+			
+			this.cuentaCorriente = new CuentaCorriente();
+			this.cuentaCorriente.setCliente(cliente);
+			this.cuentaCorriente.setEstadoCuentaCorriente(estadoCuentaCorriente);
+			this.cuentaCorriente.setFechaCreacion(new Date());
+			this.cuentaCorriente.setProveedor(null);
+			this.cuentaCorriente.setSaldoAcreedor(new BigDecimal(this.getSaldoCtaCte()));
+			this.cuentaCorriente.setTipoCuentaCorriente(tipoCuentaCorriente);
+			this.cuentaCorriente.setTotalVenta(this.totalVenta);
+			this.cuentaCorriente.setUsuario(usuario);
+							
+		}
+			
+					
 		
 		if(observaciones!=null){
 			this.getVenta().setObservaciones(observaciones.trim());	
@@ -333,7 +409,8 @@ public class EgresoProductoAction extends ActionSupport{
 		else{
 			this.getVenta().setObservaciones("");
 		}
-				
+		
+						
 		this.items = new ArrayList<DetalleVenta>();
 		
 		List<DetalleVenta> detalleVenta = (List<DetalleVenta>)ActionContext.getContext().getSession().get("itemsVenta");
@@ -343,11 +420,14 @@ public class EgresoProductoAction extends ActionSupport{
 		}
 				
 		this.getVenta().setItems(this.items);
-		
-		Usuario usuario = (Usuario)ActionContext.getContext().getSession().get("usuario");
 		this.getVenta().setUsuario(usuario);
 
 		this.ventaBO.save(this.getVenta());
+		
+		if(Integer.parseInt(this.getFormaDePago())==4){
+			this.cuentaCorriente.setVenta(this.getVenta());
+			this.cuentaCorrienteBO.save(this.cuentaCorriente);
+		}
 		
 		boolean esProductoConCodigo=true;
 		
@@ -359,7 +439,7 @@ public class EgresoProductoAction extends ActionSupport{
 		    }
 			
 			if(esProductoConCodigo){
-				Producto producto = this.productoBO.findByCriteria(dv.getCodigo(),"", "").get(0);
+				Producto producto = this.productoBO.findByCriteria(dv.getCodigo(),"", "","",null).get(0);
 				TemplateUtil tu = new TemplateUtil();
 				producto.setCantidad(tu.decrementarStockActual(producto.getCantidad(), dv.getCantidad()));
 				this.productoBO.update(producto);
@@ -372,13 +452,70 @@ public class EgresoProductoAction extends ActionSupport{
 		return this.render();
 	}
 	
+	public String delete() {
+		
+		String[] ids = ServletActionContext.getRequest().getParameter("ids").split(",");
+		Venta venta = null;
+		for (int i = 0; i < ids.length; i++) {
+			
+			venta = this.ventaBO.getVenta(Long.valueOf(ids[i]));
+					
+			CuentaCorriente cuentaCorriente = this.cuentaCorrienteBO.getCuentaCorrienteByVenta(venta);
+			
+			if(cuentaCorriente!=null){
+				this.cuentaCorrienteBO.delete(cuentaCorriente);
+			}
+			
+			this.ventaBO.delete(venta);
+			
+		}
+		
+		//ver lo de alertas
+		for(DetalleVenta dv : venta.getItems()){
+			
+			Producto producto = this.productoBO.findByCode(dv.getCodigo());
+			
+			int cantidadProducto = producto.getCantidad().intValue()+dv.getCantidad().intValue();
+			producto.setCantidad(new Integer(cantidadProducto));
+			
+			this.productoBO.update(producto);
+			
+			Alerta alerta = this.alertaBO.findByCode(dv.getCodigo());
+			
+			if(producto.getCantidad()>producto.getStockCritico()){
+				if(alerta!=null){
+					this.alertaBO.delete(alerta);
+				}
+				
+			}
+			else{
+				if(alerta!=null){
+					alerta.setCantidadActual(producto.getCantidad());
+					this.alertaBO.update(alerta);
+				}
+				
+			}
+						
+			
+		}
+		return this.render();
+	}
+	
 	public String render() {
 		
+		FormaDePago formaDePago = null;
+		
+		if(this.getFilterFormaDePago()!=null){
+			if(Integer.valueOf(this.getFilterFormaDePago()).intValue()!=0){
+				formaDePago = this.formaDePagoBO.getFormaDePago(Long.valueOf(this.getFilterFormaDePago()));
+			}
+		}
+				
 		Usuario usuario = (Usuario)ActionContext.getContext().getSession().get("usuario");
 		
 		this.setTotalVentaDiaria(new BigDecimal("0.00"));
 		
-		this.listaVenta = this.ventaBO.findByCriteria(fechaDesde, fechaHasta, observaciones,usuario.getUsuario());
+		this.listaVenta = this.ventaBO.findByCriteria(this.fechaDesde, this.fechaHasta, observaciones,usuario.getUsuario(),formaDePago);
 		
 		if(this.listaVenta!=null){
 			if(!this.listaVenta.isEmpty()){
@@ -404,7 +541,7 @@ public class EgresoProductoAction extends ActionSupport{
 			
 			if(esProductoConCodigo){
 				
-				Producto producto = this.productoBO.findByCriteria(dv.getCodigo(),"", "").get(0);
+				Producto producto = this.productoBO.findByCriteria(dv.getCodigo(),"", "","",null).get(0);
 				TemplateUtil tu = new TemplateUtil();
 				Boolean stockCritico = tu.verificarStockCritico(producto.getCantidad(),producto.getStockCritico());
 				if(stockCritico){
@@ -628,10 +765,7 @@ public class EgresoProductoAction extends ActionSupport{
 		this.defaultCategoria = defaultCategoria;
 	}
 
-	public void setCategoriaBO(CategoriaBO categoriaBO) {
-		this.categoriaBO = categoriaBO;
-	}
-
+	
 	public List<String> getVentasPor() {
 		return ventasPor;
 	}
@@ -653,6 +787,21 @@ public class EgresoProductoAction extends ActionSupport{
 		this.selectedVentaPor = selectedVentaPor;
 	}
 
+	public List<String> getCodigoCategoriaVenta() {
+		return codigoCategoriaVenta;
+	}
+
+	public void setCodigoCategoriaVenta(List<String> codigoCategoriaVenta) {
+		this.codigoCategoriaVenta = codigoCategoriaVenta;
+	}
+
+	public List<String> getNombreCategoriaVenta() {
+		return nombreCategoriaVenta;
+	}
+
+	public void setNombreCategoriaVenta(List<String> nombreCategoriaVenta) {
+		this.nombreCategoriaVenta = nombreCategoriaVenta;
+	}
 
 	public String getObservaciones() {
 		return observaciones;
@@ -669,7 +818,7 @@ public class EgresoProductoAction extends ActionSupport{
 	public void setCambio(String cambio) {
 		this.cambio = cambio;
 	}
-	
+
 	public String getImporte() {
 		return importe;
 	}
@@ -678,6 +827,7 @@ public class EgresoProductoAction extends ActionSupport{
 		this.importe = importe;
 	}
 
+	
 	public String getVentaTotal() {
 		return ventaTotal;
 	}
@@ -685,19 +835,13 @@ public class EgresoProductoAction extends ActionSupport{
 	public void setVentaTotal(String ventaTotal) {
 		this.ventaTotal = ventaTotal;
 	}
-
+		
+	
 	public String getDefaultMediDePago(){
 		return EFECTIVO;
 	}
 
-	public List<String> getMediosDePago() {
-		return mediosDePago;
-	}
-
-	public void setMediosDePago(List<String> mediosDePago) {
-		this.mediosDePago = mediosDePago;
-	}
-
+	
 	public String getSelectedMedioDePago() {
 		return selectedMedioDePago;
 	}
@@ -713,8 +857,7 @@ public class EgresoProductoAction extends ActionSupport{
 	public void setPorcentajeDescuento(String porcentajeDescuento) {
 		this.porcentajeDescuento = porcentajeDescuento;
 	}
-		
-
+	
 	public String getDescuento() {
 		return descuento;
 	}
@@ -743,10 +886,7 @@ public class EgresoProductoAction extends ActionSupport{
 		return categoriaSinCodigo;
 	}
 
-	public void setCategoriaSinCodigo(Map<Long, String> categoriaSinCodigo) {
-		this.categoriaSinCodigo = categoriaSinCodigo;
-	}
-
+	
 	public BigDecimal getTotalVentaDiaria() {
 		return totalVentaDiaria;
 	}
@@ -754,8 +894,145 @@ public class EgresoProductoAction extends ActionSupport{
 	public void setTotalVentaDiaria(BigDecimal totalVentaDiaria) {
 		this.totalVentaDiaria = totalVentaDiaria;
 	}
+
+	public void setCategoriaSinCodigo(Map<Long, String> categoriaSinCodigo) {
+		this.categoriaSinCodigo = categoriaSinCodigo;
+	}
+
+	public void setFormaDePagoBO(FormaDePagoBO formaDePagoBO) {
+		this.formaDePagoBO = formaDePagoBO;
+	}
+
+	public List<FormaDePago> getListaFormaDePago() {
+		return listaFormaDePago;
+	}
+
+	public void setListaFormaDePago(List<FormaDePago> listaFormaDePago) {
+		this.listaFormaDePago = listaFormaDePago;
+	}
+
+	public String getFormaDePago() {
+		return formaDePago;
+	}
+
+	public void setFormaDePago(String formaDePago) {
+		this.formaDePago = formaDePago;
+	}
+
+	public String getDefaultFormaDePago() {
+		return defaultFormaDePago;
+	}
+
+	public void setDefaultFormaDePago(String defaultFormaDePago) {
+		this.defaultFormaDePago = defaultFormaDePago;
+	}
+
+	public String getImporteDebito() {
+		return importeDebito;
+	}
+
+	public void setImporteDebito(String importeDebito) {
+		this.importeDebito = importeDebito;
+	}
+
+	public String getNumeroTarjetaCredito() {
+		return numeroTarjetaCredito;
+	}
+
+	public void setNumeroTarjetaCredito(String numeroTarjetaCredito) {
+		this.numeroTarjetaCredito = numeroTarjetaCredito;
+	}
+
+	public String getImporteTarjetaCreditoValue() {
+		return importeTarjetaCreditoValue;
+	}
+
+	public void setImporteTarjetaCreditoValue(String importeTarjetaCreditoValue) {
+		this.importeTarjetaCreditoValue = importeTarjetaCreditoValue;
+	}
+
+	public String getIdCliente() {
+		return idCliente;
+	}
+
+	public void setIdCliente(String idCliente) {
+		this.idCliente = idCliente;
+	}
+
+	public String getImporteCtaCte() {
+		return importeCtaCte;
+	}
+
+	public void setImporteCtaCte(String importeCtaCte) {
+		this.importeCtaCte = importeCtaCte;
+	}
+
+	public String getSaldoCtaCte() {
+		return saldoCtaCte;
+	}
+
+	public void setSaldoCtaCte(String saldoCtaCte) {
+		this.saldoCtaCte = saldoCtaCte;
+	}
+
+	public void setTipoCuentaCorrienteBO(TipoCuentaCorrienteBO tipoCuentaCorrienteBO) {
+		this.tipoCuentaCorrienteBO = tipoCuentaCorrienteBO;
+	}
+
+	public void setClienteBO(ClienteBO clienteBO) {
+		this.clienteBO = clienteBO;
+	}
+
+	public void setEstadoCuentaCorrienteBO(
+			EstadoCuentaCorrienteBO estadoCuentaCorrienteBO) {
+		this.estadoCuentaCorrienteBO = estadoCuentaCorrienteBO;
+	}
+
+	public void setCuentaCorrienteBO(CuentaCorrienteBO cuentaCorrienteBO) {
+		this.cuentaCorrienteBO = cuentaCorrienteBO;
+	}
+
+	public CuentaCorriente getCuentaCorriente() {
+		return cuentaCorriente;
+	}
+
+	public void setCuentaCorriente(CuentaCorriente cuentaCorriente) {
+		this.cuentaCorriente = cuentaCorriente;
+	}
+
+	public List<FormaDePago> getFilterFormasDePago() {
+		return filterFormasDePago;
+	}
+
+	public void setFilterFormasDePago(List<FormaDePago> filterFormasDePago) {
+		this.filterFormasDePago = filterFormasDePago;
+	}
+
+	public String getFilterFormaDePago() {
+		return filterFormaDePago;
+	}
+
+	public void setFilterFormaDePago(String filterFormaDePago) {
+		this.filterFormaDePago = filterFormaDePago;
+	}
+
+	public String getDefaultFilterFormaDePago() {
+		return defaultFilterFormaDePago;
+	}
+
+	public void setDefaultFilterFormaDePago(String defaultFilterFormaDePago) {
+		this.defaultFilterFormaDePago = defaultFilterFormaDePago;
+	}
+
+	public String getInteresTarjeta() {
+		return interesTarjeta;
+	}
+
+	public void setInteresTarjeta(String interesTarjeta) {
+		this.interesTarjeta = interesTarjeta;
+	}
+	
 		
 	
 	
-
 }

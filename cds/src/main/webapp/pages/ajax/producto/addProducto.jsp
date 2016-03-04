@@ -32,8 +32,8 @@
   		divBusquedaProducto.dialog({
 			   title: 'Busqueda de producto',
 			   modal: true,
-			   width: 720,
-			   height: 440,
+			   width: 1024,
+			   height: 560,
 			   position: 'center',
 			   hide: "scale",
 			   close: function() {
@@ -86,11 +86,12 @@
       			<input type="text" class="form-control input-sm" id="precioDeCompra"  name="precioDeCompra" value="" onkeypress="validaSoloNumerosConPunto();" required>
     		</div>
   		</div>
-  		
+  		  		
+  		  		
   		<div class="form-group">
     		<label for="precio" class="col-md-3 col-lg-3 control-label">Precio de venta</label>
     		<div class="col-md-3 col-lg-3">
-      			<input type="text" class="form-control input-sm" id="precioProducto"  name="precioDeVenta" value="" required>
+      			<input type="text" class="form-control input-sm" id="precioDeVenta"  name="precioDeVenta" value="" required>
     		</div>
   		</div>
   		

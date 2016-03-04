@@ -26,9 +26,6 @@
         <property name="cambio" type="java.math.BigDecimal">
             <column name="CAMBIO" />
         </property>
-        <property name="medioDePago" type="java.lang.Integer">
-            <column name="MEDIO_DE_PAGO" />
-        </property>
         <property name="porcentajeDescuento" type="java.math.BigDecimal">
             <column name="PORCENTAJE_DESCUENTO" />
         </property>
@@ -53,6 +50,12 @@
         </many-to-one>
         <property name="observaciones" type="string">
             <column name="OBSERVACIONES" length="1024" />
+        </property>
+        <many-to-one name="formaDePago" class="ar.com.templateit.cds.web.entity.FormaDePago" fetch="join" cascade="none">
+        	<column name="ID_FORMA_DE_PAGO" />
+        </many-to-one>
+        <property name="numeroTarjetaCredito" type="string" length="16" not-null="false">
+            <column name="NRO_TARJETA_CREDITO" />
         </property>
     </class>
 </hibernate-mapping>

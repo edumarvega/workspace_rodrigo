@@ -30,7 +30,7 @@ public class ABMCategoriaAction extends ActionSupport {
 	public String loadNewCategoria() {
 			
 		this.categoria = new Categoria();
-		
+				
 		return "loadNewCategoria";
 	}
 	

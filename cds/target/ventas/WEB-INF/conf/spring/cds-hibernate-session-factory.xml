@@ -19,27 +19,43 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
          		<!--Crea el esquema y borra los datos-->
          		<!--<prop key="hibernate.hbm2ddl.auto">create</prop>-->
          		<!--Borra el esquema antes de cerrar session-->
-         		<!--<prop key="hibernate.hbm2ddl.auto">create-drop</prop> -->
+         		<!--<prop key="hibernate.hbm2ddl.auto">create-drop</prop>-->
+         		<!--Esquema--> 
          		<prop key="hibernate.default_schema">cds</prop>
          	</props>
     	</property>
  
     	<property name="mappingResources">
 			<list>
-          		<value>hibernate/Usuario.hbm.xml</value>
-          		<value>hibernate/Role.hbm.xml</value>
-          		<value>hibernate/UsuarioRole.hbm.xml</value>
-          		<value>hibernate/Producto.hbm.xml</value>
-          		<value>hibernate/Categoria.hbm.xml</value>
-          		<value>hibernate/Compra.hbm.xml</value>
-          		<value>hibernate/DetalleCompra.hbm.xml</value>
-          		<value>hibernate/Venta.hbm.xml</value>
-          		<value>hibernate/DetalleVenta.hbm.xml</value>
           		<value>hibernate/Ajuste.hbm.xml</value>
-          		<value>hibernate/MotivoAjuste.hbm.xml</value>
           		<value>hibernate/Alerta.hbm.xml</value>
+          		<value>hibernate/Caja.hbm.xml</value>
+          		<value>hibernate/Compra.hbm.xml</value>
+          		<value>hibernate/Categoria.hbm.xml</value>
+          		<value>hibernate/DetalleCompra.hbm.xml</value>
+          		<value>hibernate/DetalleVenta.hbm.xml</value>
+          		<value>hibernate/EstadoCaja.hbm.xml</value>
+          		<value>hibernate/EstadoDelPago.hbm.xml</value>
+          		<value>hibernate/FormaDePago.hbm.xml</value>
+          		<value>hibernate/GastoVario.hbm.xml</value>
+          		<value>hibernate/IngresoVario.hbm.xml</value>
+          		<value>hibernate/MotivoAjuste.hbm.xml</value>
+          		<value>hibernate/Producto.hbm.xml</value>
           		<value>hibernate/Proveedor.hbm.xml</value>
           		<value>hibernate/Provincia.hbm.xml</value>
+          		<value>hibernate/Role.hbm.xml</value>
+          		<value>hibernate/TarjetaDeCredito.hbm.xml</value>
+          		<value>hibernate/TipoGastoVario.hbm.xml</value>
+          		<value>hibernate/TipoIngresoVario.hbm.xml</value>
+          		<value>hibernate/Usuario.hbm.xml</value>
+          		<value>hibernate/UsuarioRole.hbm.xml</value>
+          		<value>hibernate/Venta.hbm.xml</value>
+          		<value>hibernate/Cliente.hbm.xml</value>
+          		<value>hibernate/CuentaCorriente.hbm.xml</value>
+          		<value>hibernate/MovimientoCuentaCorriente.hbm.xml</value>
+          		<value>hibernate/EstadoCuentaCorriente.hbm.xml</value>
+          		<value>hibernate/TipoCuentaCorriente.hbm.xml</value>
+          		<value>hibernate/UsuarioEcommerce.hbm.xml</value>
 			</list>
     	</property>	
  

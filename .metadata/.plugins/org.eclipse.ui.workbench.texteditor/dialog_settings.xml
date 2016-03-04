@@ -2,29 +2,33 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="257" key="DIALOG_WIDTH"/>
-		<item value="158" key="DIALOG_Y_ORIGIN"/>
-		<item value="728" key="DIALOG_X_ORIGIN"/>
+		<item value="132" key="DIALOG_Y_ORIGIN"/>
+		<item value="855" key="DIALOG_X_ORIGIN"/>
 		<item value="378" key="DIALOG_HEIGHT"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
-		<item value="false" key="incremental"/>
+		<item value="true" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="observaciones" key="selection"/>
+		<item value="getNombreProducto" key="selection"/>
 		<list key="findhistory">
-			<item value="observaciones"/>
-			<item value="egresar"/>
-			<item value="codigoCategoriaVenta"/>
-			<item value="910739"/>
-			<item value="search"/>
-			<item value="divEgresoProducto"/>
-			<item value="totalGloba"/>
-			<item value="interesDebito"/>
+			<item value="getNombreProducto"/>
+			<item value="save"/>
+			<item value="Usuario"/>
+			<item value="site"/>
+			<item value="cerrar"/>
+			<item value="sear"/>
+			<item value="searc"/>
+			<item value="transfer"/>
 		</list>
 		<list key="replacehistory">
+			<item value="UserEcommerce"/>
+			<item value=""/>
+			<item value="divInteresTarjeta"/>
+			<item value="interesTarjeta"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">

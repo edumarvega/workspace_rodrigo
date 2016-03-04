@@ -35,9 +35,9 @@
         <property name="subTotal" type="java.math.BigDecimal">
             <column name="SUB_TOTAL" />
         </property>
-         <many-to-one name="venta">
+        <many-to-one name="venta">
             <column name="ID_VENTA"  />
-	     </many-to-one>
+	    </many-to-one>
     </class>
 </hibernate-mapping>
 

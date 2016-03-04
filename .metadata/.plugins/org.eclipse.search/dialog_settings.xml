@@ -41,11 +41,11 @@
 		<item value="12" key="HISTORY_SIZE"/>
 		<section name="HISTORY11">
 			<item value="false" key="isRegExSearch"/>
-			<item value="ActionContext" key="textPattern"/>
+			<item value="login" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
-				<item value="*.java"/>
+				<item value="*.xml"/>
 			</list>
 			<list key="workingSets">
 			</list>
@@ -53,57 +53,24 @@
 		<section name="EXTENSIONS">
 			<item value="*.xml" key="3"/>
 			<item value="*.java" key="2"/>
-			<item value="*.*" key="1"/>
-			<item value="*.jsp" key="0"/>
+			<item value="*.jsp" key="1"/>
+			<item value="*.*" key="0"/>
 			<item value="*.js" key="4"/>
 		</section>
 		<section name="HISTORY10">
 			<item value="false" key="isRegExSearch"/>
-			<item value="porcentajeDescuento" key="textPattern"/>
+			<item value="home" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
-				<item value="*.jsp"/>
+				<item value="*.xml"/>
 			</list>
 			<list key="workingSets">
 			</list>
 		</section>
 		<section name="HISTORY9">
 			<item value="false" key="isRegExSearch"/>
-			<item value="display: none" key="textPattern"/>
-			<item value="0" key="scope"/>
-			<item value="true" key="ignoreCase"/>
-			<list key="fileNamePatterns">
-				<item value="*.jsp"/>
-			</list>
-			<list key="workingSets">
-			</list>
-		</section>
-		<section name="HISTORY8">
-			<item value="false" key="isRegExSearch"/>
-			<item value="formIngresoProducto" key="textPattern"/>
-			<item value="0" key="scope"/>
-			<item value="true" key="ignoreCase"/>
-			<list key="fileNamePatterns">
-				<item value="*.jsp"/>
-			</list>
-			<list key="workingSets">
-			</list>
-		</section>
-		<section name="HISTORY5">
-			<item value="false" key="isRegExSearch"/>
-			<item value="formAddProducto" key="textPattern"/>
-			<item value="0" key="scope"/>
-			<item value="true" key="ignoreCase"/>
-			<list key="fileNamePatterns">
-				<item value="*.jsp"/>
-			</list>
-			<list key="workingSets">
-			</list>
-		</section>
-		<section name="HISTORY4">
-			<item value="false" key="isRegExSearch"/>
-			<item value="display:none;" key="textPattern"/>
+			<item value="baseLayout" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
@@ -112,9 +79,31 @@
 			<list key="workingSets">
 			</list>
 		</section>
-		<section name="HISTORY7">
+		<section name="HISTORY8">
 			<item value="false" key="isRegExSearch"/>
-			<item value="Subtotal" key="textPattern"/>
+			<item value="baseLayout.jsp" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<list key="fileNamePatterns">
+				<item value="*.*"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY5">
+			<item value="false" key="isRegExSearch"/>
+			<item value="getNombreProducto" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<list key="fileNamePatterns">
+				<item value="*.java"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY4">
+			<item value="false" key="isRegExSearch"/>
+			<item value="html" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
@@ -123,9 +112,20 @@
 			<list key="workingSets">
 			</list>
 		</section>
+		<section name="HISTORY7">
+			<item value="false" key="isRegExSearch"/>
+			<item value="etiqueta" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<list key="fileNamePatterns">
+				<item value="*.*"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
 		<section name="HISTORY6">
 			<item value="false" key="isRegExSearch"/>
-			<item value="grillaEgresoProducto" key="textPattern"/>
+			<item value="cw" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
@@ -136,7 +136,7 @@
 		</section>
 		<section name="HISTORY2">
 			<item value="false" key="isRegExSearch"/>
-			<item value="observaciones" key="textPattern"/>
+			<item value="ISO" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
@@ -147,18 +147,7 @@
 		</section>
 		<section name="HISTORY3">
 			<item value="false" key="isRegExSearch"/>
-			<item value="printVentaGrillaScroll" key="textPattern"/>
-			<item value="0" key="scope"/>
-			<item value="true" key="ignoreCase"/>
-			<list key="fileNamePatterns">
-				<item value="*.*"/>
-			</list>
-			<list key="workingSets">
-			</list>
-		</section>
-		<section name="HISTORY0">
-			<item value="false" key="isRegExSearch"/>
-			<item value="beforeSerialize" key="textPattern"/>
+			<item value="&lt;html&gt;" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">
@@ -167,9 +156,20 @@
 			<list key="workingSets">
 			</list>
 		</section>
+		<section name="HISTORY0">
+			<item value="false" key="isRegExSearch"/>
+			<item value="porcentajeGanancia" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<list key="fileNamePatterns">
+				<item value="*.*"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
 		<section name="HISTORY1">
 			<item value="false" key="isRegExSearch"/>
-			<item value="dialog(&apos;close&apos;);" key="textPattern"/>
+			<item value="lang" key="textPattern"/>
 			<item value="0" key="scope"/>
 			<item value="true" key="ignoreCase"/>
 			<list key="fileNamePatterns">

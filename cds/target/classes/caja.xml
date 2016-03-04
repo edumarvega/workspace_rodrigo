@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+	<package name="caja" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="sessionInterceptor"
+				class="ar.com.templateit.cds.web.interceptor.SessionInterceptor">
+			</interceptor>
+
+			<interceptor-stack name="sessionStack">
+				<interceptor-ref name="sessionInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+
+			<interceptor-stack name="paginationStack">
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="sessionExpired">/pages/login/sessionTimeout.jsp</result>
+		</global-results>
+		
+		<action name="caja_*" method="{1}" class="cajaAction">
+			<!--<interceptor-ref name="sessionStack" />-->
+			<interceptor-ref name="paginationStack" />
+			<interceptor-ref name="params">
+				<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
+			</interceptor-ref>
+			<result name="initCaja">/pages/caja/caja.jsp</result>
+			<result name="loadNewCaja">/pages/ajax/caja/newCaja.jsp</result>
+			<result name="loadEditCaja">/pages/ajax/caja/editCaja.jsp</result>
+			<result name="loadViewCaja">/pages/ajax/caja/viewCaja.jsp</result>
+			<result name="searchCaja">/pages/ajax/caja/resultCaja.jsp</result> 
+			<result name="render">/pages/ajax/caja/resultCaja.jsp</result>
+		</action>
+	</package>
+	
+	<package name="jsonCaja" namespace="/" extends="json-default">
+      <action name="jsonCaja_*" method="{1}" class="cajaAction">
+       	   <result type="json" >
+       	 		<param name="root">mostrar</param>
+       	 	</result>
+      </action>
+      <action name="jsonCajaCerrada_*" method="{1}" class="cajaAction">
+       	   <result type="json" >
+       	 		<param name="root">cajaCerrada</param>
+       	 	</result>
+      </action>
+    </package>
+		
+</struts>

@@ -42,7 +42,7 @@
            							<td><s:property value="codigo"></s:property></td>
            							<td><s:property value="nombre"></s:property></td>
            							<td><s:property value="descripcion"></s:property></td>
-           							<td>$<s:property value="precioVenta"></s:property></td>
+           							<td><s:property value="precio"></s:property></td>
 		       					</tr>
     		   				</s:iterator>
 						</s:if>

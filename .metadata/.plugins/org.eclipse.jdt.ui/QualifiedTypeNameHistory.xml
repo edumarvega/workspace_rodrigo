@@ -7,10 +7,24 @@
 <fullyQualifiedTypeName name="org.apache.commons.io.output.NullWriter"/>
 <fullyQualifiedTypeName name="ar.com.templateit.cds.web.bo.UsuarioBO"/>
 <fullyQualifiedTypeName name="ar.com.templateit.cds.web.entity.Usuario"/>
-<fullyQualifiedTypeName name="java.lang.Long"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="ar.com.templateit.cds.web.entity.FormaDePago"/>
+<fullyQualifiedTypeName name="java.lang.Long"/>
+<fullyQualifiedTypeName name="java.lang.Boolean"/>
+<fullyQualifiedTypeName name="org.hibernate.criterion.MatchMode"/>
+<fullyQualifiedTypeName name="ar.com.templateit.cds.web.bo.CategoriaBO"/>
+<fullyQualifiedTypeName name="ar.com.templateit.cds.web.bo.ProductoBO"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="ar.com.templateit.cds.web.entity.UserEcommerce"/>
+<fullyQualifiedTypeName name="org.springframework.orm.hibernate3.HibernateAccessor"/>
+<fullyQualifiedTypeName name="org.springframework.orm.hibernate3.support.HibernateDaoSupport"/>
+<fullyQualifiedTypeName name="ar.com.templateit.cds.web.dao.UserEcommerceDAO"/>
+<fullyQualifiedTypeName name="ar.com.templateit.cds.web.bo.UsuarioEcommerceBO"/>
+<fullyQualifiedTypeName name="ar.com.templateit.cds.web.entity.IngresoVario"/>
+<fullyQualifiedTypeName name="ar.com.templateit.cds.web.entity.GastoVario"/>
+<fullyQualifiedTypeName name="ar.com.templateit.cds.web.entity.CuentaCorriente"/>
 <fullyQualifiedTypeName name="java.math.BigDecimal"/>
 </qualifiedTypeNameHistroy>

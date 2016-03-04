@@ -3,7 +3,7 @@
 	<span style="color:#2aabd2; font-size: 14px; font-weight:bold;">Resultado</span>
 	<br>
 	<div class="displayTable">
-		<display:table id="data" name="listaUsuarios" requestURI="/abmUsuario_search.do" pagesize="5" export="true" class="table table-striped table-condensed" excludedParams="*" decorator="ar.com.templateit.cds.web.decorator.RoleDecorator">
+		<display:table id="data" name="listaUsuarios" requestURI="/abmUsuario_search.do" pagesize="10" export="true" class="table table-striped table-condensed" excludedParams="*" decorator="ar.com.templateit.cds.web.decorator.RoleDecorator">
 			<display:column  media="html">
 				<input type="checkbox" name="idUsuario" value="${data.id}"/>
 			</display:column>

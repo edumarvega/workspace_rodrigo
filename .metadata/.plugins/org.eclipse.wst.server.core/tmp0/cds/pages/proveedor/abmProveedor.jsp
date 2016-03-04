@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ include file="/pages/template/taglibs.jsp" %>
 <s:url action="abmProveedor_loadNewProveedor" namespace="/" var="loadNewProveedor" />
 <s:url action="abmProveedor_loadEditProveedor" namespace="/" var="loadEditProveedor" />
@@ -8,8 +7,8 @@
 <s:url action="abmProveedor_delete" namespace="/" var="delete" />
 <s:url action="jsonProveedor_getNombreRazonSocialProveedor" namespace="/" var="getNombreRazonSocialProveedor" />
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <title>ABM de Proveedor</title>
@@ -118,7 +117,6 @@
 
   	var divNewProveedor;
   	var divEditarProveedor;
-  	var divViewProveedor;
 
 	function showModalNuevoProveedor(){
 		divNewProveedor = $('<div id="divNewProveedor"></div>');
@@ -157,7 +155,7 @@
 	  			}).block({ message: '<h5><img src="${appCtx}/images/loading.gif"/> Procesando...</h5>' });
 	}
 
-	
+	var divViewProveedor;
 	function showModalViewProveedor(id){
 		var url = '${loadViewProveedor}?id='+id;
 		divViewProveedor = $('<div id="divViewProveedor"></div>');
@@ -184,7 +182,7 @@
    </script>
 </head>
 <body>
-	<span style="color:#2aabd2; font-size: 14px; font-weight:bold;">Búsqueda de Proveedores</span>
+	<span style="color:#2aabd2; font-size: 14px; font-weight:bold;">B&uacute;squeda de Proveedores</span>
 	<br>
 	<br>
 	<div id="filter">

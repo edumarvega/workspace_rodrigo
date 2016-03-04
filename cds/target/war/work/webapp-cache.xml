@@ -37,12 +37,17 @@
           <string>fonts/glyphicons-halflings-regular.ttf</string>
           <string>fonts/glyphicons-halflings-regular.woff</string>
           <string>home.html</string>
+          <string>images/ajustes.png</string>
+          <string>images/busqueda.png</string>
+          <string>images/caja.png</string>
+          <string>images/calculadora.png</string>
           <string>images/calendario/anterior.png</string>
           <string>images/calendario/calendario-over-onclick.gif</string>
           <string>images/calendario/calendario.gif</string>
           <string>images/calendario/proximo.png</string>
           <string>images/calendario/Thumbs.db</string>
           <string>images/codigobarra.jpg</string>
+          <string>images/etiqueta.png</string>
           <string>images/gestion-stock_opt.jpg</string>
           <string>images/historial/historial-off.gif</string>
           <string>images/historial/historial-on.gif</string>
@@ -72,8 +77,13 @@
           <string>images/loading.gif</string>
           <string>images/panales_opt.jpg</string>
           <string>images/pañales.jpg</string>
+          <string>images/pedido.png</string>
+          <string>images/regalo.png</string>
+          <string>images/reporte.png</string>
+          <string>images/seguridad.png</string>
           <string>images/spinnerDefault.png</string>
           <string>images/supermercado.jpg</string>
+          <string>images/tarjeta.png</string>
           <string>images/Thumbs.db</string>
           <string>index.jsp</string>
           <string>js/bootstrap.js</string>
@@ -94,16 +104,40 @@
           <string>js/jquery.timeentry.js</string>
           <string>js/template.js</string>
           <string>pages/ajax/alertaProducto/grillaAlertaProducto.jsp</string>
+          <string>pages/ajax/caja/editCaja.jsp</string>
+          <string>pages/ajax/caja/newCaja.jsp</string>
+          <string>pages/ajax/caja/resultCaja.jsp</string>
+          <string>pages/ajax/caja/viewCaja.jsp</string>
           <string>pages/ajax/categoria/editCategoria.jsp</string>
           <string>pages/ajax/categoria/newCategoria.jsp</string>
           <string>pages/ajax/categoria/resultCategoria.jsp</string>
           <string>pages/ajax/categoria/viewCategoria.jsp</string>
+          <string>pages/ajax/cliente/editCliente.jsp</string>
+          <string>pages/ajax/cliente/newCliente.jsp</string>
+          <string>pages/ajax/cliente/resultCliente.jsp</string>
+          <string>pages/ajax/cliente/viewCliente.jsp</string>
+          <string>pages/ajax/cobranzaCliente/newCobranzaCliente.jsp</string>
+          <string>pages/ajax/cobranzaCliente/resultCobranzaCliente.jsp</string>
+          <string>pages/ajax/cobranzaCliente/resultMovimientoCtaCteCliente.jsp</string>
           <string>pages/ajax/estadisticaVenta/statisticsSales.jsp</string>
+          <string>pages/ajax/gastosVarios/editGastoVario.jsp</string>
+          <string>pages/ajax/gastosVarios/newGastoVario.jsp</string>
+          <string>pages/ajax/gastosVarios/resultGastosVarios.jsp</string>
+          <string>pages/ajax/gastosVarios/viewGastoVario.jsp</string>
+          <string>pages/ajax/ingresosVarios/editIngresoVario.jsp</string>
+          <string>pages/ajax/ingresosVarios/newIngresoVario.jsp</string>
+          <string>pages/ajax/ingresosVarios/resultIngresosVarios.jsp</string>
+          <string>pages/ajax/ingresosVarios/viewIngresoVario.jsp</string>
+          <string>pages/ajax/pagoProveedor/newPagoProveedor.jsp</string>
+          <string>pages/ajax/pagoProveedor/resultMovimientoCuentaCorriente.jsp</string>
+          <string>pages/ajax/pagoProveedor/resultPagoProveedor.jsp</string>
           <string>pages/ajax/producto/addProducto.jsp</string>
           <string>pages/ajax/producto/adjustmentProducto.jsp</string>
           <string>pages/ajax/producto/editInputProducto.jsp</string>
+          <string>pages/ajax/producto/editPriceProducto.jsp</string>
           <string>pages/ajax/producto/editProducto.jsp</string>
           <string>pages/ajax/producto/filterProducto.jsp</string>
+          <string>pages/ajax/producto/formaDePagoProducto.jsp</string>
           <string>pages/ajax/producto/grillaEgresoProducto.jsp</string>
           <string>pages/ajax/producto/grillaIngresoProducto.jsp</string>
           <string>pages/ajax/producto/importeProducto.jsp</string>
@@ -117,6 +151,8 @@
           <string>pages/ajax/producto/resultFilterProducto.jsp</string>
           <string>pages/ajax/producto/resultIngresos.jsp</string>
           <string>pages/ajax/producto/resultProducto.jsp</string>
+          <string>pages/ajax/producto/resultSearchProducto.jsp</string>
+          <string>pages/ajax/producto/searchProducto.jsp</string>
           <string>pages/ajax/producto/viewAdjustmentProducto.jsp</string>
           <string>pages/ajax/producto/viewInputProducto.jsp</string>
           <string>pages/ajax/producto/viewProducto.jsp</string>
@@ -134,14 +170,24 @@
           <string>pages/baseLayout.html</string>
           <string>pages/blank.jsp</string>
           <string>pages/body.jsp</string>
+          <string>pages/caja/caja.jsp</string>
+          <string>pages/caja/toolBarCaja.jsp</string>
           <string>pages/categoria/abmCategoria.jsp</string>
           <string>pages/categoria/toolBarCategoria.jsp</string>
+          <string>pages/cliente/abmCliente.jsp</string>
+          <string>pages/cliente/toolBarCliente.jsp</string>
+          <string>pages/cobranzaCliente/cobranzaCliente.jsp</string>
+          <string>pages/cobranzaCliente/toolBarCobranzaCliente.jsp</string>
           <string>pages/database/backUpDataBaseOk.jsp</string>
           <string>pages/database/errorBackUpDataBase.jsp</string>
           <string>pages/error/accessDenied.jsp</string>
           <string>pages/estadisticaVenta/estadisticaVenta.jsp</string>
           <string>pages/footer.jsp</string>
+          <string>pages/gastosVarios/gastosVarios.jsp</string>
+          <string>pages/gastosVarios/toolBarGastosVarios.jsp</string>
           <string>pages/header.jsp</string>
+          <string>pages/ingresosVarios/ingresosVarios.jsp</string>
+          <string>pages/ingresosVarios/toolBarIngresosVarios.jsp</string>
           <string>pages/login/login.jsp</string>
           <string>pages/login/login1.jsp</string>
           <string>pages/login/loginSpringSecurity.jsp</string>
@@ -149,6 +195,8 @@
           <string>pages/login/sessionTimeout.jsp</string>
           <string>pages/login/template.html</string>
           <string>pages/menu.jsp</string>
+          <string>pages/pagoProveedor/pagoProveedor.jsp</string>
+          <string>pages/pagoProveedor/toolBarPagoProveedor.jsp</string>
           <string>pages/producto/abmProducto.jsp</string>
           <string>pages/producto/ajusteProducto.jsp</string>
           <string>pages/producto/alertaProducto.jsp</string>
@@ -179,6 +227,7 @@
           <string>WEB-INF/conf/spring/cds-hibernate-session-factory.xml</string>
           <string>WEB-INF/conf/spring/cds-rolevote-spring.xml</string>
           <string>WEB-INF/conf/spring/cds-service-spring.xml</string>
+          <string>WEB-INF/conf/spring/cds-service-ws-spring.xml</string>
           <string>WEB-INF/decorators/baseLayout.jsp</string>
           <string>WEB-INF/decorators/main.jsp</string>
           <string>WEB-INF/decorators.xml</string>
@@ -187,6 +236,7 @@
           <string>WEB-INF/spring-security2.xml</string>
           <string>WEB-INF/web.xml</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/action/ABMCategoriaAction.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/action/ABMClienteAction.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/action/ABMProductoAction.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/action/ABMProveedorAction.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/action/ABMUsuarioAction.class</string>
@@ -194,100 +244,210 @@
           <string>WEB-INF/classes/ar/com/templateit/cds/web/action/AjusteProductoAction.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/action/AlertaProductoAction.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/action/BackUpDataBaseAction.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/action/CajaAction.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/action/CategoriaAction.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/action/CobranzaClienteAction.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/action/EgresoProductoAction.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/action/EstadisticaVentaAction.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/action/GastoVarioAction.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/action/HomeAction.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/action/IngresoProductoAction.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/action/IngresoVarioAction.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/action/JSONDataAction.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/action/JsonProductoAction.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/action/LoginAction.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/action/PagoProveedorAction.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/action/ProductoAction.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/action/ProveedorAction.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/action/ReporteAction.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/AjusteBO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/AlertaBO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/CajaBO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/CategoriaBO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/ClienteBO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/CompraBO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/CuentaCorrienteBO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/EstadisticaVentaBO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/EstadoCajaBO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/EstadoCuentaCorrienteBO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/EstadoDelPagoBO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/FormaDePagoBO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/GastoVarioBO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/AjusteBOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/AlertaBOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/CajaBOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/CategoriaBOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/ClienteBOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/CompraBOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/CuentaCorrienteBOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/EstadisticaVentaBOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/EstadoCajaBOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/EstadoCuentaCorrienteBOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/EstadoDelPagoBOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/FormaDePagoBOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/GastoVarioBOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/IngresoVarioBOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/MotivoAjusteBOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/MovimientoCuentaCorrienteBOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/ProductoBOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/ProveedorBOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/ProvinciaBOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/RoleBOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/TarjetaDeCreditoBOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/TipoCuentaCorrienteBOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/TipoGastoVarioBOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/TipoIngresoVarioBOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/UsuarioBOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/UsuarioEcommerceBOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/impl/VentaBOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/IngresoVarioBO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/MotivoAjusteBO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/MovimientoCuentaCorrienteBO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/ProductoBO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/ProveedorBO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/ProvinciaBO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/RoleBO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/TarjetaDeCreditoBO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/TipoCuentaCorrienteBO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/TipoGastoVarioBO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/TipoIngresoVarioBO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/UsuarioBO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/UsuarioEcommerceBO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/bo/VentaBO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/AjusteDAO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/AlertaDAO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/CajaDAO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/CategoriaDAO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/ClienteDAO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/CompraDAO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/CuentaCorrienteDAO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/EstadisticaVentaDAO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/EstadoCajaDAO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/EstadoCuentaCorrienteDAO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/EstadoDelPagoDAO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/FormaDePagoDAO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/GastoVarioDAO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/AjusteDAOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/AlertaDAOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/CajaDAOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/CategoriaDAOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/ClienteDAOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/CompraDAOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/CuentaCorrienteDAOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/EstadisticaVentaDAOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/EstadoCajaDAOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/EstadoCuentaCorrienteDAOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/EstadoDelPagoDAOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/FormaDePagoDAOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/GastoVarioDAOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/IngresoVarioDAOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/MotivoAjusteDAOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/MovimientoCuentaCorrienteDAOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/ProductoDAOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/ProveedorDAOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/ProvinciaDAOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/RoleDAOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/TarjetaDeCreditoDAOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/TipoCuentaCorrienteDAOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/TipoGastoVarioDAOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/TipoIngresoVarioDAOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/UsuarioDAOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/UsuarioEcommerceDAOImpl.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/impl/VentaDAOImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/IngresoVarioDAO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/MotivoAjusteDAO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/MovimientoCuentaCorrienteDAO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/ProductoDAO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/ProveedorDAO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/ProvinciaDAO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/RoleDAO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/TarjetaDeCreditoDAO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/TipoCuentaCorrienteDAO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/TipoGastoVarioDAO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/TipoIngresoVarioDAO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/UsuarioDAO.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/UsuarioEcommerceDAO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/dao/VentaDAO.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/decorator/RoleDecorator.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/Ajuste.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/Alerta.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/Caja.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/Categoria.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/Cliente.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/Compra.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/CuentaCorriente.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/DetalleCompra.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/DetalleVenta.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/Estadistica.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/EstadoCaja.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/EstadoCuentaCorriente.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/EstadoDelPago.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/FormaDePago.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/GastoVario.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/IngresoVario.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/MotivoAjuste.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/MovimientoCuentaCorriente.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/Producto.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/Proveedor.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/Provincia.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/Role.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/TarjetaDeCredito.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/TipoCuentaCorriente.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/TipoGastoVario.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/TipoIngresoVario.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/Usuario.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/UsuarioEcommerce.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/UsuarioRole.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/entity/Venta.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/interceptor/SessionInterceptor.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/service/CategoriaService.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/service/impl/CategoriaServiceImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/service/impl/PedidoServiceImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/service/impl/ProductoServiceImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/service/impl/UsuarioEcommerceServiceImpl.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/service/PedidoService.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/service/ProductoService.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/service/UsuarioDetailsService.class</string>
+          <string>WEB-INF/classes/ar/com/templateit/cds/web/service/UsuarioEcommerceService.class</string>
           <string>WEB-INF/classes/ar/com/templateit/cds/web/util/TemplateUtil.class</string>
           <string>WEB-INF/classes/backup.xml</string>
+          <string>WEB-INF/classes/caja.xml</string>
           <string>WEB-INF/classes/categoria.xml</string>
+          <string>WEB-INF/classes/cliente.xml</string>
+          <string>WEB-INF/classes/cobranzacliente.xml</string>
+          <string>WEB-INF/classes/gastosvarios.xml</string>
           <string>WEB-INF/classes/hibernate/Ajuste.hbm.xml</string>
           <string>WEB-INF/classes/hibernate/Alerta.hbm.xml</string>
+          <string>WEB-INF/classes/hibernate/Caja.hbm.xml</string>
           <string>WEB-INF/classes/hibernate/Categoria.hbm.xml</string>
+          <string>WEB-INF/classes/hibernate/Cliente.hbm.xml</string>
           <string>WEB-INF/classes/hibernate/Compra.hbm.xml</string>
+          <string>WEB-INF/classes/hibernate/CuentaCorriente.hbm.xml</string>
           <string>WEB-INF/classes/hibernate/DetalleCompra.hbm.xml</string>
           <string>WEB-INF/classes/hibernate/DetalleVenta.hbm.xml</string>
+          <string>WEB-INF/classes/hibernate/EstadoCaja.hbm.xml</string>
+          <string>WEB-INF/classes/hibernate/EstadoCuentaCorriente.hbm.xml</string>
+          <string>WEB-INF/classes/hibernate/EstadoDelPago.hbm.xml</string>
+          <string>WEB-INF/classes/hibernate/FormaDePago.hbm.xml</string>
+          <string>WEB-INF/classes/hibernate/GastoVario.hbm.xml</string>
+          <string>WEB-INF/classes/hibernate/IngresoVario.hbm.xml</string>
           <string>WEB-INF/classes/hibernate/MotivoAjuste.hbm.xml</string>
+          <string>WEB-INF/classes/hibernate/MovimientoCuentaCorriente.hbm.xml</string>
           <string>WEB-INF/classes/hibernate/Producto.hbm.xml</string>
           <string>WEB-INF/classes/hibernate/Proveedor.hbm.xml</string>
           <string>WEB-INF/classes/hibernate/Provincia.hbm.xml</string>
           <string>WEB-INF/classes/hibernate/Role.hbm.xml</string>
+          <string>WEB-INF/classes/hibernate/TarjetaDeCredito.hbm.xml</string>
+          <string>WEB-INF/classes/hibernate/TipoCuentaCorriente.hbm.xml</string>
+          <string>WEB-INF/classes/hibernate/TipoGastoVario.hbm.xml</string>
+          <string>WEB-INF/classes/hibernate/TipoIngresoVario.hbm.xml</string>
           <string>WEB-INF/classes/hibernate/Usuario.hbm.xml</string>
+          <string>WEB-INF/classes/hibernate/UsuarioEcommerce.hbm.xml</string>
           <string>WEB-INF/classes/hibernate/UsuarioRole.hbm.xml</string>
           <string>WEB-INF/classes/hibernate/Venta.hbm.xml</string>
+          <string>WEB-INF/classes/ingresosvarios.xml</string>
           <string>WEB-INF/classes/login.xml</string>
+          <string>WEB-INF/classes/pagoproveedor.xml</string>
           <string>WEB-INF/classes/producto.xml</string>
           <string>WEB-INF/classes/proveedor.xml</string>
           <string>WEB-INF/classes/reporte.xml</string>
@@ -344,6 +504,34 @@
           <string>WEB-INF/lib/log4j-1.2.13.jar</string>
           <string>WEB-INF/lib/displaytag-1.2.jar</string>
           <string>WEB-INF/lib/itext-1.3.jar</string>
+          <string>WEB-INF/lib/cxf-rt-frontend-jaxws-2.2.3.jar</string>
+          <string>WEB-INF/lib/xml-resolver-1.2.jar</string>
+          <string>WEB-INF/lib/geronimo-jaxws_2.1_spec-1.0.jar</string>
+          <string>WEB-INF/lib/geronimo-activation_1.1_spec-1.0.2.jar</string>
+          <string>WEB-INF/lib/geronimo-ws-metadata_2.0_spec-1.1.2.jar</string>
+          <string>WEB-INF/lib/cxf-api-2.2.3.jar</string>
+          <string>WEB-INF/lib/cxf-common-utilities-2.2.3.jar</string>
+          <string>WEB-INF/lib/geronimo-annotation_1.0_spec-1.1.1.jar</string>
+          <string>WEB-INF/lib/jaxb-api-2.1.jar</string>
+          <string>WEB-INF/lib/geronimo-stax-api_1.0_spec-1.0.1.jar</string>
+          <string>WEB-INF/lib/wsdl4j-1.6.2.jar</string>
+          <string>WEB-INF/lib/XmlSchema-1.4.5.jar</string>
+          <string>WEB-INF/lib/wstx-asl-3.2.8.jar</string>
+          <string>WEB-INF/lib/neethi-2.0.4.jar</string>
+          <string>WEB-INF/lib/cxf-common-schemas-2.2.3.jar</string>
+          <string>WEB-INF/lib/cxf-rt-core-2.2.3.jar</string>
+          <string>WEB-INF/lib/jaxb-impl-2.1.12.jar</string>
+          <string>WEB-INF/lib/geronimo-javamail_1.4_spec-1.6.jar</string>
+          <string>WEB-INF/lib/FastInfoset-1.2.7.jar</string>
+          <string>WEB-INF/lib/cxf-rt-bindings-soap-2.2.3.jar</string>
+          <string>WEB-INF/lib/cxf-tools-common-2.2.3.jar</string>
+          <string>WEB-INF/lib/saaj-api-1.3.jar</string>
+          <string>WEB-INF/lib/cxf-rt-databinding-jaxb-2.2.3.jar</string>
+          <string>WEB-INF/lib/cxf-rt-bindings-xml-2.2.3.jar</string>
+          <string>WEB-INF/lib/cxf-rt-frontend-simple-2.2.3.jar</string>
+          <string>WEB-INF/lib/cxf-rt-ws-addr-2.2.3.jar</string>
+          <string>WEB-INF/lib/saaj-impl-1.3.2.jar</string>
+          <string>WEB-INF/lib/cxf-rt-transports-http-2.2.3.jar</string>
         </pathsSet>
       </path-set>
     </entry>
@@ -706,6 +894,30 @@
         <exclusions/>
         <optional>false</optional>
       </dependency>
+    </org.apache.maven.plugin.war.util.DependencyInfo>
+    <org.apache.maven.plugin.war.util.DependencyInfo>
+      <dependency>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-rt-frontend-jaxws</artifactId>
+        <version>2.2.3</version>
+        <type>jar</type>
+        <scope>compile</scope>
+        <exclusions/>
+        <optional>false</optional>
+      </dependency>
+      <targetFileName>cxf-rt-frontend-jaxws-2.2.3.jar</targetFileName>
+    </org.apache.maven.plugin.war.util.DependencyInfo>
+    <org.apache.maven.plugin.war.util.DependencyInfo>
+      <dependency>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-rt-transports-http</artifactId>
+        <version>2.2.3</version>
+        <type>jar</type>
+        <scope>compile</scope>
+        <exclusions/>
+        <optional>false</optional>
+      </dependency>
+      <targetFileName>cxf-rt-transports-http-2.2.3.jar</targetFileName>
     </org.apache.maven.plugin.war.util.DependencyInfo>
   </dependenciesInfo>
 </webapp-structure>

@@ -3,7 +3,7 @@
 	<span style="color:#2aabd2; font-size: 14px; font-weight:bold;">Resultado</span>
 	<br>
 	<div class="displayTable">
-		<display:table id="data" name="listaProveedores" requestURI="/abmProveedor_search.do" pagesize="5" export="true" class="table table-striped table-condensed" excludedParams="*">
+		<display:table id="data" name="listaProveedores" requestURI="/abmProveedor_search.do" pagesize="10" export="true" class="table table-striped table-condensed" excludedParams="*">
 			<display:column  media="html">
 				<input type="checkbox" name="idProveedor" value="${data.id}"/>
 			</display:column>

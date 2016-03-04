@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+	<package name="pagoProveedor" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="sessionInterceptor"
+				class="ar.com.templateit.cds.web.interceptor.SessionInterceptor">
+			</interceptor>
+
+			<interceptor-stack name="sessionStack">
+				<interceptor-ref name="sessionInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+
+			<interceptor-stack name="paginationStack">
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="sessionExpired">/pages/login/sessionTimeout.jsp</result>
+		</global-results>
+		
+		<action name="pagoProveedor_*" method="{1}" class="pagoProveedorAction">
+			<!--<interceptor-ref name="sessionStack" />
+			<interceptor-ref name="paginationStack" /> -->
+			<interceptor-ref name="params">
+				<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
+			</interceptor-ref>
+			<result name="pagoProveedor">/pages/pagoProveedor/pagoProveedor.jsp</result>
+			<result name="loadNewPagoProveedor">/pages/ajax/pagoProveedor/newPagoProveedor.jsp</result>
+			<result name="loadViewPagoProveedor">/pages/ajax/pagoProveedor/resultMovimientoCuentaCorriente.jsp</result>
+			<result name="searchPagoProveedor">/pages/ajax/pagoProveedor/resultPagoProveedor.jsp</result> 
+			<result name="render">/pages/ajax/pagoProveedor/resultPagoProveedor.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ include file="/pages/template/taglibs.jsp" %>
 <s:url action="ingresoProducto_loadIngresoProducto" namespace="/" var="loadIngresoProducto" />
 <s:url action="ingresoProducto_loadEditIngresoProducto" namespace="/" var="loadEditIngresoProducto" />
@@ -8,8 +7,8 @@
 <s:url action="ingresoProducto_search" namespace="/" var="search" />
 <s:url action="jsonProveedor_getNombreRazonSocialProveedor" namespace="/" var="getNombreRazonSocialProveedor" />
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <title>Compras</title>
@@ -164,7 +163,7 @@
    </script>
 </head>
 <body>
-	<span style="color:#2aabd2; font-size: 14px; font-weight:bold;">Búsqueda de Compras</span>
+	<span style="color:#2aabd2; font-size: 14px; font-weight:bold;">B&uacute;squeda de Compras</span>
 	<br>
 	<br>
 	<div id="filter">
@@ -177,10 +176,18 @@
     			<s:textfield id="fechaHasta" cssClass="form-control input-sm" name="fechaHasta" placeholder="Fecha hasta" theme="simple" />
   			</div>
   			<div class="form-group">
-    			<input type="text" id="nroTicketFacturaFilter" class="form-control input-sm" name="nroTicketFactura" placeholder="NºTicket-Factura">
+    			<input type="text" id="nroTicketFacturaFilter" class="form-control input-sm" name="nroTicketFactura" placeholder="NÂºTicket-Factura">
   			</div>
   			<div class="form-group">
     			<input type="text"  id="proveedorFilter" class="form-control input-sm" name="proveedor" placeholder="Proveedor">
+  			</div>
+  			<div class="form-group">
+    			<s:select 
+					list="filterFormasDePago" 
+					listKey="id"   
+        			listValue="nombre"
+					name="filterFormaDePago" 
+					value="defaultFilterFormaDePago" theme="simple" cssClass="form-control input-sm"/>
   			</div>
   			<div class="form-group">
     			<button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span>&nbsp;Buscar</button>

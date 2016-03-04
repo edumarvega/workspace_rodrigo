@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ar.com.templateit.cds.web.entity.Caja" table="caja">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+
+        <property name="cajaInicial" type="java.math.BigDecimal">
+            <column name="CAJA_INICIAL" />
+        </property>
+        
+        <property name="fecha" type="date">
+            <column name="FECHA" />
+        </property>
+        
+        <property name="fechaHora" type="timestamp">
+            <column name="FECHA_HORA" />
+        </property>
+       
+        <property name="ventaEfectivo" type="java.math.BigDecimal">
+            <column name="VENTA_EFECTIVO" />
+        </property>
+        
+        <property name="ingresosVariosEfectivo" type="java.math.BigDecimal">
+            <column name="INGRESOS_VARIOS_EFECTIVO" />
+        </property>
+                
+        
+        <property name="compras" type="java.math.BigDecimal">
+            <column name="COMPRAS" />
+        </property>
+         
+        <property name="gastosVariosEfectivo" type="java.math.BigDecimal">
+            <column name="GASTOS_VARIOS_EFECTIVO" />
+        </property>
+        
+        <property name="ventaTarjetaDeCredito" type="java.math.BigDecimal">
+            <column name="VENTA_TARJETA_CREDITO" />
+        </property>
+       
+        <property name="ventaTarjetaDeDebito" type="java.math.BigDecimal">
+            <column name="VENTA_TARJETA_DEBITO" />
+        </property>
+        
+        <property name="totalEfectivo" type="java.math.BigDecimal">
+            <column name="TOTAL_EFECTIVO" />
+        </property>
+        
+        <many-to-one name="estadoCaja" class="ar.com.templateit.cds.web.entity.EstadoCaja" fetch="join" cascade="none">
+        	<column name="ID_ESTADO_CAJA" />
+        </many-to-one>
+        
+        <many-to-one name="usuario" class="ar.com.templateit.cds.web.entity.Usuario" fetch="join" cascade="none">
+        	<column name="ID_USUARIO" />
+        </many-to-one>
+        
+        <property name="cuentaCorrienteCliente" type="java.math.BigDecimal">
+            <column name="CUENTA_CORRIENTE_CLIENTE" />
+        </property>
+        
+        <property name="cuentaCorrienteProveedor" type="java.math.BigDecimal">
+            <column name="CUENTA_CORRIENTE_PROVEEDOR" />
+        </property>
+        
+        <property name="cambio" type="java.math.BigDecimal">
+            <column name="CAMBIO" />
+        </property>
+                    	
+    </class>
+</hibernate-mapping>
+

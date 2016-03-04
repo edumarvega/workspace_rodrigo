@@ -24,7 +24,8 @@
   	<struts.version>2.3.8</struts.version>
     <!--<spring.version>2.5.6</spring.version> -->   
     <spring.version>3.0.5.RELEASE</spring.version>
-    <spring.security.version>3.2.3.RELEASE</spring.security.version>          
+    <spring.security.version>3.2.3.RELEASE</spring.security.version>    
+    <cxf.version>2.2.3</cxf.version>      
   </properties>
   <dependencies>
  	
@@ -248,13 +249,25 @@
 		<version>2.0</version>
 		<scope>provided</scope>
 	</dependency>
-  	
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>3.8.1</version>
+		<scope>test</scope>
+	</dependency>
+	
+	<!--Cfx --> 
+	<dependency>
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-frontend-jaxws</artifactId>
+		<version>${cxf.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-transports-http</artifactId>
+		<version>${cxf.version}</version>
+	</dependency>
   </dependencies>
   
 </project>

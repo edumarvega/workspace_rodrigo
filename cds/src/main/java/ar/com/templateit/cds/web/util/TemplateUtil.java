@@ -121,7 +121,7 @@ public class TemplateUtil {
 		categoria8.setId(Long.valueOf(7));
 		categoria8.setNombre("VERDULERIA");
 
-		List<Categoria> listaCategorias = new ArrayList();
+		List<Categoria> listaCategorias = new ArrayList<Categoria>();
 		listaCategorias.add(categoria1);
 		listaCategorias.add(categoria2);
 		listaCategorias.add(categoria3);

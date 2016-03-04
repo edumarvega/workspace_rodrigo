@@ -31,7 +31,7 @@
         </property>
         <many-to-one name="compra">
             <column name="ID_COMPRA"  />
-	     </many-to-one>
+	    </many-to-one>
     </class>
 </hibernate-mapping>
 

@@ -34,6 +34,7 @@
 			<result name="loadNewProducto">/pages/ajax/producto/newProducto.jsp</result>
 			<result name="loadEditProducto">/pages/ajax/producto/editProducto.jsp</result>
 			<result name="loadViewProducto">/pages/ajax/producto/viewProducto.jsp</result>
+			<result name="loadEditarPrecio">/pages/ajax/producto/editPriceProducto.jsp</result>
 			<result name="searchProducto">/pages/ajax/producto/resultProducto.jsp</result> 
 			<!-- <result name="render" type="redirect"> <param name="location">/abmProducto_result.do</param> </result> -->
 			<result name="render">/pages/ajax/producto/resultProducto.jsp</result>
@@ -49,6 +50,7 @@
 			<result name="ingresoProducto">/pages/producto/ingresoProducto.jsp</result>
 			<result name="loadIngresoProducto">/pages/ajax/producto/inputProducto.jsp</result>
 			<result name="loadAddProducto">/pages/ajax/producto/addProducto.jsp</result>
+			<result name="loadFormaDePagoProducto">/pages/ajax/producto/formaDePagoProducto.jsp</result>
 			<result name="refreshItems">/pages/ajax/producto/grillaIngresoProducto.jsp</result>
 			<result name="searchIngreso">/pages/ajax/producto/resultIngresos.jsp</result> 
 			<result name="render">/pages/ajax/producto/resultIngresos.jsp</result>
@@ -108,7 +110,9 @@
 				<param name="excludeParams">dojo\..*,^struts\..*,d-\d+?-[sopn]</param>
 			</interceptor-ref>
 			<result name="loadFilterProducto">/pages/ajax/producto/filterProducto.jsp</result>
+			<result name="loadSearchProducto">/pages/ajax/producto/searchProducto.jsp</result>
 			<result name="searchProducto">/pages/ajax/producto/resultFilterProducto.jsp</result>
+			<result name="productos">/pages/ajax/producto/resultSearchProducto.jsp</result>
 		</action>
 		
 		<action name="estadisticaVenta_*" method="{1}" class="estadisticaVentaAction">

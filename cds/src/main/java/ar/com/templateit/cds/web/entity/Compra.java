@@ -16,12 +16,13 @@ public class Compra implements Serializable {
 	private BigDecimal total;
 	private List<DetalleCompra> items;
 	private Usuario usuario;
+	private FormaDePago formaDePago;
 
 	public Compra() {
 	}
 
 	public Compra(Date fechaAlta,Date fechaCompra, String nroTicketFactura, String proveedor,
-			BigDecimal total, List<DetalleCompra> items,Usuario usuario) {
+			BigDecimal total, List<DetalleCompra> items,Usuario usuario,FormaDePago formaDePago) {
 		this.fechaAlta = fechaAlta;
 		this.fechaCompra = fechaCompra;
 		this.nroTicketFactura = nroTicketFactura;
@@ -29,6 +30,7 @@ public class Compra implements Serializable {
 		this.total = total;
 		this.items = items;
 		this.usuario = usuario;
+		this.formaDePago = formaDePago;
 	}
 			
 	public Long getId() {
@@ -94,4 +96,14 @@ public class Compra implements Serializable {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+
+	public FormaDePago getFormaDePago() {
+		return formaDePago;
+	}
+
+	public void setFormaDePago(FormaDePago formaDePago) {
+		this.formaDePago = formaDePago;
+	}
+	
+	
 }

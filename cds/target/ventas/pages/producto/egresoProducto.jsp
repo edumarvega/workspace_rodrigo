@@ -1,14 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ include file="/pages/template/taglibs.jsp" %>
 <s:url action="egresoProducto_loadEgresoProducto" namespace="/" var="loadEgresoProducto" />
 <s:url action="egresoProducto_search" namespace="/" var="search" />
 <s:url action="egresoProducto_imprimirVenta" namespace="/" var="imprimirVenta" />
 <s:url action="egresoProducto_imprimirTicketNoFiscal" namespace="/" var="imprimirTicketNoFiscal" />
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+<s:url action="egresoProducto_delete" namespace="/" var="delete" />
+
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>Ventas</title>
  <%@ include file="/pages/template/common-header.jsp" %>
   <style type="text/css">
@@ -60,6 +62,23 @@
 				showMsgWarning('Selecciono mas de un elemento');
 			}
   	  	});
+  		
+  		$("#optDelete").click(function(){
+  			var seleccionados = $("input:checked").length;
+			if(seleccionados==0){
+				showMsgWarning('Debe seleccionar un elemento');
+			}
+			else{
+				var url = '${delete}';
+				var ids  = new Array();
+				$("input:checked").each(function(){
+					ids.push($(this).val());
+				});
+				var params = 'ids='+ids;
+	
+				showMsgInfo('Desea eliminar el o los elementos?',url,params,'resultado');
+			}
+  	  	});
 
   		$("#optView").click(function(){
   			var seleccionados = $("input:checked").length;
@@ -98,8 +117,10 @@
   			   		$("input:checked").each(function(){
 						$(this).removeAttr('checked');
 					});
-  			   		$(this).dialog('destroy').remove();
-         	   }
+         	   },
+         	   close: function() {
+		       		$(this).dialog('destroy').remove();
+		       },
 			}).load('${loadEgresoProducto}',function(){
 					$(this).unblock();
 	  			}).block({ message: '<h5><img src="${appCtx}/images/loading.gif"/> Procesando...</h5>' });
@@ -158,7 +179,7 @@
    </script>
 </head>
 <body>
-<span style="color:#2aabd2; font-size: 14px; font-weight:bold;">Búsqueda de Ventas</span>
+<span style="color:#2aabd2; font-size: 14px; font-weight:bold;">B&uacute;squeda de Ventas</span>
 	<br>
 	<br>
 	<div id="filter">
@@ -172,6 +193,14 @@
   			</div>
   			<div class="form-group">
     			<input type="text" id="observacionesFilter" class="form-control input-sm" name="observaciones" placeholder="Observaciones">
+  			</div>
+  			<div class="form-group">
+    			<s:select 
+					list="filterFormasDePago" 
+					listKey="id"   
+        			listValue="nombre"
+					name="filterFormaDePago" 
+					value="defaultFilterFormaDePago" theme="simple" cssClass="form-control input-sm"/>
   			</div>
   			<div class="form-group">
     			<button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span>&nbsp;Buscar</button>

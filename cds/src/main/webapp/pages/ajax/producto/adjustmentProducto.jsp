@@ -29,8 +29,8 @@
   		divBusquedaProducto.dialog({
 			   title: 'Busqueda de producto',
 			   modal: true,
-			   width: 720,
-			   height: 440,
+			   width: 1024,
+			   height: 560,
 			   position: 'center',
 			   hide: "scale",
 			   close: function() {

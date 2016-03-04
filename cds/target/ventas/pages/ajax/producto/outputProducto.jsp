@@ -40,6 +40,20 @@
   		});
 
 
+  		/*var autocompleteFormat = function(url) {
+  		  return function(request, response) {
+  			 alert(request.term);
+  			 var tmp = encodeURIComponent(request.term);
+  			 alert(tmp);
+  			 var parametro = 'term='+tmp;
+  			 alert(parametro);
+  			 
+  		    return $.get(url,parametro);
+  		  };
+  		};*/
+  		
+  		//source: autocompleteFormat('${getNombreProducto}'),
+  		
   		$("#nombre").autocomplete({
 			dataType : 'json',
 			source: '${getNombreProducto}',
@@ -141,16 +155,35 @@
 		      	});
 	  		}			  			
 	  	});
-	  	
-  	  
-  		
+  	  	
+  	  $("#buscarProducto").click(function(){
+  	  		var cantidad = $('#cantidad').val();
+	  		var codigo = $('#codigo').val();
+		    $.ajax({
+		  		url:   '${addProducto}',
+		  		data: {'cantidad': cantidad, 'codigo': codigo}, 
+		  		cache: false,
+		  		type:  'get',
+		  		beforeSend: function () {
+		  			$("#itemsVenta").block({ message: '<h5><img src="${appCtx}/images/loading.gif"/> Procesando...</h5>' });
+		  		},
+		  		success:  function (response) {
+		  			$('#itemsVenta').html(response);
+		  			$("#cantidad").val('1'); 
+	  		    	$("#codigo").val('');  
+	  		    	$("#codigo").focus();
+		  		}
+		    });
+	  		
+  	  });
+	    	    		
   		
   		
  	});
 
   	var divImporteProducto;
    	function showModalImporteProducto(){
-   	   	var observaciones = escape($("#observaciones").val());
+   		var observaciones = escape($("#observaciones").val());
    		var url = '${loadImporteProducto}?observaciones='+observaciones;
    		divImporteProducto = $('<div id="divImporteProducto"></div>');
   		divImporteProducto.dialog({
@@ -217,6 +250,9 @@
     		<div class="col-md-3 col-lg-3">
       			<input type="text" class="form-control input-sm" id="codigo"  name="codigo" value="" onkeypress="validaSoloNumeros();" maxlength="13" autofocus>
     		</div>
+    		<div class="col-md-0 col-lg-0">
+      			<img id="buscarProducto" src="${appCtx}/images/iconos/lupaOver.gif"  alt="Buscar producto">
+    		</div>
   		</div>
   		
   		<div  id="divNombreProducto" class="form-group" style="display:none">
@@ -249,7 +285,7 @@
     	<div class="form-group">
     		<label for="observaciones" class="col-md-2 col-lg-2 control-label">Observaciones</label>
     		<div class="col-md-7 col-lg-7">
-      			<textarea id="observaciones" class="form-control input-sm" rows="5" name="observaciones"></textarea>
+      			<textarea id="observaciones" class="form-control input-sm" rows="3" name="observaciones"></textarea>
     		</div>
   		</div>
     </s:form>

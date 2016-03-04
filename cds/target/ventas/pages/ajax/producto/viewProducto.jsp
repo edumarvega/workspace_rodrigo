@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ include file="/pages/template/taglibs.jsp" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <body>
 	<div id="divPrint">
 	<s:form id="formViewProducto" action="abmProducto_saveOrUpdate" theme="simple"  cssClass="form-horizontal" role="form">
 		<div class="form-group">
-    		<label for="codigo" class="col-md-3 col-lg-3 control-label">Código</label>
+    		<label for="codigo" class="col-md-3 col-lg-3 control-label">C&oacute;digo</label>
     		<div class="col-md-4 col-lg-4">
       			<p class="form-control-static"><s:property value="producto.codigo"/></p>
     		</div>
@@ -19,7 +19,7 @@
     		</div>
   		</div>
   		<div class="form-group">
-    		<label for="descripcion" class="col-md-3 col-lg-3 control-label">Descripción</label>
+    		<label for="descripcion" class="col-md-3 col-lg-3 control-label">Descripci&oacute;n</label>
     		<div class="col-md-9 col-lg-9">
       			<p class="form-control-static"><s:property value="producto.descripcion"/></p>
     		</div>

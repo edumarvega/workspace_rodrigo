@@ -9,6 +9,7 @@ import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import ar.com.templateit.cds.web.dao.ProductoDAO;
+import ar.com.templateit.cds.web.entity.Categoria;
 import ar.com.templateit.cds.web.entity.Producto;
 
 public class ProductoDAOImpl extends HibernateDaoSupport implements ProductoDAO {
@@ -42,16 +43,23 @@ public class ProductoDAOImpl extends HibernateDaoSupport implements ProductoDAO 
 	}
 
 	@Override
-	public List<Producto> findByCriteria(Long codigo,String nombre,String descripcion) {
-		DetachedCriteria criteria = DetachedCriteria.forClass(Producto.class);
+	public List<Producto> findByCriteria(Long codigo,String nombre,String descripcion,String marca,Categoria categoria) {
+		DetachedCriteria criteria = DetachedCriteria.forClass(Producto.class); 
 		if(codigo!=null){
 			criteria.add(Restrictions.eq("codigo",codigo));
 		}
-		else if(nombre!=null && nombre.length()!=0){
+		if(nombre!=null && nombre.length()!=0){
 			criteria.add(Restrictions.ilike("nombre", nombre, MatchMode.ANYWHERE));
 		}
-		else if(descripcion!=null && descripcion.length()!=0){
+		if(descripcion!=null && descripcion.length()!=0){
 			criteria.add(Restrictions.ilike("descripcion", descripcion, MatchMode.ANYWHERE));
+		}
+		if(marca!=null && marca.length()!=0){
+			criteria.add(Restrictions.ilike("marca", marca, MatchMode.ANYWHERE));
+		}
+		if(categoria!=null){  
+			criteria.createAlias("categoria", "categoria").add(Restrictions.eq("categoria", categoria));
+		
 		}
 		List<Producto> productos = (List<Producto>)this.getHibernateTemplate().findByCriteria(criteria);
 		return productos;

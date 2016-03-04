@@ -1,12 +1,12 @@
 <%@ include file="/pages/template/taglibs.jsp" %>
   <script type="text/javascript">
-  	$(document).ready(function(){
+  	$(document).ready(function(){	
   	  	
   		var options = { 
   		  		target : '#resultado',
 			    success:    function(){ 
   					changeLinksPagination('resultado','filterForm');
-			    	divNewCategoria.dialog('close');
+			    	divNewCategoria.dialog('destroy').remove();
 			    } 
 		};
   		$('#formAltaCategoria').submit(function() {
@@ -22,7 +22,7 @@
   		<div class="form-group">
     		<label for="nombre" class="col-md-4 col-lg-4 control-label">Nombre</label>
     		<div class="col-md-5 col-lg-5">
-      			<input type="text" class="form-control input-sm" id="nombre" name="categoria.nombre" value="" required>
+      			<input type="text" class="form-control input-sm" id="nombre" name="categoria.nombre" value="" autofocus required>
     		</div>
   		</div>
   		

@@ -1,22 +1,22 @@
 <%@ include file="/pages/template/taglibs.jsp" %>
 <s:url action="jsonProductoExistente_verificarExisteProducto" namespace="/" var="verificarExisteProducto" />
-  <script type="text/javascript">
-  	$(document).ready(function(){
 
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+  		  	  	
   	  	$("#codigo").focus();
   	  	
   		var options = { 
   		  		target : '#resultado',
 			    success:    function(){ 
   					changeLinksPagination('resultado','filterForm');
-			    	//if($('#idProducto').val().length == 0){
-			    		divNewProducto.dialog('destroy').remove();
-					/*}
-			    	else{
-			    		divEditarProducto.dialog('destroy').remove();
-					}*/
+			    	divNewProducto.dialog('destroy').remove();
+			    	
 			    } 
 		};
+  		
   		$('#formAltaProducto').submit(function() {
   	        $(this).ajaxSubmit(options);
   	        return false;
@@ -42,12 +42,13 @@
   	    });
   		
  	});
-   </script>
+</script>
+  
 	<s:form id="formAltaProducto"  action="abmProducto_save" theme="simple"  cssClass="form-horizontal" role="form">
 		<s:hidden id="idProducto" name="producto.id" value=""/>
   		<div class="form-group">
     		<label for="codigo" class="col-md-3 col-lg-3 control-label">Código</label>
-    		<div class="col-md-4 col-lg-4">
+    		<div id="divCodigo" class="col-md-4 col-lg-4">
       			<input type="text" class="form-control input-sm" id="codigo" name="producto.codigo"  value="" maxlength="13" onkeypress="validaSoloNumeros();" required>
     		</div>
   		</div>
@@ -92,6 +93,12 @@
       		</div>
   		</div>
   		<div class="form-group">
+    		    <label for="cantidad" class="col-md-3 col-lg-3 control-label">Cantidad</label>
+    		    <div class="col-md-2 col-lg-2">
+      			<input type="text" class="form-control input-sm" id="cantidad"  name="producto.cantidad" value="" onkeypress="validaSoloNumeros();" placeholder="0" required>
+    		   </div>
+  		</div>
+  		<div class="form-group">
     		<label for="precio" class="col-md-3 col-lg-3 control-label">Precio</label>
     		<div class="col-md-4 col-lg-4">
       			<input type="text" class="form-control input-sm" id="precio" name="precio"  value="" placeholder="0.00" onkeypress="validaSoloNumerosConPunto();">
@@ -110,4 +117,5 @@
     		</div>
     	</div>	
     </s:form>
-    	
+    
+   	

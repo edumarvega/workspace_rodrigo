@@ -1,10 +1,12 @@
 <%@ include file="/pages/template/taglibs.jsp" %>
 <div class="col-md-3 col-lg-3 column">
 			<div class="panel-group" id="panel-692274">
+			
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-692274" href="#panel-element-726032">Producto</a>
 					</div>
+			
 					<div id="panel-element-726032" class="panel-collapse collapse">
 						<div class="panel-body">
 							<div>
@@ -55,7 +57,9 @@
 							</div>
 						</div>
 					</div>
+					
 				</div>
+				
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-692274" href="#panel-element-910737">Proveedor</a>
@@ -71,6 +75,7 @@
 						</div>
 					</div>
 				</div>
+				
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-692274" href="#panel-element-910738">Usuario</a>
@@ -86,6 +91,7 @@
 						</div>
 					</div>
 				</div>
+				
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-692274" href="#panel-element-910739">Reportes</a>
@@ -101,6 +107,7 @@
 						</div>
 					</div>
 				</div>
+				
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-692274" href="#panel-element-910740">Utilidades</a>
@@ -116,5 +123,64 @@
 						</div>
 					</div>
 				</div>
+				
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-692274" href="#panel-element-910741">Caja</a>
+					</div>
+					<div id="panel-element-910741" class="panel-collapse collapse">
+						<div class="panel-body">
+							<div>
+								<s:url action="caja_initCaja.do" var="initCaja" namespace="/">
+    							</s:url>
+    							<img src="${appCtx}/images/iconos/backup.jpg"  alt="Back Up">
+    							<a href="<s:property value="initCaja"/>" >Caja del día</a>
+							</div>
+							<div>
+								<s:url action="ingresoVario_ingresoVario.do" var="ingresoVario" namespace="/">
+    							</s:url>
+    							<img src="${appCtx}/images/iconos/backup.jpg"  alt="Ingresos varios">
+    							<a href="<s:property value="ingresoVario"/>" >Ingresos varios</a>
+							</div>
+							<div>
+								<s:url action="gastoVario_gastoVario.do" var="gastoVario" namespace="/">
+    							</s:url>
+    							<img src="${appCtx}/images/iconos/backup.jpg"  alt="Gastos varios">
+    							<a href="<s:property value="gastoVario"/>" >Gastos varios</a>
+							</div>
+							<div>
+								<s:url action="pagoProveedor_pagoProveedor.do" var="pagoProveedor" namespace="/">
+    							</s:url>
+    							<img src="${appCtx}/images/iconos/backup.jpg"  alt="Back Up">
+    							<a href="<s:property value="pagoProveedor"/>" >Pago a proveedores</a>
+							</div>
+							<div>
+								<s:url action="cobranzaCliente_cobranzaCliente.do" var="cobranzaCliente" namespace="/">
+    							</s:url>
+    							<img src="${appCtx}/images/iconos/backup.jpg"  alt="Back Up">
+    							<a href="<s:property value="cobranzaCliente"/>" >Cobranza a clientes</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						 <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-692274" href="#panel-element-910742">Cliente</a>
+					</div>
+					<div id="panel-element-910742" class="panel-collapse collapse">
+						<div class="panel-body">
+							<div>
+								<s:url action="abmCliente_abmCliente.do" var="abmCliente" namespace="/">
+    							</s:url>
+    							<img src="${appCtx}/images/iconos/backup.jpg"  alt="ABM Cliente">
+    							<a href="<s:property value="abmCliente"/>" >ABM Cliente</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				
 			</div>
 </div>

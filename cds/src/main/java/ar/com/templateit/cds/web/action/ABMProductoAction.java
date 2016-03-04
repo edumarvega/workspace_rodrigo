@@ -1,6 +1,7 @@
 package ar.com.templateit.cds.web.action;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.struts2.ServletActionContext;
@@ -8,8 +9,11 @@ import org.apache.struts2.ServletActionContext;
 import ar.com.templateit.cds.web.bo.CategoriaBO;
 import ar.com.templateit.cds.web.bo.ProductoBO;
 import ar.com.templateit.cds.web.entity.Categoria;
+import ar.com.templateit.cds.web.entity.EstadoCaja;
 import ar.com.templateit.cds.web.entity.Producto;
+import ar.com.templateit.cds.web.entity.Usuario;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ABMProductoAction extends ActionSupport {
@@ -28,13 +32,30 @@ public class ABMProductoAction extends ActionSupport {
 	private String marca;
 	private String categoria;
 	private List<Categoria> categorias;
+	private List<Categoria> filterCategorias;
 	private String defaultCategoria;
 	private String precio;
 	private String stockCritico;
+	private String filterCategoria;
+	private String defaultFilterCategoria;
+	private BigDecimal precioProducto;
+	
 	private CategoriaBO categoriaBO;
 	private ProductoBO productoBO;
 
 	public String abmProducto() {
+		this.filterCategorias = new ArrayList<Categoria>(); 
+		
+		Categoria categoria = new Categoria();
+		categoria.setId(new Long(0));
+		categoria.setNombre("Todos");
+		
+		this.filterCategorias.add(categoria);
+		List<Categoria> tmp = this.categoriaBO.loadAllCategoria();
+		this.filterCategorias.addAll(tmp);
+		
+		this.setDefaultFilterCategoria(this.filterCategorias.get(0).toString());
+		
 		this.listaProductos = this.productoBO.loadAllProducto();
 		return "abmProducto";
 	}
@@ -60,6 +81,13 @@ public class ABMProductoAction extends ActionSupport {
 		}
 		return "loadEditProducto";
 	}
+	
+	public String loadEditarPrecio() {
+		String[] ids = ServletActionContext.getRequest().getParameter("ids").split(",");
+		ActionContext.getContext().getSession().put("ids", ids);
+		
+		return "loadEditarPrecio";
+	}
 		
 
 	public String loadViewProducto() {
@@ -69,17 +97,24 @@ public class ABMProductoAction extends ActionSupport {
 	}
 
 	public String search() {
+		
+		Categoria categoria = null;
+		if(Integer.valueOf(this.getFilterCategoria()).intValue()!=0){
+			categoria = this.categoriaBO.getCategoria(Long.valueOf(this.getFilterCategoria())) ;
+		}
 		Long codigo=null;
 		
 		if(this.codigo!=null && this.codigo.length()!=0){
 			codigo = Long.valueOf(this.codigo);
 		}
 		
-		this.listaProductos = this.productoBO.findByCriteria(codigo, this.nombre, this.descripcion);
+		this.listaProductos = this.productoBO.findByCriteria(codigo, this.nombre, this.descripcion,this.marca,categoria);
+		
 		return "searchProducto";
 	}
 
 	public String save() {
+		
 		this.getProducto().setPrecioCompra(BigDecimal.ZERO);
 		
 		if(!this.getPrecio().isEmpty()){
@@ -89,19 +124,21 @@ public class ABMProductoAction extends ActionSupport {
 			this.getProducto().setPrecio(BigDecimal.ZERO);
 		}
 				
-		this.getProducto().setCantidad(new Integer(0));
-		
+				
 		if(this.getProducto().getStockCritico()==null){
 			this.getProducto().setStockCritico(new Integer(0));
 		}
+		
 		Categoria categoria = this.categoriaBO.getCategoria(Long.valueOf(this.getCategoria()));
 		this.getProducto().setCategoria(categoria);
+		
 		this.productoBO.save(this.getProducto());
 		// ActionContext.getContext().getSession().put("listaProductos", this.listaProductos);
 		return this.render();
 	}
 	
 	public String update() {
+		
 		if(!this.getPrecio().isEmpty()){
 			this.getProducto().setPrecio(new BigDecimal(this.getPrecio()));
 		}
@@ -123,6 +160,19 @@ public class ABMProductoAction extends ActionSupport {
 			 producto = this.productoBO.getProducto(Long.valueOf(ids[i]));
 			 this.productoBO.delete(producto);
 		}
+		return this.render();
+	}
+	
+	public String updatePrice() {
+		
+		String[] ids = (String[])ActionContext.getContext().getSession().get("ids");
+		Producto producto=null;
+		for (int i = 0; i < ids.length; i++) {
+			 producto = this.productoBO.getProducto(Long.valueOf(ids[i]));
+			 producto.setPrecio(this.getPrecioProducto());
+			 this.productoBO.update(producto);
+		}
+				
 		return this.render();
 	}
 	
@@ -227,7 +277,39 @@ public class ABMProductoAction extends ActionSupport {
 	public void setStockCritico(String stockCritico) {
 		this.stockCritico = stockCritico;
 	}
+
+	public List<Categoria> getFilterCategorias() {
+		return filterCategorias;
+	}
+
+	public void setFilterCategorias(List<Categoria> filterCategorias) {
+		this.filterCategorias = filterCategorias;
+	}
+
+	public String getFilterCategoria() {
+		return filterCategoria;
+	}
+
+	public void setFilterCategoria(String filterCategoria) {
+		this.filterCategoria = filterCategoria;
+	}
+
+	public String getDefaultFilterCategoria() {
+		return defaultFilterCategoria;
+	}
+
+	public void setDefaultFilterCategoria(String defaultFilterCategoria) {
+		this.defaultFilterCategoria = defaultFilterCategoria;
+	}
+
+	public BigDecimal getPrecioProducto() {
+		return precioProducto;
+	}
+
+	public void setPrecioProducto(BigDecimal precioProducto) {
+		this.precioProducto = precioProducto;
+	}
 	
-	
+		
 	
 }

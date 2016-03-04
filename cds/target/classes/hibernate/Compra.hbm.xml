@@ -30,6 +30,9 @@
       	</list>
       	 <many-to-one name="usuario" class="ar.com.templateit.cds.web.entity.Usuario" fetch="join" cascade="none">
         	<column name="ID_USUARIO" />
+        </many-to-one>
+        <many-to-one name="formaDePago" class="ar.com.templateit.cds.web.entity.FormaDePago" fetch="join" cascade="none">
+        	<column name="ID_FORMA_DE_PAGO" />
         </many-to-one> 
     </class>
 </hibernate-mapping>

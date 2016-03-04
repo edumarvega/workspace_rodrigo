@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ar.com.templateit.cds.web.entity.GastoVario" table="gastovario">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="fecha" type="date">
+            <column name="FECHA" />
+        </property>
+        <many-to-one name="tipoGastoVario" class="ar.com.templateit.cds.web.entity.TipoGastoVario" fetch="join" cascade="none">
+        	<column name="ID_TIPO_GASTO_VARIO" />
+        </many-to-one>
+        <property name="nombre" type="string" length="50" not-null="true">
+            <column name="NOMBRE" />
+        </property>
+        <property name="importe" type="java.math.BigDecimal">
+            <column name="IMPORTE" />
+        </property>
+        <property name="observaciones" type="string">
+            <column name="OBSERVACIONES" length="1024" />
+        </property>
+        
+        <many-to-one name="usuario" class="ar.com.templateit.cds.web.entity.Usuario" fetch="join" cascade="none">
+        	<column name="ID_USUARIO" />
+        </many-to-one>
+    
+    </class>
+</hibernate-mapping>
+

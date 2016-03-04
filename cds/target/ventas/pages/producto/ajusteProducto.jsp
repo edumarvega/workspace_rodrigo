@@ -1,11 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ include file="/pages/template/taglibs.jsp" %>
 <s:url action="ajusteProducto_loadAjusteProducto" namespace="/" var="loadAjusteProducto" />
 <s:url action="ajusteProducto_search" namespace="/" var="search" />
 <s:url action="ajusteProducto_loadViewAjusteProducto" namespace="/" var="loadViewAjusteProducto" />
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <title>Ajuste de Producto</title>
@@ -80,8 +79,7 @@
 	  							}).block({ message: '<h5><img src="${appCtx}/images/loading.gif"/> Procesando...</h5>' });
   						}
 		
-
-  	var divViewAjusteProducto;
+	var divViewAjusteProducto;
   	function showModalViewAjusteProducto(id){
 		var url = '${loadViewAjusteProducto}?id='+id;
 		divViewAjusteProducto = $('<div id="divViewAjusteProducto"></div>');
@@ -94,7 +92,7 @@
 			   hide: "scale",
 			   close: function() {
 		       		$(this).dialog('destroy').remove();
-		       	},
+		       },
 			   buttons: {
 			   		"Imprimir": function () {
 						$("#divPrint").printArea();
@@ -108,7 +106,7 @@
    </script>
 </head>
 <body>
-<span style="color:#2aabd2; font-size: 14px; font-weight:bold;">Búsqueda de Ajuste de productos</span>
+<span style="color:#2aabd2; font-size: 14px; font-weight:bold;">B&uacute;squeda de Ajuste de productos</span>
 	<br>
 	<br>
 	<div id="filter">
@@ -121,7 +119,7 @@
     			<s:textfield id="fechaHasta" cssClass="form-control input-sm" name="fechaHasta" placeholder="Fecha hasta" theme="simple" />
   			</div>
   			<div class="form-group">
-    			<s:textfield id="codigoFilter" cssClass="form-control input-sm" name="codigoFilter" placeholder="Código" onkeypress="validaSoloNumeros();" maxlength="13" theme="simple" />
+    			<s:textfield id="codigoFilter" cssClass="form-control input-sm" name="codigoFilter" placeholder="CÃ³digo" onkeypress="validaSoloNumeros();" maxlength="13" theme="simple" />
   			</div>
   			<div class="form-group">
     			<input type="text" id="Filter" class="form-control input-sm" name=nombreFilter placeholder="Nombre">

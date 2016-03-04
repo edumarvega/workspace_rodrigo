@@ -59,12 +59,12 @@
 			</tr>
 			<tr>
 				<td colspan="3">
-					<s:if test="%{venta.medioDePago.intValue()==1}">
+					<s:if test="%{venta.formaDePago.intValue()==1}">
 						<p style="font-size: 11px;font-style: italic;">Efectivo:$<s:property value="venta.efectivo"/><br>
 						Cambio:$<s:property value="venta.cambio"/>
 						</p>
 					</s:if>
-					<s:elseif test="%{venta.medioDePago.intValue()==2}">
+					<s:elseif test="%{venta.formaDePago.intValue()==2}">
    						<p style="font-size: 11px;font-style: italic;">DEBITO</p>
 					</s:elseif>
 					<s:else>

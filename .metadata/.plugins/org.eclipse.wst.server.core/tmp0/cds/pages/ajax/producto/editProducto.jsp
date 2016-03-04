@@ -1,17 +1,21 @@
 <%@ include file="/pages/template/taglibs.jsp" %>
-   <script type="text/javascript">
-   	$(document).ready(function(){
-  	  	
+
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+  		
   		var options = { 
   		  		target : '#resultado',
 			    success:    function(){ 
 			    	//renderAjax('${render}');
 			    	changeLinksPagination('resultado','filterForm');
 			    	//if($('#idProducto').val().length == 0){
-			    		//divNewProducto.dialog('close');
+			    		//divNewProducto.dialog('destroy').remove();
 					//}
 			    	//else{
-			    		divEditarProducto.dialog('close');
+			    		divEditarProducto.dialog('destroy').remove();
+			    		
 					//}
 			    	
 			    } 
@@ -22,7 +26,8 @@
   	    });
  	});
 
-   </script>
+</script>
+   
 	<s:form id="formEdicionProducto"  action="abmProducto_update" theme="simple"  cssClass="form-horizontal" role="form">
 		<s:hidden id="idProducto" name="producto.id" value="%{producto.id}"/>
 		<s:hidden id="cantidadProducto" name="producto.cantidad" value="%{producto.cantidad}"/>
@@ -86,4 +91,6 @@
  		</div>
   		
     </s:form>
+    
+    
 

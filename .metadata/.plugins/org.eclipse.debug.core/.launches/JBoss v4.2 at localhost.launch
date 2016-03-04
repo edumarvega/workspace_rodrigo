@@ -7,8 +7,8 @@
 <booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
 <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre6"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.jboss.Main"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-c default "/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dprogram.name=run.bat -Djava.endorsed.dirs=&quot;C:/jboss-4.2.3.GA/bin/../lib/endorsed&quot; -Xms128m -Xmx512m "/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-c default"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dprogram.name=run.bat -Djava.endorsed.dirs=&quot;C:/jboss-4.2.3.GA/bin/../lib/endorsed&quot; -Xms128m -Xmx512m -Duser.timezone=GMT-3"/>
 <stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="C:/jboss-4.2.3.GA/bin"/>
 <stringAttribute key="server-id" value="JBoss v4.2 at localhost"/>
 </launchConfiguration>

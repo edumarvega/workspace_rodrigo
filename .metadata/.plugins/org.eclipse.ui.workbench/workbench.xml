@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="64" version="2.0">
+<workbench progressCount="52" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="1024" x="-5" y="163">
 <fastViewData fastViewLocation="1024"/>
@@ -25,14 +25,15 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.compare.CompareEditor" itemType="typePlaceholder" x="84" y="22"/>
 <coolItem id="org.eclipse.wst.css.core.csssource.source" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.server.ui.editor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.server.ui.editor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.html.core.htmlsource.source" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="com.android.ide.eclipse.editors.CommonXmlEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.jst.jsp.core.jspsource.source" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.android.ide.eclipse.editors.CommonXmlEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jst.jsp.core.jspsource.source" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -44,20 +45,22 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="com.android.ide.eclipse.editors.CommonXmlEditor" name="spring-security2.xml" partName="spring-security2.xml" path="C:/workspace_rodrigo/cds/src/main/webapp/WEB-INF/spring-security2.xml" title="spring-security2.xml" tooltip="cds/src/main/webapp/WEB-INF/spring-security2.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/cds/src/main/webapp/WEB-INF/spring-security2.xml"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jst.jsp.core.jspsource.source" name="importeProducto.jsp" partName="importeProducto.jsp" path="C:/workspace_rodrigo/cds/src/main/webapp/pages/ajax/producto/importeProducto.jsp" title="importeProducto.jsp" tooltip="cds/src/main/webapp/pages/ajax/producto/importeProducto.jsp" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/cds/src/main/webapp/pages/ajax/producto/importeProducto.jsp"/>
-<editorState selectionHorizontalPixel="0" selectionLength="44" selectionOffset="3468" selectionTopPixel="1350"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MiTest.java" partName="MiTest.java" path="C:/workspace_rodrigo/Test/src/ar/com/templateit/prueba/MiTest.java" title="MiTest.java" tooltip="Test/src/ar/com/templateit/prueba/MiTest.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Test/src/ar/com/templateit/prueba/MiTest.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="533" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
+<view id="org.eclipse.team.ui.GenericHistoryView" partName="History">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ProgressView" partName="Progress">
+<viewState/>
+</view>
 <view id="org.eclipse.search.ui.views.SearchView" partName="Search">
 <viewState isPinned="false">
 <view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
@@ -67,13 +70,13 @@
 <view id="org.eclipse.debug.ui.DebugView" partName="Debug">
 <viewState/>
 </view>
-<view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
-<view id="org.eclipse.debug.ui.VariableView" partName="Variables">
-<viewState/>
-</view>
 <view id="org.eclipse.debug.ui.BreakpointView" partName="Breakpoints">
 <viewState/>
 </view>
+<view id="org.eclipse.debug.ui.VariableView" partName="Variables">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
 </view>
@@ -92,8 +95,12 @@
 </view>
 <view id="org.eclipse.wst.common.snippets.internal.ui.SnippetsView" partName="Snippets"/>
 <view id="org.eclipse.ui.views.PropertySheet" partName="Properties"/>
+<view id="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" partName="Data Source Explorer"/>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Errors"/>
+</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="161" org.eclipse.ui.ide.severityAndDescriptionField="680"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -102,10 +109,14 @@
 <visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
 </viewState>
 </view>
-<view id="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" partName="Data Source Explorer"/>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
 <view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
 <viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="">
-<customFilters userDefinedPatternsEnabled="false">&#x0A;<xmlDefinedFilters>&#x0A;<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
+<customFilters userDefinedPatternsEnabled="false">
+<xmlDefinedFilters>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
 <child filterId="org.eclipse.jdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
 <child filterId="org.eclipse.pde.ui.ExternalPluginLibrariesFilter1" isEnabled="true"/>
@@ -133,9 +144,6 @@
 </customFilters>
 </viewState>
 </view>
-<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
-<viewState/>
-</view>
 <view id="org.eclipse.mylyn.tasks.ui.views.tasks" partName="Task List">
 <viewState linkWithEditor="true" presentation="org.eclipse.mylyn.tasks.ui.categorized">
 <sorter groupBy="CATEGORY_QUERY">&#x0A;<sorter>&#x0A;<sort0 sortDirection="1" sortKey="PRIORITY"/>
@@ -151,13 +159,15 @@
 <filteredTreeFindHistory/>
 </viewState>
 </view>
-<view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
-<view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
+<view id="org.eclipse.jdt.ui.SourceView" partName="Declaration">
+<viewState/>
+</view>
 <view id="org.eclipse.wst.server.ui.ServersView" partName="Servers">
 <viewState CommonNavigator.LINKING_ENABLED="0"/>
 </view>
+<view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
 </views>
-<perspectives activePart="org.eclipse.jst.jsp.core.jspsource.source" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jst.j2ee.internal.perspective.J2EEPerspective" id="org.eclipse.jst.j2ee.J2EEPerspective" label="Java EE"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -333,14 +343,16 @@
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <fastViewBars>
-<fastViewBar fastViewLocation="131072" id="bottom" orientation="256" selectedTabId="org.eclipse.search.ui.views.SearchView" style="1">
+<fastViewBar fastViewLocation="131072" id="bottom" orientation="256" selectedTabId="org.eclipse.ui.console.ConsoleView" style="1">
 <fastViews>
 <view id="org.eclipse.ui.views.ProblemView" ratio="0.3"/>
 <view id="org.eclipse.wst.server.ui.ServersView" ratio="0.3"/>
-<view id="org.eclipse.ui.console.ConsoleView" ratio="0.3"/>
+<view id="org.eclipse.ui.console.ConsoleView" ratio="0.29985008"/>
 <view id="org.eclipse.jdt.ui.JavadocView" ratio="0.3"/>
 <view id="org.eclipse.jdt.ui.SourceView" ratio="0.3"/>
 <view id="org.eclipse.search.ui.views.SearchView" ratio="0.3"/>
+<view id="org.eclipse.team.ui.GenericHistoryView" ratio="0.3"/>
+<view id="org.eclipse.ui.views.ProgressView" ratio="0.3"/>
 </fastViews>
 </fastViewBar>
 <fastViewBar fastViewLocation="16384" id="left" orientation="512" selectedTabId="org.eclipse.jdt.ui.PackageExplorer" style="1">
@@ -352,7 +364,7 @@
 <layout>
 <mainWindow>
 <info folder="true" part="left">
-<folder appearance="2" expanded="2">
+<folder appearance="2" expanded="0">
 <page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
@@ -369,16 +381,17 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.21907014" ratioLeft="278" ratioRight="991" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.3298193" ratioLeft="219" ratioRight="445" relationship="4" relative="org.eclipse.ui.editorss">
-<folder appearance="2" expanded="2">
+<info folder="true" part="bottom" ratio="0.3057229" ratioLeft="203" ratioRight="461" relationship="4" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="0">
 <page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
 <page content="org.eclipse.wst.server.ui.ServersView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="LabelNotFound"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
-<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.team.ui.GenericHistoryView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
@@ -483,7 +496,7 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.3691756" ratioLeft="103" ratioRight="176" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
+<info part="org.eclipse.ui.editorss" ratio="0.23684211" ratioLeft="99" ratioRight="319" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
 <info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.7495895" ratioLeft="913" ratioRight="305" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
@@ -506,12 +519,16 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" path="/cds/src/main/webapp/WEB-INF/spring-security2.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/cds/src/main/webapp/pages/ajax/producto/importeProducto.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Test/src/ar/com/templateit/prueba/MiTest.java"/>
 </editors>
-<item historyLabel="spring-security2.xml" index="0"/>
-<item active="true" historyLabel="importeProducto.jsp" index="1">
-<position info="not_deleted" x="3468" y="15"/>
+<item historyLabel="MiTest.java" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MiTest.java" index="0">
+<position info="not_deleted" x="556" y="0"/>
+</item>
+<item active="true" historyLabel="MiTest.java" index="0">
+<position info="not_deleted" x="330" y="1"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -537,32 +554,29 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="importeProducto.jsp" tooltip="cds/src/main/webapp/pages/ajax/producto/importeProducto.jsp">
-<persistable path="/cds/src/main/webapp/pages/ajax/producto/importeProducto.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MiTest.java" tooltip="Test/src/ar/com/templateit/prueba/MiTest.java">
+<persistable path="/Test/src/ar/com/templateit/prueba/MiTest.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="spring-security2.xml" tooltip="cds/src/main/webapp/WEB-INF/spring-security2.xml">
-<persistable path="/cds/src/main/webapp/WEB-INF/spring-security2.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="editCategoria.jsp" tooltip="cds/src/main/webapp/pages/ajax/categoria/editCategoria.jsp">
-<persistable path="/cds/src/main/webapp/pages/ajax/categoria/editCategoria.jsp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="newProducto.jsp" tooltip="cds/src/main/webapp/pages/ajax/producto/newProducto.jsp">
-<persistable path="/cds/src/main/webapp/pages/ajax/producto/newProducto.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="editPriceProducto.jsp" tooltip="cds/src/main/webapp/pages/ajax/producto/editPriceProducto.jsp">
+<persistable path="/cds/src/main/webapp/pages/ajax/producto/editPriceProducto.jsp"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="abmProducto.jsp" tooltip="cds/src/main/webapp/pages/producto/abmProducto.jsp">
 <persistable path="/cds/src/main/webapp/pages/producto/abmProducto.jsp"/>
 </file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ProductoService.java" tooltip="cds/src/main/java/ar/com/templateit/cds/web/service/ProductoService.java">
+<persistable path="/cds/src/main/java/ar/com/templateit/cds/web/service/ProductoService.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ProductoServiceImpl.java" tooltip="cds/src/main/java/ar/com/templateit/cds/web/service/impl/ProductoServiceImpl.java">
+<persistable path="/cds/src/main/java/ar/com/templateit/cds/web/service/impl/ProductoServiceImpl.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="cds-hibernate-session-factory.xml" tooltip="cds/src/main/webapp/WEB-INF/conf/spring/cds-hibernate-session-factory.xml">
 <persistable path="/cds/src/main/webapp/WEB-INF/conf/spring/cds-hibernate-session-factory.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="outputProducto.jsp" tooltip="cds/src/main/webapp/pages/ajax/producto/outputProducto.jsp">
-<persistable path="/cds/src/main/webapp/pages/ajax/producto/outputProducto.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="loginSpringSecurity.jsp" tooltip="cds/src/main/webapp/pages/login/loginSpringSecurity.jsp">
+<persistable path="/cds/src/main/webapp/pages/login/loginSpringSecurity.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Venta.java" tooltip="cds/src/main/java/ar/com/templateit/cds/web/entity/Venta.java">
-<persistable path="/cds/src/main/java/ar/com/templateit/cds/web/entity/Venta.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ABMProductoAction.java" tooltip="cds/src/main/java/ar/com/templateit/cds/web/action/ABMProductoAction.java">
-<persistable path="/cds/src/main/java/ar/com/templateit/cds/web/action/ABMProductoAction.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="searchProducto.jsp" tooltip="cds/src/main/webapp/pages/ajax/producto/searchProducto.jsp">
+<persistable path="/cds/src/main/webapp/pages/ajax/producto/searchProducto.jsp"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DetalleVenta.java" tooltip="cds/src/main/java/ar/com/templateit/cds/web/entity/DetalleVenta.java">
 <persistable path="/cds/src/main/java/ar/com/templateit/cds/web/entity/DetalleVenta.java"/>
@@ -570,17 +584,20 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EgresoProductoAction.java" tooltip="cds/src/main/java/ar/com/templateit/cds/web/action/EgresoProductoAction.java">
 <persistable path="/cds/src/main/java/ar/com/templateit/cds/web/action/EgresoProductoAction.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DetalleCompra.java" tooltip="cds/src/main/java/ar/com/templateit/cds/web/entity/DetalleCompra.java">
-<persistable path="/cds/src/main/java/ar/com/templateit/cds/web/entity/DetalleCompra.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="resultFilterProducto.jsp" tooltip="cds/src/main/webapp/pages/ajax/producto/resultFilterProducto.jsp">
+<persistable path="/cds/src/main/webapp/pages/ajax/producto/resultFilterProducto.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="IngresoProductoAction.java" tooltip="cds/src/main/java/ar/com/templateit/cds/web/action/IngresoProductoAction.java">
-<persistable path="/cds/src/main/java/ar/com/templateit/cds/web/action/IngresoProductoAction.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="filterProducto.jsp" tooltip="cds/src/main/webapp/pages/ajax/producto/filterProducto.jsp">
+<persistable path="/cds/src/main/webapp/pages/ajax/producto/filterProducto.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="grillaIngresoProducto.jsp" tooltip="cds/src/main/webapp/pages/ajax/producto/grillaIngresoProducto.jsp">
-<persistable path="/cds/src/main/webapp/pages/ajax/producto/grillaIngresoProducto.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="Producto.hbm.xml" tooltip="cds/src/main/resources/hibernate/Producto.hbm.xml">
+<persistable path="/cds/src/main/resources/hibernate/Producto.hbm.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="ingresoProducto.jsp" tooltip="cds/src/main/webapp/pages/producto/ingresoProducto.jsp">
-<persistable path="/cds/src/main/webapp/pages/producto/ingresoProducto.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Producto.java" tooltip="cds/src/main/java/ar/com/templateit/cds/web/entity/Producto.java">
+<persistable path="/cds/src/main/java/ar/com/templateit/cds/web/entity/Producto.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.CommonXmlEditor" name="producto.xml" tooltip="cds/src/main/resources/producto.xml">
+<persistable path="/cds/src/main/resources/producto.xml"/>
 </file>
 </mruList>
 </workbench>

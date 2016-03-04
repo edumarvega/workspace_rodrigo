@@ -15,13 +15,12 @@ public class DetalleCompra implements Serializable {
 	private Integer cantidad;
 	private BigDecimal subTotal;
 	private Compra compra;
-	
+
 	public DetalleCompra() {
 	}
 
 	public DetalleCompra(Long codigo,String nombre,String descripcion, 
-						BigDecimal precioDeCompra,BigDecimal precioDeVenta, Integer cantiad,BigDecimal subTotal,
-						Compra compra) {
+						BigDecimal precioDeCompra,BigDecimal precioDeVenta, Integer cantiad,BigDecimal subTotal,Compra compra) {
 		this.nombre = nombre;
 		this.codigo = codigo;
 		this.descripcion = descripcion;
@@ -104,6 +103,7 @@ public class DetalleCompra implements Serializable {
 	public void setCompra(Compra compra) {
 		this.compra = compra;
 	}
+	
 	
 
 }

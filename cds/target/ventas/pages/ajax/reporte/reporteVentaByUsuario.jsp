@@ -3,24 +3,13 @@
 	<span style="color:#2aabd2; font-size: 14px; font-weight:bold;">Resultado</span>
 	<br>
 	<div class="displayTable">
-		<display:table id="data" name="listaVenta" requestURI="/reporte_search.do" pagesize="5" export="true" class="table table-striped table-condensed" excludedParams="*">
+		<display:table id="data" name="listaVenta" requestURI="/reporte_search.do" pagesize="10" export="true" class="table table-striped table-condensed" excludedParams="*">
 			<display:column  media="html">
 				<input type="checkbox" name="idVenta" value="${data.id}"/>
 			</display:column>
 			<display:column property="fechaVenta" title="Fecha de venta" format="{0,date,dd/MM/yyyy}" sortable="true"/>
 			<display:column property="usuario.usuario" title="Usuario" sortable="true"/>
 			<display:column property="observaciones" title="Observaciones" maxLength="45"/>
-			<display:column title="Medio de Pago">
-				<cw:if test="${data.medioDePago==1}">
-  					EFECTIVO
-				</cw:if>
-				<cw:if test="${data.medioDePago==2}">
-  					DEBITO
-				</cw:if>
-				<cw:if test="${data.medioDePago==3}">
-  					TARJ.CREDITO
-				</cw:if>
-			</display:column>
 			<display:column title="Efectivo">
 				$ ${data.efectivo}
 			</display:column>

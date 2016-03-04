@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	
+    <import resource="classpath:META-INF/cxf/cxf.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+   
+	<bean id="categoriaServiceImpl" class="ar.com.templateit.cds.web.service.impl.CategoriaServiceImpl">
+	    <property name="categoriaBO" ref="categoriaBO" />
+	</bean>    
+	<jaxws:endpoint 
+	  id="categoriaService" 
+	  implementor="#categoriaServiceImpl" 
+	  address="/CategoriaService" />
+	
+	<bean id="pedidoServiceImpl" class="ar.com.templateit.cds.web.service.impl.PedidoServiceImpl">
+ 			
+	</bean>	    
+	<jaxws:endpoint 
+	  id="pedidoService" 
+	  implementor="#pedidoServiceImpl" 
+	  address="/PedidoService" />
+	
+	<bean id="productoServiceImpl" class="ar.com.templateit.cds.web.service.impl.ProductoServiceImpl">
+		<property name="productoBO" ref="productoBO" />		
+	</bean>
+	<jaxws:endpoint 
+	  id="productoService" 
+	  implementor="#productoServiceImpl" 
+	  address="/ProductoService" />
+	
+	<bean id="usuarioEcommerceServiceImpl" class="ar.com.templateit.cds.web.service.impl.UsuarioEcommerceServiceImpl">
+	 	<property name="usuarioEcommerceBO" ref="usuarioEcommerceBO" />	
+	</bean>    
+	<jaxws:endpoint 
+	  id="usuarioService" 
+	  implementor="#usuarioEcommerceServiceImpl" 
+	  address="/UsuarioService" />
+	
+	
+    
+</beans>

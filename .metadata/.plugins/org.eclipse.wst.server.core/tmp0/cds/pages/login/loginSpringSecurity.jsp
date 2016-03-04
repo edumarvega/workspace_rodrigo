@@ -1,9 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib prefix='c' uri='http://java.sun.com/jstl/core_rt' %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <title>Login a cds</title>
@@ -39,7 +38,7 @@
 			<div class="row">
 				<div class="col-md-5 col-lg-5 thumbnail">
 					<form action="<s:url value='j_spring_security_check'/>" class="form-signin" role="form" method="POST">
-		       	 		<h2 class="form-signin-heading">Ingreso a cds</h2>
+		       	 		<h2 class="form-signin-heading">Ingreso a tpv</h2>
 		        		<s:if test="hasActionErrors()">
 		   					<p class="text-danger"><strong>Error:&nbsp;</strong><s:property value="error"/></p>
 						</s:if>

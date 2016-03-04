@@ -1,7 +1,6 @@
 <%@ include file="/pages/template/taglibs.jsp" %>
 <s:url action="alertaProducto_loadAlertaProducto" namespace="/" var="loadAlertaProducto" />
 <script type="text/javascript">
-	var divViewProducto;
 	$(document).ready(function () {
 		$("#verAlerta").click(function (){
 			dialogAlerta = $('<div id="dialogAlerta"></div>');

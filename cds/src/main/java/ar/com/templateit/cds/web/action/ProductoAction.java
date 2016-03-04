@@ -6,7 +6,6 @@ import java.util.List;
 import org.apache.struts2.ServletActionContext;
 
 import ar.com.templateit.cds.web.bo.ProductoBO;
-import ar.com.templateit.cds.web.entity.Alerta;
 import ar.com.templateit.cds.web.entity.Producto;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -16,6 +15,7 @@ public class ProductoAction extends ActionSupport {
 	private static final String PARAM_JSON = "term";
 	private Long codigo;
 	private String nombre;
+	private String marca;
 	private List<Producto> listaProductos;
 	private ProductoBO productoBO;
 	private List<String> lista;
@@ -25,13 +25,26 @@ public class ProductoAction extends ActionSupport {
 		this.listaProductos = this.productoBO.loadAllProducto();
 		return "loadFilterProducto";
 	}
+	
+	public String loadSearchProducto() {
+		this.listaProductos = this.productoBO.loadAllProducto();
+		return "loadSearchProducto";
+	}
 			
 	public String search() {
 		if(this.nombre==null){
 			this.nombre ="";
 		}
-		this.listaProductos = this.productoBO.findByCriteria(this.codigo, this.nombre, "");
+		this.listaProductos = this.productoBO.findByCriteria(this.codigo, this.nombre, "",this.marca,null);
 		return "searchProducto";
+	}
+	
+	public String searchProducto() {
+		if(this.nombre==null){
+			this.nombre ="";
+		}
+		this.listaProductos = this.productoBO.findByCriteria(this.codigo, this.nombre, "",this.marca,null);
+		return "productos";
 	}
 	
 	public String getJsonProductos(){
@@ -49,13 +62,13 @@ public class ProductoAction extends ActionSupport {
 	
 	public String getNombreProducto(){
 		String parametro = ServletActionContext.getRequest().getParameter(PARAM_JSON).trim();
-		this.listaProductos = this.productoBO.findByCriteria(null,parametro, "");
+		this.listaProductos = this.productoBO.findByCriteria(null,parametro, "","",null);
 		return SUCCESS;
 	}
 	
 	public String getDescripcionProducto(){
 		String parametro = ServletActionContext.getRequest().getParameter(PARAM_JSON).trim();
-		this.listaProductos = this.productoBO.findByCriteria(null,"",parametro);
+		this.listaProductos = this.productoBO.findByCriteria(null,"",parametro,"",null);
 		return SUCCESS;
 	}
 	
@@ -64,7 +77,7 @@ public class ProductoAction extends ActionSupport {
 		if(this.nombre==null){
 			this.nombre ="";
 		}
-		this.listaProductos = this.productoBO.findByCriteria(this.codigo, this.nombre, "");
+		this.listaProductos = this.productoBO.findByCriteria(this.codigo, this.nombre, "","",null);
 		if(listaProductos!=null){
 			if(!listaProductos.isEmpty()){
 				this.mensaje = "si";
@@ -118,6 +131,14 @@ public class ProductoAction extends ActionSupport {
 
 	public void setMensaje(String mensaje) {
 		this.mensaje = mensaje;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
 	}
 	
 	

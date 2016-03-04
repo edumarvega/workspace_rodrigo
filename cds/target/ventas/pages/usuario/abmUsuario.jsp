@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ include file="/pages/template/taglibs.jsp" %>
 <s:url action="abmUsuario_loadNewUsuario" namespace="/" var="loadNewUsuario" />
 <s:url action="abmUsuario_loadEditUsuario" namespace="/" var="loadEditUsuario" />
@@ -7,8 +6,8 @@
 <s:url action="abmUsuario_search" namespace="/" var="search" />
 <s:url action="abmUsuario_delete" namespace="/" var="delete" />
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <title>ABM de Usuario</title>
@@ -98,7 +97,6 @@
 
   	var divNewUsuario;
   	var divEditarUsuario;
-  	var divViewUsuario;
 
 	function showModalNuevoUsuario(){
 		divNewUsuario = $('<div id="divNewUsuario"></div>');
@@ -137,6 +135,7 @@
 	  			}).block({ message: '<h5><img src="${appCtx}/images/loading.gif"/> Procesando...</h5>' });
 	}
 
+	var divViewUsuario;
 	function showModalViewUsuario(id){
 		var url = '${loadViewUsuario}?id='+id;
 		divViewUsuario = $('<div id="divViewUsuario"></div>');
@@ -163,7 +162,7 @@
    </script>
 </head>
 <body>
-	<span style="color:#2aabd2; font-size: 14px; font-weight:bold;">Búsqueda de Usuarios</span>
+	<span style="color:#2aabd2; font-size: 14px; font-weight:bold;">B&uacute;squeda de Usuarios</span>
 	<br>
 	<br>
 	<div id="filter">
@@ -195,6 +194,6 @@
     </div>
 	<!--<div id="divNewUsuario" style="display: none;"></div>
 	<div id="divEditarUsuario" style="display: none;"></div>
-	<div id="divViewUsuario" style="display: none;"></div>-->
+	<div id="divViewUsuario" style="display: none;"></div> -->
 </body>
 </html>

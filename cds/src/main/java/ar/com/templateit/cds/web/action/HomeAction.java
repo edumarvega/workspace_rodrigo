@@ -4,7 +4,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 import ar.com.templateit.cds.web.bo.UsuarioBO;
-import ar.com.templateit.cds.web.dao.UsuarioDAO;
 import ar.com.templateit.cds.web.entity.Usuario;
 
 import com.opensymphony.xwork2.ActionContext;

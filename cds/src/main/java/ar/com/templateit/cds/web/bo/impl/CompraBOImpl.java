@@ -6,6 +6,8 @@ import java.util.List;
 import ar.com.templateit.cds.web.bo.CompraBO;
 import ar.com.templateit.cds.web.dao.CompraDAO;
 import ar.com.templateit.cds.web.entity.Compra;
+import ar.com.templateit.cds.web.entity.FormaDePago;
+import ar.com.templateit.cds.web.entity.Usuario;
 
 public class CompraBOImpl implements CompraBO{
 
@@ -28,8 +30,8 @@ public class CompraBOImpl implements CompraBO{
 	}
 
 	@Override
-	public List<Compra> findByCriteria(Date fechaDesde,Date fechaHasta,String nroTicketFactura,String proveedor) {
-		List<Compra> compras = this.compraDAO.findByCriteria(fechaDesde,fechaHasta,nroTicketFactura, proveedor);
+	public List<Compra> findByCriteria(Date fechaDesde,Date fechaHasta,String nroTicketFactura,String proveedor,FormaDePago formaDePago) {
+		List<Compra> compras = this.compraDAO.findByCriteria(fechaDesde,fechaHasta,nroTicketFactura, proveedor,formaDePago);
 		return compras;
 	}
 	
@@ -43,6 +45,13 @@ public class CompraBOImpl implements CompraBO{
 	
 	public void setCompraDAO(CompraDAO compraDAO) {
 		this.compraDAO = compraDAO;
+	}
+
+	@Override
+	public List<Compra> findCompraEfectivoByUsuario(Date fechaDesde,
+			Date fechaHasta, FormaDePago formaDePago, Usuario usuario) {
+		List<Compra> compras = this.compraDAO.findCompraEfectivoByUsuario(fechaDesde, fechaHasta, formaDePago, usuario);
+		return compras;
 	}
 
 

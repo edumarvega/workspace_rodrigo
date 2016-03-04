@@ -32,13 +32,22 @@
 		<property name="compraBO" ref="compraBO" />	
 		<property name="productoBO" ref="productoBO" />	
 		<property name="alertaBO" ref="alertaBO" />	
+		<property name="formaDePagoBO" ref="formaDePagoBO" />
+		<property name="tipoCuentaCorrienteBO" ref="tipoCuentaCorrienteBO" />
+		<property name="proveedorBO" ref="proveedorBO" />
+		<property name="estadoCuentaCorrienteBO" ref="estadoCuentaCorrienteBO" />
+		<property name="cuentaCorrienteBO" ref="cuentaCorrienteBO" />
 	</bean>
 	
 	<bean id="egresoProductoAction" class="ar.com.templateit.cds.web.action.EgresoProductoAction" scope="prototype">
 		<property name="ventaBO" ref="ventaBO" />	
 		<property name="productoBO" ref="productoBO" />
 		<property name="alertaBO" ref="alertaBO" />
-		<property name="categoriaBO" ref="categoriaBO" />
+		<property name="formaDePagoBO" ref="formaDePagoBO" />
+		<property name="tipoCuentaCorrienteBO" ref="tipoCuentaCorrienteBO" />
+		<property name="clienteBO" ref="clienteBO" />
+		<property name="estadoCuentaCorrienteBO" ref="estadoCuentaCorrienteBO" />
+		<property name="cuentaCorrienteBO" ref="cuentaCorrienteBO" />
 		<property name="nombreEmpresa" value="${empresa.nombre}" />
 		<property name="direccion" value="${empresa.direccion}" />
 		<property name="telefono" value="${empresa.telefono}" />
@@ -46,7 +55,8 @@
 		<property name="categoriaSinCodigo">
         	<map>
             	<entry key="9999999999999" value="SIN CODIGO"/>
-            	<entry key="8888888888888" value="PIROTECNIA"/>
+            	<entry key="8888888888888" value="KIOSKO"/>
+            	<entry key="7777777777777" value="ALMACEN"/>
          	</map>	
         </property>
 
@@ -74,7 +84,7 @@
 	</bean>
 	
 	<bean id="proveedorAction" class="ar.com.templateit.cds.web.action.ProveedorAction" scope="prototype">
-			
+		<property name="proveedorBO" ref="proveedorBO" />
 	</bean>
 	
 	<bean id="ambUsuarioAction" class="ar.com.templateit.cds.web.action.ABMUsuarioAction" scope="prototype">
@@ -93,6 +103,10 @@
 		<property name="categoriaBO" ref="categoriaBO" />
 	</bean>
 	
+	<bean id="categoriaAction" class="ar.com.templateit.cds.web.action.CategoriaAction" scope="prototype">
+		<property name="categoriaBO" ref="categoriaBO" />		
+	</bean>
+	
 	<bean id="reporteAction" class="ar.com.templateit.cds.web.action.ReporteAction" scope="prototype">
 		<property name="ventaBO" ref="ventaBO" />	
 		<property name="usuarioBO" ref="usuarioBO" />
@@ -101,5 +115,48 @@
 		<property name="telefono" value="${empresa.telefono}" />
 		<property name="email" value="${empresa.email}" />
 	</bean>
+	
+	<bean id="ingresoVarioAction" class="ar.com.templateit.cds.web.action.IngresoVarioAction" scope="prototype">
+			<property name="ingresoVarioBO" ref="ingresoVarioBO"/>
+			<property name="tipoIngresoVarioBO" ref="tipoIngresoVarioBO"/>
+	</bean>
+	
+	<bean id="gastoVarioAction" class="ar.com.templateit.cds.web.action.GastoVarioAction" scope="prototype">
+			<property name="gastoVarioBO" ref="gastoVarioBO"/>
+			<property name="tipoGastoVarioBO" ref="tipoGastoVarioBO"/>
+	</bean>
+	
+	<bean id="ambClienteAction" class="ar.com.templateit.cds.web.action.ABMClienteAction" scope="prototype">
+		<property name="clienteBO" ref="clienteBO" />
+	</bean>
+	
+	<bean id="cajaAction" class="ar.com.templateit.cds.web.action.CajaAction" scope="prototype">
+		<property name="cajaBO" ref="cajaBO" />
+		<property name="estadoCajaBO" ref="estadoCajaBO" />
+		<property name="ventaBO" ref="ventaBO" />
+		<property name="ingresoVarioBO" ref="ingresoVarioBO" />
+		<property name="cuentaCorrienteBO" ref="cuentaCorrienteBO" />
+		<property name="compraBO" ref="compraBO" />
+		<property name="gastoVarioBO" ref="gastoVarioBO" />
+		<property name="formaDePagoBO" ref="formaDePagoBO" />
+		<property name="movimientoCuentaCorrienteBO" ref="movimientoCuentaCorrienteBO" />
+		<property name="mySqldumPath" value="${mysql.path.instalacion.mysqldump}" />
+		<property name="comando" value="${mysql.comando.backup}" />
+		<property name="pathBackup" value="${mysql.path.backup.bd}" />
+	</bean>
+	
+	<bean id="pagoProveedorAction" class="ar.com.templateit.cds.web.action.PagoProveedorAction" scope="prototype">
+			<property name="cuentaCorrienteBO" ref="cuentaCorrienteBO"/>
+			<property name="tipoCuentaCorrienteBO" ref="tipoCuentaCorrienteBO"/>
+			<property name="estadoCuentaCorrienteBO" ref="estadoCuentaCorrienteBO"/>
+	</bean>
+	
+	<bean id="cobranzaClienteAction" class="ar.com.templateit.cds.web.action.CobranzaClienteAction" scope="prototype">
+			<property name="cuentaCorrienteBO" ref="cuentaCorrienteBO"/>
+			<property name="tipoCuentaCorrienteBO" ref="tipoCuentaCorrienteBO"/>
+			<property name="estadoCuentaCorrienteBO" ref="estadoCuentaCorrienteBO"/>
+	</bean>
+	
+	
   
 </beans>

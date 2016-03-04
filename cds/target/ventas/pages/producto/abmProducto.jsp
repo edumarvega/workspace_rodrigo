@@ -1,18 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ include file="/pages/template/taglibs.jsp" %>
 <s:url action="abmProducto_loadNewProducto" namespace="/" var="loadNewProducto" />
 <s:url action="abmProducto_loadEditProducto" namespace="/" var="loadEditProducto" />
 <s:url action="abmProducto_loadViewProducto" namespace="/" var="loadViewProducto" />
 <s:url action="abmProducto_search" namespace="/" var="search" />
 <s:url action="abmProducto_delete" namespace="/" var="delete" />
+<s:url action="abmProducto_loadEditarPrecio" namespace="/" var="loadEditarPrecio" />
 <s:url action="jsonProducto_getJsonProductos" namespace="/" var="getJsonProductos" />
 <s:url action="getJSONResult" namespace="/" var="getJSONResult" />
 <s:url action="jsonProducto_getNombreProducto" namespace="/" var="getNombreProducto" />
 <s:url action="jsonProducto_getDescripcionProducto" namespace="/" var="getDescripcionProducto" />
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <title>ABM de Producto</title>
@@ -61,6 +61,20 @@
 				var params = 'ids='+ids;
 	
 				showMsgInfo('Desea eliminar el o los elementos?',url,params,'resultado');
+			}
+  	  	});
+  		
+  		$("#optPrice").click(function(){
+  			var seleccionados = $("input:checked").length;
+			if(seleccionados==0){
+				showMsgWarning('Debe seleccionar un elemento');
+			}
+			else{
+				var ids  = new Array();
+				$("input:checked").each(function(){
+					ids.push($(this).val());
+				});
+				showModalEditarPrecioProducto(ids);
 			}
   	  	});
   	  	
@@ -153,15 +167,16 @@
   	});
 
   	var divNewProducto;
-  	var divEditarProducto;
+  	
 
 	function showModalNuevoProducto(){
+		//divNewProducto = $("#divNewProducto").dialog({
 		divNewProducto = $('<div id="divNewProducto"></div>');
 		divNewProducto.dialog({
 			   title: 'Nuevo producto',
 			   modal: true,
 			   width: 550,
-			   height: 450,
+			   height: 480,
 			   position: 'center',
 			   hide: "scale",
 			   close: function() {
@@ -173,9 +188,10 @@
 		
 	}
 
-	
+	var divEditarProducto;
 	function showModalEditarProducto(id){
 		var url = '${loadEditProducto}?id='+id;
+		//divEditarProducto = $("#divEditarProducto").dialog({
 		divEditarProducto = $('<div id="divEditarProducto"></div>');
 		divEditarProducto.dialog({
 			   title: 'Editar producto',
@@ -191,8 +207,27 @@
 					$(this).unblock();
 	  			}).block({ message: '<h5><img src="${appCtx}/images/loading.gif"/> Procesando...</h5>' });
 	}
+		
+	var divEditarPrecio;
+	function showModalEditarPrecioProducto(ids){
+		var url = '${loadEditarPrecio}?ids='+ids;
+		divEditarPrecio = $('<div id="divEditarPrecio"></div>');
+		divEditarPrecio.dialog({
+			   title: 'Editar precio de productos',
+			   modal: true,
+			   width: 300,
+			   height: 200,
+			   position: 'center',
+			   hide: "scale",
+			   close: function() {
+		       		$(this).dialog('destroy').remove();
+		       },
+			}).load(url,function(){
+					$(this).unblock();
+	  			}).block({ message: '<h5><img src="${appCtx}/images/loading.gif"/> Procesando...</h5>' });
+	}	
 
-	var divViewProducto;
+	var divViewProducto;	
 	function showModalViewProducto(id){
 		var url = '${loadViewProducto}?id='+id;
 		divViewProducto = $('<div id="divViewProducto"></div>');
@@ -239,21 +274,36 @@
 	<br>
 	<br>
 	<div id="filter">
-      <s:form id="filterForm" action="abmProducto_search" theme="simple"  cssClass="form-inline"  role="form">
-  		<div class="row">
+      <s:form id="filterForm" action="abmProducto_search" theme="simple"  cssClass="form-horizontal"  role="form">
   			<div class="form-group">
-    			<input type="text" id="codigoProducto" class="form-control input-sm" name="codigo" placeholder="Código" onkeypress="validaSoloNumeros();" maxlength="13" autofocus>
+  				<div class="col-md-2 col-lg-2">
+    				<input type="text" id="codigoProducto" class="form-control input-sm" name="codigo" placeholder="CÃ³digo" onkeypress="validaSoloNumeros();" maxlength="13" autofocus>
+    			</div>	
+  			
+  				<div class="col-md-3 col-lg-3">
+    				<input type="text" id="nombreProducto" class="form-control input-sm" name="nombre" placeholder="Nombre">
+    			</div>	
+  			
+  				<div class="col-md-3 col-lg-3">
+    				<input type="text"  id="descripcionProducto" class="form-control input-sm" name="descripcion" placeholder="DescripciÃ³n">
+    			</div>	
+    		</div>
+    		<div class="form-group">
+  				<div class="col-md-3 col-lg-3">
+    				<input type="text"  id="marcaProducto" class="form-control input-sm" name="marca" placeholder="Marca">
+    			</div>
+  				<div class="col-md-3 col-lg-3">
+    				<s:select 
+						list="filterCategorias" 
+						listKey="id"   
+        				listValue="nombre"
+						name="filterCategoria" 
+						value="defaultFilterCategoria" theme="simple" cssClass="form-control input-sm"/>
+				</div>		
+  				<div class="col-md-2 col-lg-2">
+    				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span>&nbsp;Buscar</button>
+    			</div>	
   			</div>
-  			<div class="form-group">
-    			<input type="text" id="nombreProducto" class="form-control input-sm" name="nombre" placeholder="Nombre">
-  			</div>
-  			<div class="form-group">
-    			<input type="text"  id="descripcionProducto" class="form-control input-sm" name="descripcion" placeholder="Descripción">
-  			</div>
-  			<div class="form-group">
-    			<button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span>&nbsp;Buscar</button>
-  			</div>
-		</div>
       </s:form>
     </div>
     <div>

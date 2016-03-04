@@ -51,4 +51,66 @@
 	<bean id="roleDAO" class="ar.com.templateit.cds.web.dao.impl.RoleDAOImpl" >
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+	
+	<bean id="cajaDAO" class="ar.com.templateit.cds.web.dao.impl.CajaDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="estadoCajaDAO" class="ar.com.templateit.cds.web.dao.impl.EstadoCajaDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="estadoDelPagoDAO" class="ar.com.templateit.cds.web.dao.impl.EstadoDelPagoDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="formaDePagoDAO" class="ar.com.templateit.cds.web.dao.impl.FormaDePagoDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="ingresoVarioDAO" class="ar.com.templateit.cds.web.dao.impl.IngresoVarioDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="tarjetaDeCreditoDAO" class="ar.com.templateit.cds.web.dao.impl.TarjetaDeCreditoDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="tipoGastoVarioDAO" class="ar.com.templateit.cds.web.dao.impl.TipoGastoVarioDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="tipoIngresoVarioDAO" class="ar.com.templateit.cds.web.dao.impl.TipoIngresoVarioDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="gastoVarioDAO" class="ar.com.templateit.cds.web.dao.impl.GastoVarioDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="clienteDAO" class="ar.com.templateit.cds.web.dao.impl.ClienteDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="cuentaCorrienteDAO" class="ar.com.templateit.cds.web.dao.impl.CuentaCorrienteDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="estadoCuentaCorrienteDAO" class="ar.com.templateit.cds.web.dao.impl.EstadoCuentaCorrienteDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="tipoCuentaCorrienteDAO" class="ar.com.templateit.cds.web.dao.impl.TipoCuentaCorrienteDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="movimientoCuentaCorrienteDAO" class="ar.com.templateit.cds.web.dao.impl.MovimientoCuentaCorrienteDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="usuarioEcommerceDAO" class="ar.com.templateit.cds.web.dao.impl.UsuarioEcommerceDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	
 </beans>

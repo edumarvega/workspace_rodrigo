@@ -22,5 +22,8 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	
 	<!-- Beans quita el prefijo ROLE_ por default Declaration -->
 	<import resource="conf/spring/cds-rolevote-spring.xml"/>
+	
+	<!-- Beans Web Service del carrito de compras -->
+	<import resource="conf/spring/cds-service-ws-spring.xml"/>
 	 
 </beans>

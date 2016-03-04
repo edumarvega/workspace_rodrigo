@@ -40,4 +40,11 @@
 			<result name="render">/pages/ajax/categoria/resultCategoria.jsp</result>
 		</action>
 	</package>
+	<package name="jsonCategoria" namespace="/" extends="json-default">
+      <action name="jsonCategoria_*" method="{1}" class="categoriaAction">
+       	   <result type="json" >
+       	 		<param name="root">categoria</param>
+       	 	</result>
+      </action>
+    </package>
 </struts>

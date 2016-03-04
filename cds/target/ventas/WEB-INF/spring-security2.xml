@@ -20,6 +20,7 @@
 	<http auto-config="true" use-expressions="true">
 		<intercept-url pattern="/j_spring_security_check**" access="isFullyAuthenticated()"/>
        	<intercept-url pattern="/abmProducto**" access="hasAnyRole('ADMINISTRADOR','ABM_PRODUCTO','USUARIO_COMPRA','USUARIO_VENTA')" />
+		<intercept-url pattern="/abmCategoria**" access="hasAnyRole('ADMINISTRADOR','ABM_PRODUCTO')" />	
 		<intercept-url pattern="/ingresoProducto**" access="hasAnyRole('ADMINISTRADOR','USUARIO_COMPRA','USUARIO_VENTA')" />
 		<intercept-url pattern="/egresoProducto**" access="hasAnyRole('ADMINISTRADOR','USUARIO_VENTA','USUARIO_COMPRA')" />
 		<intercept-url pattern="/ajusteProducto**" access="hasAnyRole('ADMINISTRADOR','AJUSTES')" />
@@ -27,7 +28,14 @@
 		<intercept-url pattern="/alertaProducto**" access="hasAnyRole('ADMINISTRADOR','USUARIO_VENTA','USUARIO_COMPRA')" />
 		<intercept-url pattern="/abmProveedor**" access="hasAnyRole('ADMINISTRADOR','ABM_PROVEEDOR','USUARIO_VENTA','USUARIO_COMPRA')" />
 		<intercept-url pattern="/abmUsuario**" access="hasAnyRole('ADMINISTRADOR','ABM_USUARIO')" />
+		<intercept-url pattern="/reporte**" access="hasRole('ADMINISTRADOR')" />
 		<intercept-url pattern="/backUpDataBase**" access="hasRole('ADMINISTRADOR')" />
+		<intercept-url pattern="/ingresoVario**" access="hasAnyRole('ADMINISTRADOR','USUARIO_VENTA')"/>
+		<intercept-url pattern="/gastoVario**" access="hasAnyRole('ADMINISTRADOR','USUARIO_VENTA')"/>
+		<intercept-url pattern="/abmCliente**" access="hasRole('ADMINISTRADOR')" />
+		<intercept-url pattern="/pagoProveedor**" access="hasAnyRole('ADMINISTRADOR','USUARIO_VENTA')"/>
+		<intercept-url pattern="/cobranzaCliente**" access="hasAnyRole('ADMINISTRADOR','USUARIO_VENTA')"/>
+		
 		<access-denied-handler error-page="/accessDenied.do" />
 		<form-login
 			login-page="/login_load.do"

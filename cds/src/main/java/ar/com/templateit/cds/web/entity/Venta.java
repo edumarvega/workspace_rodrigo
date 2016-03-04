@@ -18,26 +18,27 @@ public class Venta implements Serializable{
 	private List<DetalleVenta> items;
 	private Usuario usuario;
 	private String observaciones;
-	private Integer medioDePago;
 	private BigDecimal porcentajeDescuento;
 	private BigDecimal descuento;
 	private BigDecimal interesDebito;
 	private BigDecimal interesCredito;
+	private FormaDePago formaDePago;
+	private String numeroTarjetaCredito;
 	
 	public Venta(){
 	}
 	
 	public Venta(Date fechaVenta,String nroTicketFactura,BigDecimal total,
-				BigDecimal efectivo,BigDecimal cambio,Integer medioDePago,
+				BigDecimal efectivo,BigDecimal cambio,
 				BigDecimal porcentajeDescuento, BigDecimal descuento,
 				BigDecimal interesDebito,BigDecimal interesCredito,
-			    List<DetalleVenta> items,Usuario usuario,String observaciones,Date fechaAlta){
+			    List<DetalleVenta> items,Usuario usuario,String observaciones,Date fechaAlta,
+				FormaDePago formaDePago, String numeroTarjetaCredito){
 		this.fechaVenta = fechaVenta;
 		this.nroTicketFactura = nroTicketFactura;
 		this.total = total;
 		this.efectivo = efectivo;
 		this.cambio = cambio;
-		this.medioDePago = medioDePago;
 		this.porcentajeDescuento = porcentajeDescuento;
 		this.descuento = descuento;
 		this.interesDebito = interesDebito;
@@ -46,6 +47,8 @@ public class Venta implements Serializable{
 		this.usuario = usuario;
 		this.observaciones = observaciones;
 		this.fechaAlta = fechaAlta;
+		this.formaDePago = formaDePago;
+		this.numeroTarjetaCredito = numeroTarjetaCredito;
 	}
 
 	public Long getId() {
@@ -127,15 +130,25 @@ public class Venta implements Serializable{
 	public void setCambio(BigDecimal cambio) {
 		this.cambio = cambio;
 	}
-
-	public Integer getMedioDePago() {
-		return medioDePago;
-	}
-
-	public void setMedioDePago(Integer medioDePago) {
-		this.medioDePago = medioDePago;
-	}
 		
+
+	public FormaDePago getFormaDePago() {
+		return formaDePago;
+	}
+
+	public void setFormaDePago(FormaDePago formaDePago) {
+		this.formaDePago = formaDePago;
+	}
+
+	public String getNumeroTarjetaCredito() {
+		return numeroTarjetaCredito;
+	}
+
+	public void setNumeroTarjetaCredito(String numeroTarjetaCredito) {
+		this.numeroTarjetaCredito = numeroTarjetaCredito;
+	}
+	
+	
 
 	public BigDecimal getPorcentajeDescuento() {
 		return porcentajeDescuento;

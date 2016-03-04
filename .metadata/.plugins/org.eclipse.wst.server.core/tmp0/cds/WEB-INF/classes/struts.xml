@@ -16,4 +16,10 @@
     <include file="backup.xml"/>
     <include file="categoria.xml"/>
     <include file="reporte.xml"/>
+    <include file="ingresosvarios.xml"/>
+    <include file="gastosvarios.xml"/>
+    <include file="cliente.xml"/>
+    <include file="caja.xml"/>
+    <include file="pagoproveedor.xml"/>
+    <include file="cobranzacliente.xml"/>
 </struts>

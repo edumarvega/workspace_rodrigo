@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ar.com.templateit.cds.web.entity.MovimientoCuentaCorriente" table="movimientocuentacorriente">
+       
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+         
+        <property name="fechaPago" type="date">
+            <column name="FECHA_PAGO" />
+        </property>
+        
+        <property name="fechaCobro" type="date">
+            <column name="FECHA_COBRO" />
+        </property>
+        
+        <property name="movimiento" type="string">
+            <column name="MOVIMIENTO" length="45" not-null="false" />
+        </property>
+        
+        <property name="saldoDeudor" type="java.math.BigDecimal">
+            <column name="SALDO_DEUDOR" />
+        </property>
+        
+        <property name="saldoAcreedor" type="java.math.BigDecimal">
+            <column name="SALDO_ACREEDOR" />
+        </property>
+        
+        <property name="totalCompra" type="java.math.BigDecimal">
+            <column name="TOTAL_COMPRA" />
+        </property>
+        
+        <property name="totalVenta" type="java.math.BigDecimal">
+            <column name="TOTAL_VENTA" />
+        </property>
+        
+        <property name="pago" type="java.math.BigDecimal">
+            <column name="PAGO" />
+        </property>
+        
+        <property name="cobro" type="java.math.BigDecimal">
+            <column name="COBRO" />
+        </property>
+        
+         <many-to-one name="cuentaCorriente">
+            <column name="ID_CUENTA_CORRIENTE"  />
+	     </many-to-one>
+	     <many-to-one name="usuario" class="ar.com.templateit.cds.web.entity.Usuario" fetch="join" cascade="none">
+        	<column name="ID_USUARIO" />
+        </many-to-one>
+    </class>
+
+</hibernate-mapping>
+

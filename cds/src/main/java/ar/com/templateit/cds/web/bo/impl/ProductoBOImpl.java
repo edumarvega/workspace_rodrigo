@@ -4,6 +4,7 @@ import java.util.List;
 
 import ar.com.templateit.cds.web.bo.ProductoBO;
 import ar.com.templateit.cds.web.dao.ProductoDAO;
+import ar.com.templateit.cds.web.entity.Categoria;
 import ar.com.templateit.cds.web.entity.Producto;
 
 public class ProductoBOImpl implements ProductoBO {
@@ -39,8 +40,8 @@ public class ProductoBOImpl implements ProductoBO {
 	}
 	
 	@Override
-	public List<Producto> findByCriteria(Long codigo,String nombre,String descripcion) {
-		List<Producto> productos = this.productoDAO.findByCriteria(codigo, nombre, descripcion);
+	public List<Producto> findByCriteria(Long codigo,String nombre,String descripcion,String marca,Categoria categoria) {
+		List<Producto> productos = this.productoDAO.findByCriteria(codigo, nombre, descripcion,marca,categoria);
 		return productos;
 	}
 	
